@@ -1,0 +1,49 @@
+# .envrc
+source_env_if_exists ~/.envrc
+dotenv_if_exists || direnv status
+
+# RUBY
+cat .ruby-version | rbenv local
+gem install bundler
+
+# NODE
+# fnm uses version from package.json or .nvmrc, so no need to set it here
+# BUT zammad need v24
+if command -v fnm &>/dev/null; then
+	fnm use 24
+else
+	OS_TYPE="$(uname -s)"
+	case "${OS_TYPE}" in
+	Linux*) MACHINE=Linux ;;
+	Darwin*) MACHINE=Mac ;;
+	CYGWIN* | MINGW* | MSYS*) MACHINE=Windows ;;
+	*) MACHINE="UNKNOWN" ;;
+	esac
+
+	if [ "$MACHINE" == "Windows" ]; then
+		powershell.exe -Command "winget install Schniz.fnm"
+		echo 'Add to PowerShell $PROFILE: fnm env --use-on-cd | Out-String | Invoke-Expression'
+	elif [ "$MACHINE" == "Mac" ] || [ "$MACHINE" == "Linux" ]; then
+		curl -fsSL https://fnm.vercel.app/install | bash
+		echo 'Add "fnm"to .zshrc/.bashrc:'
+		echo 'eval "$(fnm env --use-on-cd)"'
+	else
+		exit 1
+	fi
+
+fi
+
+# install pnpm if not already installed
+# (fnm doesn't install it by defaultt)
+pnpm -v || npm install -g pnpm
+
+printf "which ruby:" && which ruby
+printf "ruby --version: " && ruby --version
+printf "which node:" && which node
+printf "node --version: " && node --version
+printf "which pnpmp:" && which pnpmp
+printf "pnpmp --version: " && pnpmp --version
+
+# install packages if outdatedd
+bundle check || bundle install
+pnpm install --frozen-lockfile || pnpm install
