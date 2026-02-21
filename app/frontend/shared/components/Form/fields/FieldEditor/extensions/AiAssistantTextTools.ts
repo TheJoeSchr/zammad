@@ -24,14 +24,28 @@ import { GraphQLErrorTypes } from '#shared/types/error.ts'
 
 import type { FormKitNode } from '@formkit/core'
 
-const createAiTextToolsController = () => {
+interface AiTextToolsController {
+  mutation: {
+    textToolsMutation: MutationHandler<any, any>
+    isLoading: Ref<boolean>
+    abort: () => void
+  }
+  isCancelled: boolean
+  cancel: () => void
+  reset: () => void
+  recreate: () => void
+  cleanup: () => void
+}
+
+const createAiTextToolsController = (): AiTextToolsController => {
   let mutationCancelled = false
+  let currentAbortController: AbortController | null = null
 
   const createAbortableMutation = () => {
-    const abortController = new AbortController()
+    currentAbortController = new AbortController()
     const textToolsMutation = new MutationHandler(
       useAiAssistanceTextToolsRunMutation({
-        context: { fetchOptions: { signal: abortController.signal } },
+        context: { fetchOptions: { signal: currentAbortController.signal } },
       }),
       {
         errorNotificationMessage: __(
@@ -46,7 +60,7 @@ const createAiTextToolsController = () => {
     return {
       textToolsMutation,
       isLoading: textToolsMutation.loading(),
-      abort: () => abortController.abort(),
+      abort: () => currentAbortController?.abort(),
     }
   }
 
@@ -63,6 +77,10 @@ const createAiTextToolsController = () => {
     },
     recreate() {
       this.mutation = createAbortableMutation()
+    },
+    cleanup() {
+      currentAbortController?.abort()
+      currentAbortController = null
     },
   }
 }
@@ -107,7 +125,7 @@ const getFormRenderContext = async (context: Ref<FormFieldContext<FieldEditorPro
 const sendTextToolsMutation = async (
   textToolId: ID,
   input: string,
-  controller: ReturnType<typeof createAiTextToolsController>,
+  controller: AiTextToolsController,
   context: Ref<FormFieldContext<FieldEditorProps>>,
 ) => {
   const contextData = await getFormRenderContext(context)
@@ -121,20 +139,22 @@ const sendTextToolsMutation = async (
   return response?.aiAssistanceTextToolsRun?.output
 }
 
+type EditorEventCleanup = () => void
+
 const setupEventHandlers = (
   editor: Editor,
-  controller: ReturnType<typeof createAiTextToolsController>,
-) => {
+  controller: AiTextToolsController,
+): EditorEventCleanup => {
   const { notify } = useNotifications()
 
-  editor.on('cancel-ai-assistant-text-tools-updates', () => {
+  const cancelHandler = () => {
     controller.cancel()
     controller.mutation.abort()
     controller.recreate()
     controller.reset()
-  })
+  }
 
-  editor.on('update', () => {
+  const updateHandler = () => {
     if (controller.mutation.isLoading.value) {
       notify({
         id: 'ai-assistant-text-tools-aborted',
@@ -144,7 +164,15 @@ const setupEventHandlers = (
       controller.mutation.abort()
       controller.recreate()
     }
-  })
+  }
+
+  editor.on('cancel-ai-assistant-text-tools-updates', cancelHandler)
+  editor.on('update', updateHandler)
+
+  return () => {
+    editor.off('cancel-ai-assistant-text-tools-updates', cancelHandler)
+    editor.off('update', updateHandler)
+  }
 }
 
 const executeTextModification = async (
@@ -159,7 +187,7 @@ const executeTextModification = async (
   const input = getHTMLContentBetweenSelection(editor, normalizedRange)
 
   loadingHandlers.hideActionBarAndShowLoader()
-  setupEventHandlers(editor, controller)
+  const cleanupEventHandlers = setupEventHandlers(editor, controller)
 
   try {
     const output = await sendTextToolsMutation(textToolId, input, controller, context)
@@ -170,6 +198,8 @@ const executeTextModification = async (
   } catch {
     editor?.chain().focus().setTextSelection(normalizedRange).run()
   } finally {
+    cleanupEventHandlers()
+    controller.cleanup()
     loadingHandlers.showActionBarAndHideLoader()
     editor.chain().focus().run()
   }
@@ -180,7 +210,19 @@ export const EXTENSION_NAME = 'aiAssistantTextTools'
 export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
   const { formId, ticketId, meta: editorMeta } = context.value
   const meta = editorMeta?.[EXTENSION_NAME] || {}
-  let scope = effectScope()
+  let scope: ReturnType<typeof effectScope> | null = null
+  let groupNodeCommitOff: (() => void) | null = null
+
+  const cleanupScope = () => {
+    if (groupNodeCommitOff) {
+      groupNodeCommitOff()
+      groupNodeCommitOff = null
+    }
+    if (scope?.active) {
+      scope.stop()
+    }
+    scope = null
+  }
 
   return Extension.create({
     name: EXTENSION_NAME,
@@ -196,13 +238,13 @@ export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
         () => config.ai_assistance_text_tools,
         (newValue) => {
           if (!newValue) {
-            if (scope.active) scope.stop()
+            cleanupScope()
             return
           }
 
-          if (!scope.active) {
-            scope = effectScope()
-          }
+          if (scope?.active) return
+
+          scope = effectScope()
 
           scope.run(() => {
             const textToolsStore = useAiAssistantTextToolsStore()
@@ -211,9 +253,13 @@ export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
 
             const groupId = ref<number>(groupNode?.value)
 
-            groupNode?.on('commit', ({ payload }) => {
+            const commitReceipt = groupNode?.on('commit', ({ payload }) => {
               groupId.value = payload
             })
+
+            if (commitReceipt) {
+              groupNodeCommitOff = () => groupNode?.off(commitReceipt)
+            }
 
             const queryHandler = new QueryHandler(
               useAiAssistanceTextToolsListQuery(() => ({
@@ -234,7 +280,6 @@ export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
             watch(
               () => groupId.value,
               (newGroupId, oldGroupId) => {
-                // If the groupId changes, we deactivate the old one
                 if (oldGroupId !== newGroupId) textToolsStore.deactivate(oldGroupId)
 
                 textToolsStore.activate(newGroupId, queryHandler)
@@ -242,7 +287,10 @@ export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
               { immediate: true },
             )
 
-            editor.on('destroy', () => textToolsStore.deactivate(groupId.value))
+            editor.on('destroy', () => {
+              textToolsStore.deactivate(groupId.value)
+              cleanupScope()
+            })
           })
         },
         { immediate: true },
@@ -264,7 +312,7 @@ export default (context: Ref<FormFieldContext<FieldEditorProps>>) => {
       }
     },
     onDestroy() {
-      scope.stop()
+      cleanupScope()
     },
   })
 }

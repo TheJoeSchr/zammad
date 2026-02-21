@@ -83,6 +83,12 @@ export const useAiAssistantTextToolsStore = defineStore('aiTextTools', () => {
     return queryResultByUsageKey.value.get(id)
   }
 
+  const $reset = () => {
+    usageKeys.value = []
+    queryByUsageKey.value.clear()
+    queryResultByUsageKey.value.clear()
+  }
+
   return {
     lookupResult,
     usageKeys,
@@ -90,6 +96,7 @@ export const useAiAssistantTextToolsStore = defineStore('aiTextTools', () => {
     queryResultByUsageKey,
     activate,
     deactivate,
+    $reset,
   }
 })
 

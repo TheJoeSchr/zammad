@@ -23,14 +23,28 @@ const addTableClasses = (container: HTMLDivElement) => {
   return container
 }
 
+// Reusable container to avoid repeated DOM element creation.
+let transformContainer: HTMLDivElement | null = null
+
+const getTransformContainer = (): HTMLDivElement => {
+  if (!transformContainer) {
+    transformContainer = document.createElement('div')
+  }
+  return transformContainer
+}
+
 export const transformEditorHtml = (htmlContent: string): string => {
-  let container = document.createElement('div')
+  const container = getTransformContainer()
 
   container.innerHTML = htmlContent
 
-  container = addTableClasses(container)
+  addTableClasses(container)
 
-  return container.innerHTML
+  const result = container.innerHTML
+
+  container.innerHTML = ''
+
+  return result
 }
 
 export const convertInlineImages = (
@@ -119,36 +133,50 @@ export const getActiveNodeOrMark = (editor: Editor) => {
   return domNode.nodeType === Node.TEXT_NODE ? domNode.parentElement : (domNode as HTMLElement)
 }
 
-export const setAutoUpdate = (editor: Editor, element: HTMLElement) => {
+export type CleanupFunction = () => void
+
+export const setAutoUpdate = (editor: Editor, element: HTMLElement): CleanupFunction | undefined => {
   const anchorNode = getActiveNodeOrMark(editor)
 
   if (!anchorNode) {
     console.warn('FieldEditor: Could not find valid anchor node for autoUpdate.')
-    return
+    return undefined
   }
 
   return autoUpdate(anchorNode, element, () => updatePosition(editor, element))
 }
 
-export const autoUpdatePosition = (editor: Editor, element: HTMLElement) => {
+export const autoUpdatePosition = (
+  editor: Editor,
+  element: HTMLElement,
+): CleanupFunction | undefined => {
   updatePosition(editor, element)
-  setAutoUpdate(editor, element)
+  return setAutoUpdate(editor, element)
 }
 
-const createHandleCloseOnClick = (editor: Editor, options?: SetFloatingPopoverOptions) => {
+const createHandleCloseOnClick = (
+  editor: Editor,
+  cleanup: CleanupFunction,
+  options?: SetFloatingPopoverOptions,
+) => {
   const handleCloseOnClick = (event: MouseEvent) => {
     if ((event.target as HTMLElement).closest('[data-id="floating-popover"]')) return
     // Editor handles click itself
     if ((event.target as HTMLElement).closest('[data-type="editor"]')) return
 
     document.removeEventListener('click', handleCloseOnClick)
+    cleanup()
     editor.commands.closeLinkForm()
 
     options?.onClose?.()
   }
 
-  // We must do so to keep the same handler reference
   return handleCloseOnClick
+}
+
+export interface FloatingPopoverInstance {
+  renderer: VueRenderer
+  cleanup: CleanupFunction
 }
 
 export const setFloatingPopover = <T extends object>(
@@ -156,7 +184,7 @@ export const setFloatingPopover = <T extends object>(
   editor: Editor,
   props: T,
   options?: SetFloatingPopoverOptions,
-) => {
+): FloatingPopoverInstance | null => {
   const virtualComponent = new VueRenderer(cmp, {
     props: {
       'data-id': 'floating-popover',
@@ -171,17 +199,42 @@ export const setFloatingPopover = <T extends object>(
       console.warn('editor: Floating popover could`t get imported. Did you async load it?')
     return null
   }
-  ;(virtualComponent.element as HTMLElement).style.position = 'absolute'
 
-  document.body.appendChild(virtualComponent.element)
+  const element = virtualComponent.element as HTMLElement
+  element.style.position = 'absolute'
 
-  autoUpdatePosition(editor, virtualComponent.element as HTMLElement)
+  document.body.appendChild(element)
 
-  const clickHandler = createHandleCloseOnClick(editor, options)
+  const cleanupAutoUpdate = autoUpdatePosition(editor, element)
 
+  let clickHandler: ((event: MouseEvent) => void) | null = null
+  let isCleanedUp = false
+
+  const cleanup = () => {
+    if (isCleanedUp) return
+    isCleanedUp = true
+
+    cleanupAutoUpdate?.()
+
+    if (clickHandler) {
+      document.removeEventListener('click', clickHandler)
+      clickHandler = null
+    }
+
+    if (element.parentNode) {
+      element.parentNode.removeChild(element)
+    }
+
+    virtualComponent.destroy()
+  }
+
+  clickHandler = createHandleCloseOnClick(editor, cleanup, options)
   document.addEventListener('click', clickHandler)
 
-  return virtualComponent
+  return {
+    renderer: virtualComponent,
+    cleanup,
+  }
 }
 
 export const rectUnion = (...rects: DOMRect[]) => {
