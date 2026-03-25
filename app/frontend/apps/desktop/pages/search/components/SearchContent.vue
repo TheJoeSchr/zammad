@@ -32,7 +32,7 @@ import SearchControls from '#desktop/pages/search/components/SearchControls.vue'
 import SearchEmptyMessage from '#desktop/pages/search/components/SearchEmptyMessage.vue'
 import { useDetailSearchCache } from '#desktop/pages/search/composables/useDetailSearchCache.ts'
 
-const MAX_ITEMS = 1000
+const MAX_ITEMS = 2000
 const PAGE_SIZE = 30
 
 const props = defineProps<{
@@ -41,11 +41,21 @@ const props = defineProps<{
 
 const router = useRouter()
 
-const pageActive = ref(false)
-
 const selectedEntity = ref(
   (router.currentRoute.value.query.entity as EnumSearchableModels) ?? EnumSearchableModels.Ticket,
 )
+
+const pageActive = ref(false)
+const offset = ref(0)
+
+const { sortedByNamePlugins, searchPluginNames } = useSearchPlugins()
+
+const notVisibleSearchEntities = computed(() =>
+  searchPluginNames.value.filter((name) => name !== selectedEntity.value),
+)
+
+// Remember this in a static way to avoid unnecessary re-fetchtings of the search counts.
+let staticNotVisibleSearchEntities = notVisibleSearchEntities.value
 
 watch(selectedEntity, (newValue) => {
   router.replace({
@@ -98,19 +108,11 @@ const { reachedTop } = useElementScroll(scrollContainerElement as Ref<HTMLElemen
 
 const searchControlsInstance = useTemplateRef('search-controls')
 
-const { sortedByNamePlugins, searchPluginNames } = useSearchPlugins()
-
 const searchQueryVariables = computed(() => ({
   search: sanitizedSearchTerm.value,
   limit: PAGE_SIZE,
   onlyIn: selectedEntity.value,
 }))
-
-const { pageInactive } = usePage({
-  pageActive,
-  metaTitle: sanitizedSearchTerm,
-  onReactivate: () => refetchQueries(),
-})
 
 const detailSearchQuery = new QueryHandler(
   useDetailSearchLazyQuery(searchQueryVariables, {
@@ -125,17 +127,6 @@ const detailSearchQuery = new QueryHandler(
     triggerRefetchOnConnectionReconnect: () => pageActive.value,
   },
 )
-
-const notVisibleSearchEntities = computed(() =>
-  searchPluginNames.value.filter((name) => name !== selectedEntity.value),
-)
-
-// Remember this in a static way to avoid unnecessary re-fetchtings of the search counts.
-let staticNotVisibleSearchEntities = notVisibleSearchEntities.value
-
-watch(notVisibleSearchEntities, (newValue) => {
-  staticNotVisibleSearchEntities = newValue
-})
 
 const searchCountsQuery = new QueryHandler(
   useSearchCountsLazyQuery(
@@ -159,6 +150,27 @@ const searchCountsQuery = new QueryHandler(
     triggerRefetchOnConnectionReconnect: () => pageActive.value,
   },
 )
+
+const refetchQueries = () => {
+  detailSearchQuery.refetch({
+    // FIXME: This is a workaround to avoid broken query on re-navigation, we simply include the current variables.
+    //   If the taskbar already exists, but the search term is changed, refetch will be called with empty variables.
+    //   In parallel, another query with correct variables will be called.
+    ...searchQueryVariables.value,
+    limit: offset.value + PAGE_SIZE,
+  })
+  searchCountsQuery.refetch()
+}
+
+const { pageInactive } = usePage({
+  pageActive,
+  metaTitle: sanitizedSearchTerm,
+  onReactivate: () => refetchQueries(),
+})
+
+watch(notVisibleSearchEntities, (newValue) => {
+  staticNotVisibleSearchEntities = newValue
+})
 
 const searchQueriesLoad = () => {
   detailSearchQuery.load()
@@ -270,7 +282,6 @@ const { sort, orderBy, orderDirection, isSorting } = useSorting(
   scrollContainerElement,
 )
 
-const offset = ref(0)
 const loadingNewPage = ref(false)
 
 const resetPagination = (variables: Partial<DetailSearchQueryVariables> = {}) => {
@@ -310,23 +321,58 @@ const fetchNextPage = async () => {
   }
 }
 
-const refetchQueries = () => {
-  detailSearchQuery.refetch({
-    // FIXME: This is a workaround to avoid broken query on re-navigation, we simply include the current variables.
-    //   If the taskbar already exists, but the search term is changed, refetch will be called with empty variables.
-    //   In parallel, another query with correct variables will be called.
-    ...searchQueryVariables.value,
-    limit: offset.value + PAGE_SIZE,
-  })
-  searchCountsQuery.refetch()
-}
+const selectAllActive = ref(false)
 
-const { checkedTicketIds, openBulkEditFlyout, setOnSuccessCallback } = useTicketBulkEdit()
+const {
+  checkedTicketIds,
+  bulkCount,
+  bulkHasMoreItems,
+  bulkContext,
+  openBulkEditFlyout,
+  setOnSuccessCallback,
+} = useTicketBulkEdit()
+
+const ticketSelectionBindings = computed(() => {
+  // Only the Ticket entity supports bulk actions for now
+  // Avoid warnings bind it only to the ticket search results component
+  if (selectedEntity.value !== EnumSearchableModels.Ticket) return {}
+
+  return {
+    checkedTicketIds: checkedTicketIds.value,
+    'onUpdate:checkedTicketIds': (value: typeof checkedTicketIds.value) => {
+      checkedTicketIds.value = value
+    },
+    selectAllActive: selectAllActive.value,
+    'onUpdate:selectAllActive': (value: boolean) => {
+      selectAllActive.value = value
+    },
+  }
+})
+
+watch(selectAllActive, (newValue) => {
+  if (!newValue) {
+    bulkCount.value = 0
+    bulkHasMoreItems.value = false
+
+    return
+  }
+
+  if (searchResultTotalCount.value > MAX_ITEMS) {
+    bulkCount.value = MAX_ITEMS
+    bulkHasMoreItems.value = true
+  } else {
+    bulkCount.value = searchResultTotalCount.value
+    bulkHasMoreItems.value = false
+  }
+})
 
 watch(
   sanitizedSearchTerm,
   (newValue, oldValue) => {
-    if (newValue !== oldValue) checkedTicketIds.value.clear()
+    if (newValue !== oldValue) {
+      checkedTicketIds.value.clear()
+      bulkContext.value = { searchQuery: newValue }
+    }
 
     if (newValue && detailSearchQuery.isFirstRun()) {
       searchQueriesLoad()
@@ -394,6 +440,7 @@ setOnSuccessCallback(() => {
       <TicketBulkEditButton
         v-if="selectedEntity === EnumSearchableModels.Ticket"
         :checked-ticket-ids="checkedTicketIds"
+        :total-count="searchResultTotalCount"
         @open-flyout="openBulkEditFlyout"
       />
     </template>
@@ -414,6 +461,7 @@ setOnSuccessCallback(() => {
         <component
           :is="searchPlugin.detailSearchComponent"
           :key="selectedEntity"
+          v-bind="ticketSelectionBindings"
           :table-id="`search-${selectedEntity}-table`"
           :caption="`Search result for: ${searchPlugin.label}`"
           :items="searchResultItems"

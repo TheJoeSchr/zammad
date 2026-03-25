@@ -10,13 +10,12 @@ import {
   type GroupPermissionReactive,
   type GroupPermissionsContext,
 } from '#shared/components/Form/fields/FieldGroupPermissions/types.ts'
+import useFlatSelectOptions from '#shared/components/Form/fields/FieldTreeSelect/composables/useFlatSelectOptions.ts'
 import type { TreeSelectOption } from '#shared/components/Form/fields/FieldTreeSelect/types.ts'
 import { useDelegateFocus } from '#shared/composables/useDelegateFocus.ts'
 import getUuid from '#shared/utils/getUuid.ts'
 
 import CommonButton from '#desktop/components/CommonButton/CommonButton.vue'
-
-import useFlatSelectOptions from '../FieldTreeSelect/useFlatSelectOptions.ts'
 
 interface Props {
   context: GroupPermissionsContext
@@ -199,7 +198,7 @@ const ensureGranularOrFullAccess = (
 <template>
   <output
     :id="context.id"
-    class="flex w-full flex-col space-y-2 rounded-lg p-2 focus:outline-1 focus:-outline-offset-1 focus:outline-blue-800 hover:focus:outline-blue-800"
+    class="flex w-full flex-col space-y-2 rounded-lg p-2 focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-blue-800 hover:focus-visible:outline-blue-800"
     :class="context.classes.input"
     :name="context.node.name"
     role="list"

@@ -13,6 +13,7 @@ import {
   useCurrentElement,
   type MaybeElementRef,
   type VueInstance,
+  unrefElement,
 } from '@vueuse/core'
 import {
   type ComponentPublicInstance,
@@ -83,6 +84,8 @@ const hasDirectionRight = computed(() => {
 
 const locale = useLocaleStore()
 
+const overflowOrientation = ref<Orientation | null>(null)
+
 const autoOrientation = computed(() => {
   if (overflowOrientation.value) return overflowOrientation.value
 
@@ -107,7 +110,6 @@ const verticalOrientation = computed(
 )
 
 const overflowHorizontalPlacement = ref<Placement | null>(null)
-const overflowOrientation = ref<Orientation | null>(null)
 
 whenever(
   () => !showPopover.value,
@@ -270,7 +272,8 @@ const { moveNextFocusToTrap } = useTrapTab(popoverElement)
 const { instances } = usePopoverInstances()
 
 const updateOwnerAriaExpandedState = () => {
-  const element = props.owner
+  const element = unrefElement(props.owner)
+
   if (!element) return
 
   if ('ariaExpanded' in element) {
@@ -281,6 +284,7 @@ const updateOwnerAriaExpandedState = () => {
 let removeOnKeyUpEscapeHandler: () => void
 
 const lastActiveElement = ref<HTMLElement>()
+const ownerElement = useCurrentElement(toRef(props, 'owner') as MaybeElementRef<VueInstance>)
 
 const isLastActiveElementOwner = computed(() => lastActiveElement.value === ownerElement.value)
 
@@ -337,8 +341,6 @@ const checkHorizontalOverflow = () => {
     }
   })
 }
-
-const ownerElement = useCurrentElement(toRef(props, 'owner') as MaybeElementRef<VueInstance>)
 
 const isOwnerHovered = useElementHover(computed(() => ownerElement.value as Element))
 
@@ -439,6 +441,15 @@ onMounted(() => {
 
 useOnEmitter('close-popover', () => {
   if (showPopover.value) closePopover()
+})
+
+// We have certain situation where we don't detect when the positioning is changing
+// For example when the popover was opened via long press in the top header
+// We resize the sidebar but since it is a grid we are changing css values
+// Only changes on the window size and element bounding are detected
+// In this cases we need to trigger a manual update
+useOnEmitter('resize-element', () => {
+  if (showPopover.value && targetElementBounds.value) closePopover()
 })
 </script>
 

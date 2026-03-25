@@ -256,50 +256,70 @@ RSpec.describe Trigger, type: :model do
         end
       end
 
-      context 'when ticket is created via Channel::EmailParser.process with inline image and trigger is a note (#5918)' do
+      context 'when ticket has attachments or inline images (#5918)' do
+        let(:condition) do
+          { 'ticket.action' => { 'operator' => 'is', 'value' => 'update' } }
+        end
+
         let(:perform) do
-          { 'article.note' => { 'subject' => 'Test subject note', 'internal' => 'true', 'body' => 'some body with #{article.body_as_html}' } } # rubocop:disable Lint/InterpolationCheck
+          { 'article.note' => { 'subject' => 'Test subject note', 'internal' => 'true', 'body' => 'some body with #{last_external_article.body_as_html}', 'include_attachments' => true } } # rubocop:disable Lint/InterpolationCheck
         end
 
-        let(:raw_email) { Rails.root.join('test/data/mail/mail010.box').read }
+        context 'when inline images are used' do
+          it 'does add attachments because last article has inline attachments' do
+            ticket = create(:ticket)
+            create(:ticket_article, :with_inline_attachment, ticket: ticket)
+            TransactionDispatcher.commit
 
-        it 'fires (without altering ticket state)' do
-          expect { Channel::EmailParser.new.process({}, raw_email) }
-            .to change(Ticket, :count).by(1)
-            .and change(Ticket::Article, :count).by(2)
+            UserInfo.current_user_id = 1
+            create(:ticket_article, :with_inline_attachment, ticket: ticket, body: 'Second article with inline attachments')
 
-          expect(Ticket.last.state.name).to eq('new')
+            expect { TransactionDispatcher.commit }.to change(Ticket::Article, :count).by(1)
 
-          article = Ticket::Article.last
-          expect(article.type.name).to eq('note')
-          expect(article.sender.name).to eq('System')
-          expect(article.attachments.count).to eq(1)
-          expect(article.attachments[0].filename).to eq('image001.jpg')
-          expect(article.attachments[0].preferences['Content-ID']).to eq('image001.jpg@01CDB132.D8A510F0')
-          expect(article.body).to include('image001.jpg@01CDB132.D8A510F0')
-        end
-
-        context 'when first article' do
-          let(:perform) do
-            { 'article.note' => { 'subject' => 'Test subject note', 'internal' => 'true', 'body' => 'some body with #{first_article.body_as_html}' } } # rubocop:disable Lint/InterpolationCheck
+            note = Ticket::Article.last
+            expect(note.attachments.count).to eq(1)
           end
 
-          let(:raw_email) { Rails.root.join('test/data/mail/mail010.box').read }
+          it 'does not add attachments from first article because perform only uses last_external_article' do
+            ticket = create(:ticket)
+            create(:ticket_article, :with_inline_attachment, ticket: ticket)
+            TransactionDispatcher.commit
 
-          it 'fires (without altering ticket state)' do
-            expect { Channel::EmailParser.new.process({}, raw_email) }
-              .to change(Ticket, :count).by(1)
-              .and change(Ticket::Article, :count).by(2)
+            UserInfo.current_user_id = 1
+            create(:ticket_article, ticket: ticket, body: 'Second article without inline attachments')
+            expect { TransactionDispatcher.commit }.to change(Ticket::Article, :count).by(1)
 
-            expect(Ticket.last.state.name).to eq('new')
+            note = Ticket::Article.last
+            expect(note.attachments.count).to eq(0)
+          end
+        end
 
-            article = Ticket::Article.last
-            expect(article.type.name).to eq('note')
-            expect(article.sender.name).to eq('System')
-            expect(article.attachments.count).to eq(1)
-            expect(article.attachments[0].filename).to eq('image001.jpg')
-            expect(article.attachments[0].preferences['Content-ID']).to eq('image001.jpg@01CDB132.D8A510F0')
-            expect(article.body).to include('image001.jpg@01CDB132.D8A510F0')
+        context 'when attachments are used' do
+          it 'does add attachments because latest article has attachments and include_attachments is activated' do
+            ticket = create(:ticket)
+            create(:ticket_article, :with_attachment, ticket: ticket)
+            TransactionDispatcher.commit
+
+            UserInfo.current_user_id = 1
+            create(:ticket_article, :with_attachment, ticket: ticket, body: 'Second article with attachments')
+
+            expect { TransactionDispatcher.commit }.to change(Ticket::Article, :count).by(1)
+
+            note = Ticket::Article.last
+            expect(note.attachments.count).to eq(1)
+          end
+
+          it 'does not add attachments from first article because attachments are only used from the latest article if activated' do
+            ticket = create(:ticket)
+            create(:ticket_article, :with_attachment, ticket: ticket)
+            TransactionDispatcher.commit
+
+            UserInfo.current_user_id = 1
+            create(:ticket_article, ticket: ticket, body: 'Second article without attachments')
+            expect { TransactionDispatcher.commit }.to change(Ticket::Article, :count).by(1)
+
+            note = Ticket::Article.last
+            expect(note.attachments.count).to eq(0)
           end
         end
       end

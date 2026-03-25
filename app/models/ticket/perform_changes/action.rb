@@ -63,14 +63,12 @@ class Ticket::PerformChanges::Action < ::PerformChanges::Action # rubocop:disabl
   end
 
   def article_clone_attachments(new_article_id)
-    NotificationFactory::Renderer::ARTICLE_TAGS.each do |article_key|
-      article_template = notification_factory_template_objects[article_key]
+    last_article = notification_factory_template_objects[:article]
 
-      next if !article_template
-      next if ActiveModel::Type::Boolean.new.cast(execution_data['include_attachments']) != true || article_template.attachments.blank?
+    return if !last_article
+    return if ActiveModel::Type::Boolean.new.cast(execution_data['include_attachments']) != true || last_article.attachments.blank?
 
-      article_template.clone_attachments('Ticket::Article', new_article_id, only_attached_attachments: true)
-    end
+    last_article.clone_attachments('Ticket::Article', new_article_id, only_attached_attachments: true)
   end
 
   def article_clone_attachments_inline(new_article_id)

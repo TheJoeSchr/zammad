@@ -6,7 +6,7 @@ module Gql::Mutations
 
     description 'Update a ticket.'
 
-    argument :ticket_id, GraphQL::Types::ID, loads: Gql::Types::TicketType, description: 'The ticket to be updated'
+    argument :ticket_id, GraphQL::Types::ID, loads: Gql::Types::TicketType, loads_pundit_method: :follow_up?, description: 'The ticket to be updated'
     argument :input, Gql::Types::Input::Ticket::UpdateInputType, description: 'The ticket data'
     argument :meta, Gql::Types::Input::Ticket::UpdateMetaInputType, required: false, description: 'The ticket metadata'
 
@@ -15,6 +15,12 @@ module Gql::Mutations
     requires_permission 'ticket.agent', 'ticket.customer'
 
     def resolve(ticket:, input:, meta: nil)
+      Gql::Types::Input::Ticket::UpdateInputType.sanitize_agent_only_fields!(
+        input.to_h,
+        user:     context.current_user,
+        group_id: ticket.group_id
+      )
+
       return group_has_no_email_error if !group_has_email?(input: input)
 
       {

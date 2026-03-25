@@ -208,6 +208,29 @@
       "note": "Admin configured RegExp"
     },
     {
+      "warning_type": "Remote Code Execution",
+      "warning_code": 25,
+      "fingerprint": "4fece0b57f4c3096ec1d0746b032c8b0c96b1a5c9225858a075f5006b558339b",
+      "check_name": "Deserialize",
+      "message": "Use of `Marshal.load` may be dangerous",
+      "file": "app/services/service/ticket/bulk/single_item_update.rb",
+      "line": 58,
+      "link": "https://brakemanscanner.org/docs/warning_types/unsafe_deserialization",
+      "code": "Marshal.load(Marshal.dump(perform[:input]))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Service::Ticket::Bulk::SingleItemUpdate",
+        "method": "ticket_data"
+      },
+      "user_input": null,
+      "confidence": "Weak",
+      "cwe_id": [
+        502
+      ],
+      "note": ""
+    },
+    {
       "warning_type": "SQL Injection",
       "warning_code": 0,
       "fingerprint": "54c6ff0714c6d869037e344ea22bedcece2d2bc3b88f1cdfffe72ce62d8ef816",
@@ -349,13 +372,13 @@
     {
       "warning_type": "SQL Injection",
       "warning_code": 0,
-      "fingerprint": "8451fd5b9ed57f184e85861ec2a85fdb2d394ffa45e8cd20f00740f6fa271533",
+      "fingerprint": "7f248c60e38d8f73ba5f3ae896d1c9ac18e8f961c4d34a6c308deba5bf51430c",
       "check_name": "SQL",
       "message": "Possible SQL injection",
       "file": "app/models/concerns/can_search.rb",
-      "line": 306,
+      "line": 309,
       "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
-      "code": "Arel.sql(\"array_position(ARRAY[#{ids.join(\",\")}], id)\")",
+      "code": "Arel.sql(\"array_position(ARRAY[#{ids.join(\",\")}]::bigint[], id::bigint)\")",
       "render_path": null,
       "location": {
         "type": "method",
@@ -821,5 +844,5 @@
       "note": ""
     }
   ],
-  "brakeman_version": "8.0.1"
+  "brakeman_version": "8.0.4"
 }

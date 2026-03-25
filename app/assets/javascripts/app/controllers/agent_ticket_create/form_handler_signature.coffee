@@ -3,38 +3,28 @@ class TicketCreateFormHandlerSignature
   @run: (params, attribute, attributes, classname, form, ui) ->
     return if !attribute
     return if attribute.name isnt 'group_id'
-    signature = undefined
-    if params['group_id']
-      group = App.Group.find(params['group_id'])
-      if group && group.signature_id
-        signature = App.Signature.find(group.signature_id)
+
+    result = App.SignatureHelper.findForGroup(params['group_id'])
 
     # check if signature needs to be added
     type = ui.el.closest('.content').find('[name="formSenderType"]').val()
-    if signature && signature.active && signature.body && type is 'email-out'
-      signatureFinished = App.Utils.replaceTags(signature.body,
-        user: App.Session.get()
-        config: App.Config.all()
-
-        # Fake a ticket object, if a group is present (#4448).
-        ticket:
-          group: group
-      )
-
+    if result && type is 'email-out'
       currentBody = ui.el.closest('.content').find('[data-name=body]')
-      if !_.isEmpty(currentBody)
-        # Always remove any existing signature first (from old or new editor format)
-        # before checking and potentially adding a new one
-        ui.el.closest('.content').find('[data-signature="true"]').remove()
+      return if _.isEmpty(currentBody)
 
-        # Refresh currentBody reference after removal
-        currentBody = ui.el.closest('.content').find('[data-name=body]')
-        
-        if App.Utils.signatureCheck(currentBody.html() || '', signatureFinished)
-          signature = $("<div data-signature=\"true\" data-signature-id=\"#{signature.id}\">#{signatureFinished}</div>")
-          App.Utils.htmlStrip(signature)
-          currentBody.append(signature)
-          ui.el.closest('.content').find('[data-name=body]').replaceWith(currentBody)
+      # skip re-applying the signature if it is already present (e.g. after autosave restore)
+      return if currentBody.find("[data-signature-id=\"#{result.signature.id}\"]").length
+
+      # remove existing signature and re-add it
+      # https://github.com/zammad/zammad/issues/2319
+      App.SignatureHelper.removeTopLevel(currentBody)
+
+      # Fake a ticket object, if a group is present (#4448).
+      signatureFinished = App.SignatureHelper.render(result.signature.body, { group: result.group })
+
+      sigEl = App.SignatureHelper.buildElement(result.signature.id, signatureFinished)
+      App.SignatureHelper.appendToBottom(currentBody, sigEl)
+      ui.el.closest('.content').find('[data-name=body]').replaceWith(currentBody)
 
     # remove old signature
     else

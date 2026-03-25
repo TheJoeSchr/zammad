@@ -79,7 +79,7 @@ const loginSchema = defineFormSchema([
           link: '/#password_reset',
           onClick: forceDesktop,
         },
-        children: __('Forgot password?'),
+        children: '$t("Forgot password?")',
       },
     ],
   },
@@ -144,7 +144,7 @@ const sendCredentials = (formData: FormSubmitData<LoginCredentials>) => {
         <span class="ltr:mr-1 rtl:ml-1">{{ $t('New user?') }}</span>
         <CommonLink
           link="/#signup"
-          class="cursor-pointer text-sm text-yellow underline select-none"
+          class="text-yellow cursor-pointer text-sm underline select-none"
           @click="forceDesktop"
         >
           {{ $t('Register') }}

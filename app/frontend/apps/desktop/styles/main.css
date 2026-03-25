@@ -244,7 +244,7 @@
     }
 
     pre {
-      @apply my-2 rounded-md bg-black/10 p-2.5 dark:bg-black/20;
+      @apply my-2 rounded-md bg-black/10 p-2.5 break-all whitespace-pre-wrap dark:bg-black/20;
 
       code {
         @apply bg-transparent p-0;
@@ -252,7 +252,7 @@
     }
 
     code {
-      @apply rounded-md bg-black/10 p-0.75 font-mono dark:bg-black/20;
+      @apply rounded-md bg-black/10 px-0.75 py-px font-mono wrap-break-word whitespace-pre-wrap dark:bg-black/20;
     }
 
     table.zammad-table,
@@ -261,7 +261,7 @@
 
       td,
       th {
-        @apply relative box-border min-w-[1em] border border-neutral-700 px-[5px] py-[3px] align-top dark:border-neutral-500;
+        @apply relative box-border min-w-[1em] border border-neutral-700 px-1.25 py-0.75 align-top dark:border-neutral-500;
       }
 
       th {
@@ -453,6 +453,72 @@
     position: absolute;
     z-index: -10;
   }
+
+  .progress-bar {
+    &.progress-bar--primary {
+      --pb-fill: var(--color-blue-800);
+      --pb-track: var(--color-blue-200);
+
+      [data-theme='dark'] & {
+        --pb-track: var(--color-gray-700);
+      }
+    }
+
+    &.progress-bar--inverted {
+      --pb-fill: var(--color-black);
+      --pb-track: rgba(0, 0, 0, 0.1);
+
+      [data-theme='dark'] & {
+        --pb-fill: var(--color-white);
+        --pb-track: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    background-color: var(--pb-track);
+
+    &::-webkit-progress-bar {
+      border-radius: 1rem;
+      background-color: var(--pb-track);
+    }
+
+    &::-webkit-progress-value {
+      border-radius: 0;
+      background-color: var(--pb-fill);
+      transition: width 1s;
+    }
+
+    &::-moz-progress-bar {
+      border-radius: 0;
+      background-color: var(--pb-fill);
+    }
+
+    &:indeterminate {
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--pb-fill) -1%,
+        var(--pb-fill) 10%,
+        transparent 10%,
+        transparent 90%
+      );
+      background-size: 200%;
+      background-position-x: 15%;
+      animation: progress-loading 5s ease-in-out infinite;
+    }
+
+    &:indeterminate::-moz-progress-bar {
+      background-color: var(--pb-track);
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--pb-fill) -1%,
+        var(--pb-fill) 10%,
+        transparent 10%,
+        transparent 90%
+      );
+      background-size: 200%;
+      background-position-x: 15%;
+      animation: progress-loading 5s ease-in-out infinite;
+    }
+  }
 }
 
 [data-theme='dark'] .bg-stripes::before {
@@ -524,6 +590,53 @@
     animation: gradient 2s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+  }
+}
+
+/*
+ * CSS Custom Highlight API – article body text highlights.
+ * ::highlight() inherits CSS custom properties from the cascade, so dark-mode
+ * overrides defined on [data-theme='dark'] are picked up automatically.
+ */
+:root {
+  --article-highlight-yellow: var(--color-yellow-200);
+  --article-highlight-green: var(--color-green-350);
+  --article-highlight-blue: var(--color-blue-550);
+  --article-highlight-pink: var(--color-pink-150);
+  --article-highlight-purple: var(--color-purple-100);
+}
+
+[data-theme='dark'] {
+  --article-highlight-yellow: var(--color-yellow-750);
+  --article-highlight-green: var(--color-green-700);
+  --article-highlight-blue: var(--color-blue-875);
+  --article-highlight-pink: var(--color-pink-700);
+  --article-highlight-purple: var(--color-purple-700);
+}
+
+::highlight(highlight-yellow) {
+  background-color: var(--article-highlight-yellow);
+}
+
+::highlight(highlight-green) {
+  background-color: var(--article-highlight-green);
+}
+
+::highlight(highlight-blue) {
+  background-color: var(--article-highlight-blue);
+}
+
+::highlight(highlight-pink) {
+  background-color: var(--article-highlight-pink);
+}
+
+::highlight(highlight-purple) {
+  background-color: var(--article-highlight-purple);
+}
+
+@keyframes progress-loading {
+  50% {
+    background-position-x: -115%;
   }
 }
 

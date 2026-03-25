@@ -42,6 +42,8 @@ import { useTicketsCachedByOverviewQuery } from '#desktop/entities/ticket/graphq
 import { useTicketOverviewsStore } from '#desktop/entities/ticket/stores/ticketOverviews.ts'
 import { useLifetimeCustomerTicketsCount } from '#desktop/entities/user/current/composables/useLifetimeCustomerTicketsCount.ts'
 
+const MAX_ITEMS = 2000
+
 interface Props {
   overviewId: string
   orderBy: string
@@ -105,15 +107,6 @@ const fetchOptions = {
   signal: currentAbortController.signal,
 }
 
-const refreshRefetchAbortController = () => {
-  // Stop polling to avoid duplicate requests during an manual refetch.
-  stopPolling()
-
-  currentAbortController.abort()
-  currentAbortController = new AbortController()
-  fetchOptions.signal = currentAbortController.signal
-}
-
 const ticketsQuery = new QueryHandler(
   useTicketsCachedByOverviewQuery(ticketsQueryVariables, {
     fetchPolicy: 'cache-and-network',
@@ -130,17 +123,65 @@ const ticketsQuery = new QueryHandler(
   },
 )
 
+const scrollContainerElement = useTemplateRef('scroll-container')
+
+const {
+  sort,
+  orderBy: localOrderBy,
+  orderDirection: localOrderDirection,
+  isSorting,
+} = useSorting(
+  ticketsQuery,
+  toRef(props, 'orderBy'),
+  toRef(props, 'orderDirection'),
+  scrollContainerElement,
+)
+
+const pagination = usePagination(
+  ticketsQuery,
+  'ticketsCachedByOverview',
+  queryPollingConfig.value.page_size,
+  () => ({
+    knownCollectionSignature: null,
+    renewCache: false,
+  }),
+)
+
 const ticketsResult = ticketsQuery.result()
+
+const currentCollectionSignature = computed(() => {
+  return ticketsResult.value?.ticketsCachedByOverview?.collectionSignature
+})
+
+const { startPolling, stopPolling } = useQueryPolling(
+  ticketsQuery,
+  pollingInterval,
+  () => ({
+    knownCollectionSignature: currentCollectionSignature.value,
+    renewCache: false,
+    pageSize: queryPollingConfig.value.page_size * pagination.currentPage,
+    cacheTtl: cacheTtl.value,
+  }),
+  () => ({
+    enabled: queryPollingConfig.value.enabled && !isSorting.value,
+  }),
+)
+
+const refreshRefetchAbortController = () => {
+  // Stop polling to avoid duplicate requests during an manual refetch.
+  stopPolling()
+
+  currentAbortController.abort()
+  currentAbortController = new AbortController()
+  fetchOptions.signal = currentAbortController.signal
+}
+
 const loading = ticketsQuery.loading()
 
 const isLoadingTickets = computed(() => {
   if (ticketsResult.value !== undefined) return false
 
   return loading.value
-})
-
-const currentCollectionSignature = computed(() => {
-  return ticketsResult.value?.ticketsCachedByOverview?.collectionSignature
 })
 
 const tickets = computed(() => edgesToArray(ticketsResult.value?.ticketsCachedByOverview))
@@ -157,44 +198,6 @@ onActivated(() => {
 onDeactivated(() => {
   foreground.value = false
 })
-
-const pagination = usePagination(
-  ticketsQuery,
-  'ticketsCachedByOverview',
-  queryPollingConfig.value.page_size,
-  () => ({
-    knownCollectionSignature: null,
-    renewCache: false,
-  }),
-)
-
-const scrollContainerElement = useTemplateRef('scroll-container')
-
-const {
-  sort,
-  orderBy: localOrderBy,
-  orderDirection: localOrderDirection,
-  isSorting,
-} = useSorting(
-  ticketsQuery,
-  toRef(props, 'orderBy'),
-  toRef(props, 'orderDirection'),
-  scrollContainerElement,
-)
-
-const { startPolling, stopPolling } = useQueryPolling(
-  ticketsQuery,
-  pollingInterval,
-  () => ({
-    knownCollectionSignature: currentCollectionSignature.value,
-    renewCache: false,
-    pageSize: queryPollingConfig.value.page_size * pagination.currentPage,
-    cacheTtl: cacheTtl.value,
-  }),
-  () => ({
-    enabled: queryPollingConfig.value.enabled && !isSorting.value,
-  }),
-)
 
 const resort = (column: string, direction: EnumOrderDirection) => {
   forceTicketsByOverviewCacheOnlyFirstPage(
@@ -339,7 +342,17 @@ const localHeaders = computed(() => {
   return extendedHeaders
 })
 
-const { setOnSuccessCallback, checkedTicketIds } = useTicketBulkEdit()
+const { setOnSuccessCallback, checkedTicketIds, bulkContext } = useTicketBulkEdit()
+
+watch(
+  () => props.overviewId,
+  (newValue) => {
+    bulkContext.value = {
+      overviewId: newValue,
+    }
+  },
+  { immediate: true },
+)
 
 setOnSuccessCallback(() => {
   forceTicketsByOverviewCacheOnlyFirstPage(
@@ -366,8 +379,6 @@ setOnSuccessCallback(() => {
 
 onBeforeRouteUpdate(() => checkedTicketIds.value.clear())
 
-const maxItems = computed(() => config.value.ui_ticket_overview_ticket_limit)
-
 const { visibleSkeletonLoadingCount } = useSkeletonLoadingCount(toRef(props, 'overviewCount'))
 
 defineExpose({ tickets: readonly(tickets) })
@@ -386,7 +397,7 @@ defineExpose({ tickets: readonly(tickets) })
       :scroll-container="scrollContainerElement"
       :items="tickets"
       :total-count="totalCount"
-      :max-items="maxItems"
+      :max-items="MAX_ITEMS"
       :resorting="isSorting"
       :loading="isLoadingTickets"
       :skeleton-loading-count="visibleSkeletonLoadingCount"

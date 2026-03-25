@@ -281,7 +281,7 @@ msgstr "%s チェックリスト"
 msgid "%s Group"
 msgstr "%s グループ"
 
-#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:51
+#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:50
 msgid "%s Import Status"
 msgstr "%s インポート状況"
 
@@ -491,7 +491,7 @@ msgid "%s object(s) will be updated."
 msgstr "%s オブジェクトを更新。"
 
 #: app/assets/javascripts/app/views/ticket_zoom/meta.jst.eco:19
-#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:209
+#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:208
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/TicketInformation/TicketInformationBadgeList/ChecklistBadgeList.vue:44
 #, fuzzy
 #| msgid "Manage %s"
@@ -530,6 +530,12 @@ msgstr ""
 msgid "%s required!"
 msgstr "%sが必要です！"
 
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:383
+#, fuzzy
+#| msgid "%s tickets selected"
+msgid "%s result(s) selected"
+msgstr "％s チケットが選択されました"
+
 #: app/frontend/apps/desktop/composables/dragAndDrop/useKeyboardKeysForDragAndDrop.ts:53
 msgid "%s selected. Use arrow keys to choose drop position, then press Space."
 msgstr ""
@@ -549,11 +555,11 @@ msgstr ""
 msgid "%s switched to |%s|!"
 msgstr "%s が |%s| に切り替わりました！"
 
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:70
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:83
 #, fuzzy
-#| msgid "assign tickets"
-msgid "%s ticket selected"
-msgstr "チケット割り当て"
+#| msgid "%s tickets selected"
+msgid "%s ticket(s) selected"
+msgstr "％s チケットが選択されました"
 
 #: app/assets/javascripts/app/views/ticket_zoom/meta.jst.eco:30
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/TicketInformation/TicketInformationBadgeList/ReferencingTicketsBadgePopover.vue:63
@@ -569,10 +575,6 @@ msgstr "チケット割り当て"
 #| msgid "assign tickets"
 msgid "%s tickets found"
 msgstr "チケット割り当て"
-
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:71
-msgid "%s tickets selected"
-msgstr "％s チケットが選択されました"
 
 #: app/assets/javascripts/app/models/ticket_article.coffee:51
 #: app/frontend/shared/composables/activity-message/activityMessageBuilder/builders/ticket-article.ts:28
@@ -658,11 +660,11 @@ msgstr "%s%が再対応されました"
 msgid "%{model} can have full or granular access to group"
 msgstr ""
 
-#: app/models/object_manager/attribute.rb:621
+#: app/models/object_manager/attribute.rb:624
 msgid "%{name} already exists"
 msgstr "%{name} は既に存在します"
 
-#: app/models/object_manager/attribute.rb:605
+#: app/models/object_manager/attribute.rb:608
 msgid "%{name} is a reserved word"
 msgstr ""
 
@@ -776,7 +778,7 @@ msgstr ""
 msgid "2 hours"
 msgstr ""
 
-#: db/seeds/settings.rb:2149
+#: db/seeds/settings.rb:2152
 #, fuzzy
 #| msgid "2 lower and 2 upper characters"
 msgid "2 lower case and 2 upper case characters"
@@ -840,14 +842,14 @@ msgstr ""
 msgid "A color scheme that uses light-colored elements on a dark background."
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:2233
+#: db/seeds/object_manager_attributes.rb:2286
 msgid ""
 "A group's email address determines which address should be used for outgoing "
 "mails, e.g. when an agent is composing an email or a trigger is sending an "
 "auto-reply"
 msgstr ""
 
-#: db/seeds/settings.rb:4005
+#: db/seeds/settings.rb:4008
 msgid "A list of active import backends that gets scheduled automatically."
 msgstr ""
 
@@ -949,7 +951,7 @@ msgstr "担当者"
 msgid "AI Provider"
 msgstr "プロバイダー"
 
-#: db/seeds/settings.rb:6054
+#: db/seeds/settings.rb:6057
 #, fuzzy
 #| msgid "Provider"
 msgid "AI Provider Config"
@@ -1025,7 +1027,7 @@ msgstr ""
 msgid "AI error log"
 msgstr "サインアウト"
 
-#: db/seeds/settings.rb:6040
+#: db/seeds/settings.rb:6043
 #, fuzzy
 #| msgid "Provider"
 msgid "AI provider"
@@ -1108,7 +1110,7 @@ msgstr "API"
 msgid "API Key"
 msgstr ""
 
-#: db/seeds/settings.rb:3518
+#: db/seeds/settings.rb:3521
 msgid "API Password Access"
 msgstr ""
 
@@ -1116,7 +1118,7 @@ msgstr ""
 msgid "API Token"
 msgstr ""
 
-#: db/seeds/settings.rb:3493
+#: db/seeds/settings.rb:3496
 msgid "API Token Access"
 msgstr ""
 
@@ -1275,7 +1277,7 @@ msgstr "作業時間"
 
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TimeAccountingFlyout.vue:77
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent.vue:124
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:11
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:14
 #, fuzzy
 #| msgid "Accounted Time"
 msgid "Accounted time"
@@ -1363,12 +1365,12 @@ msgstr "バルクアクションが実行されました！"
 #: app/assets/javascripts/app/views/integration/pgp_list.jst.eco:19
 #: app/assets/javascripts/app/views/integration/smime_list.jst.eco:15
 #: app/assets/javascripts/app/views/ssl_certificates_list.jst.eco:16
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:561
 #: app/frontend/apps/desktop/components/CommonTable/CommonSimpleTable.vue:100
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:371
 msgid "Actions"
 msgstr "操作"
 
-#: db/seeds/settings.rb:2844
+#: db/seeds/settings.rb:2847
 msgid "Activate the recursive processing of ticket triggers."
 msgstr ""
 
@@ -1416,7 +1418,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/profile/password.jst.eco:29
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingOutOfOffice.vue:69
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingTwoFactorAuth.vue:209
-#: db/seeds/object_manager_attributes.rb:1667
+#: db/seeds/object_manager_attributes.rb:1705
 msgid "Active"
 msgstr "有効"
 
@@ -1493,7 +1495,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/profile/linked_accounts.jst.eco:15
 #: app/assets/javascripts/app/views/tag/index.jst.eco:24
 #: app/assets/javascripts/app/views/ticket_zoom/sidebar_checklist/show.jst.eco:19
-#: app/frontend/apps/desktop/components/Form/fields/FieldGroupPermissions/FieldGroupPermissionsInput.vue:261
+#: app/frontend/apps/desktop/components/Form/fields/FieldGroupPermissions/FieldGroupPermissionsInput.vue:264
 #: app/frontend/shared/form/i18n/locales.ts:25
 msgid "Add"
 msgstr "追加"
@@ -1662,7 +1664,7 @@ msgstr "メモを追加"
 #: app/frontend/apps/desktop/components/Form/fields/FieldEditor/useEditorActions.ts:300
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketLinks.vue:158
 #: app/frontend/apps/mobile/components/Form/fields/FieldEditor/useEditorActions.ts:297
-#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:174
+#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:173
 #, fuzzy
 #| msgid "Add Link"
 msgid "Add link"
@@ -1731,7 +1733,7 @@ msgstr "順序付けしたリストとしてフォーマット"
 msgid "Additional Channels"
 msgstr "追加のチャネル"
 
-#: db/seeds/settings.rb:3326
+#: db/seeds/settings.rb:3329
 msgid "Additional follow-up detection"
 msgstr "Additional follow-up detection"
 
@@ -1757,7 +1759,7 @@ msgstr ""
 msgid "Additional ticket edit actions"
 msgstr "通知をブロック"
 
-#: db/seeds/object_manager_attributes.rb:1407
+#: db/seeds/object_manager_attributes.rb:1439
 msgid "Address"
 msgstr "住所"
 
@@ -1792,7 +1794,7 @@ msgstr "ユーザに対するパスワード"
 msgid "Admin documentation"
 msgstr "管理者アカウント"
 
-#: db/seeds/permissions.rb:5
+#: db/seeds/permissions.rb:5 db/seeds/settings.rb:1120
 msgid "Admin interface"
 msgstr ""
 
@@ -1886,11 +1888,11 @@ msgstr "経過時間"
 msgid "Agent"
 msgstr "担当者"
 
-#: db/seeds/settings.rb:3239
+#: db/seeds/settings.rb:3242
 msgid "Agent Name"
 msgstr ""
 
-#: db/seeds/settings.rb:3239
+#: db/seeds/settings.rb:3242
 msgid "Agent Name + FromSeparator + System Address Display Name"
 msgstr ""
 
@@ -1900,7 +1902,7 @@ msgstr ""
 msgid "Agent chat"
 msgstr "担当者"
 
-#: db/seeds/settings.rb:3593
+#: db/seeds/settings.rb:3596
 msgid "Agent idle timeout"
 msgstr ""
 
@@ -1914,7 +1916,7 @@ msgstr "Agent limit exceeded, please check your account settings."
 msgid "Agent phone"
 msgstr "担当者"
 
-#: db/seeds/permissions.rb:408
+#: db/seeds/permissions.rb:408 db/seeds/settings.rb:1129
 #, fuzzy
 #| msgid "Open Tickets"
 msgid "Agent tickets"
@@ -1935,6 +1937,18 @@ msgstr ""
 #: app/assets/javascripts/app/views/profile/calendar_subscriptions.jst.eco:27
 msgid "Alarm"
 msgstr ""
+
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:382
+#, fuzzy
+#| msgid "%s tickets selected"
+msgid "All %s result(s) selected"
+msgstr "％s チケットが選択されました"
+
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:81
+#, fuzzy
+#| msgid "%s tickets selected"
+msgid "All %s ticket(s) selected"
+msgstr "％s チケットが選択されました"
 
 #: app/assets/javascripts/app/views/generic/notification_matrix.jst.eco:8
 #: app/assets/javascripts/app/views/profile/notification.jst.eco:30
@@ -2011,7 +2025,7 @@ msgstr "認証"
 msgid "Allow AI Agent to select multiple categories from all possible values."
 msgstr ""
 
-#: db/seeds/settings.rb:6025
+#: db/seeds/settings.rb:6028
 msgid ""
 "Allow admins to manage availability and access to the desktop BETA UI switch."
 msgstr ""
@@ -2038,7 +2052,7 @@ msgstr "投稿を許可"
 msgid "Allow past dates toggle value is required."
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:2166
+#: db/seeds/object_manager_attributes.rb:2217
 msgid "Allow reopening of tickets within a certain time."
 msgstr ""
 
@@ -2046,15 +2060,15 @@ msgstr ""
 msgid "Allow users to add new tags."
 msgstr "ユーザーの新規タグ追加を許可"
 
-#: db/seeds/settings.rb:4170
+#: db/seeds/settings.rb:4173
 msgid "Allow users to create new tags."
 msgstr ""
 
-#: db/seeds/settings.rb:6016
+#: db/seeds/settings.rb:6019
 msgid "Allow users to switch automatically to the new desktop UI."
 msgstr ""
 
-#: db/seeds/settings.rb:1160
+#: db/seeds/settings.rb:1163
 msgid "Allow using one email address for multiple users."
 msgstr ""
 
@@ -2067,7 +2081,7 @@ msgstr ""
 msgid "Also notify via email"
 msgstr "メールでも通知"
 
-#: db/seeds/settings.rb:5198
+#: db/seeds/settings.rb:5201
 msgid ""
 "Alternative FQDN for callbacks if you operate Zammad in an internal network."
 msgstr ""
@@ -2126,7 +2140,7 @@ msgstr ""
 msgid "An open-source monitoring tool."
 msgstr "オープンソースモニタリングツール。"
 
-#: app/frontend/shared/components/Form/utils.ts:23
+#: app/frontend/shared/components/Form/utils.ts:41
 msgid "An unexpected error has occurred."
 msgstr ""
 
@@ -2157,6 +2171,12 @@ msgstr "Analyzing entries with given configuration..."
 #| msgid "Analyzing structure..."
 msgid "Analyzing structure…"
 msgstr "Analyzing structure..."
+
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:222
+msgid ""
+"Another bulk update is currently in progress. Please wait until it is "
+"finished before starting a new one."
+msgstr ""
 
 #. This is the template file app/views/mailer/ticket_update_received_merge/en.html.erb in ERB/HTML format.
 #. Please make sure to translate it to a valid corresponding output structure.
@@ -2220,15 +2240,15 @@ msgid ""
 "within WhatsApp Business."
 msgstr ""
 
-#: db/seeds/settings.rb:1423
+#: db/seeds/settings.rb:1426
 msgid "App ID"
 msgstr "アプリのID"
 
-#: db/seeds/settings.rb:1429
+#: db/seeds/settings.rb:1432
 msgid "App Secret"
 msgstr "アプリの秘訣"
 
-#: db/seeds/settings.rb:1762
+#: db/seeds/settings.rb:1765
 msgid "App Tenant ID"
 msgstr ""
 
@@ -2246,11 +2266,11 @@ msgstr ""
 msgid "App could not be verified."
 msgstr "アカウントが確認されていません"
 
-#: db/seeds/settings.rb:1419
+#: db/seeds/settings.rb:1422
 msgid "App credentials for Facebook."
 msgstr ""
 
-#: db/seeds/settings.rb:1355
+#: db/seeds/settings.rb:1358
 msgid "App credentials for Twitter."
 msgstr ""
 
@@ -2284,7 +2304,7 @@ msgid "Applications"
 msgstr "アプリケーション"
 
 #: app/assets/javascripts/app/views/widget/template.jst.eco:8
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:311
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:408
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSharedDraftFlyout.vue:134
 msgid "Apply"
 msgstr "適用"
@@ -2560,12 +2580,12 @@ msgstr ""
 msgid "Article#"
 msgstr "記事#"
 
-#: db/seeds/object_manager_attributes.rb:2188
+#: db/seeds/object_manager_attributes.rb:2240
 msgid "Assign Follow-Ups"
 msgstr "フォローアップを割当てる"
 
 #: app/assets/javascripts/app/models/group.coffee:11
-#: db/seeds/object_manager_attributes.rb:2197
+#: db/seeds/object_manager_attributes.rb:2249
 msgid "Assign follow-up to latest agent again."
 msgstr ""
 
@@ -2579,7 +2599,7 @@ msgstr "フォローアップを割当てる"
 msgid "Assign signup roles"
 msgstr "サインアップ権限を割当てる"
 
-#: db/seeds/object_manager_attributes.rb:1797
+#: db/seeds/object_manager_attributes.rb:1838
 #, fuzzy
 #| msgid "Assign Users based on users domain."
 msgid "Assign users based on user domain."
@@ -2600,11 +2620,11 @@ msgstr "割当てられるユーザー"
 msgid "Assignees"
 msgstr "割当てられるユーザー"
 
-#: db/seeds/object_manager_attributes.rb:2089
+#: db/seeds/object_manager_attributes.rb:2138
 msgid "Assignment Timeout"
 msgstr "割当てのタイムアウト"
 
-#: app/assets/javascripts/app/models/_application_model.coffee:164
+#: app/assets/javascripts/app/models/_application_model.coffee:166
 #: app/assets/javascripts/app/models/group.coffee:8
 #, fuzzy
 #| msgid "Assignment Timeout"
@@ -2612,7 +2632,7 @@ msgid "Assignment timeout"
 msgstr "割当てのタイムアウト"
 
 #: app/assets/javascripts/app/models/group.coffee:8
-#: db/seeds/object_manager_attributes.rb:2094
+#: db/seeds/object_manager_attributes.rb:2143
 msgid ""
 "Assignment timeout in minutes if assigned agent is not working on it. Ticket "
 "will be shown as unassigend."
@@ -2669,7 +2689,7 @@ msgstr "添付ファイル"
 msgid "Attachment"
 msgstr "添付"
 
-#: db/seeds/settings.rb:3340
+#: db/seeds/settings.rb:3343
 msgid "Attachment - Search for follow-up also in attachments."
 msgstr ""
 
@@ -2732,7 +2752,7 @@ msgstr ""
 msgid "Attribute '%s' is required in the mapping"
 msgstr ""
 
-#: db/seeds/settings.rb:1935
+#: db/seeds/settings.rb:1938
 msgid ""
 "Attribute that uniquely identifies the user. If unset, the name identifier "
 "returned by the IDP is used."
@@ -2745,7 +2765,7 @@ msgid "Attributes"
 msgstr "属性"
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:32
-#: db/seeds/settings.rb:2695
+#: db/seeds/settings.rb:2698
 #, fuzzy
 #| msgid "Attributes"
 msgid "Attributes to compare"
@@ -2810,13 +2830,13 @@ msgstr ""
 msgid "Authentication required"
 msgstr ""
 
-#: db/seeds/settings.rb:1182
+#: db/seeds/settings.rb:1185
 msgid "Authentication via %s"
 msgstr "%sで認証"
 
 #: app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/authenticator_app.coffee:4
 #: app/assets/javascripts/app/lib/app_post/two_factor_methods/authenticator_app.coffee:5
-#: db/seeds/settings.rb:5863
+#: db/seeds/settings.rb:5866
 #, fuzzy
 #| msgid "Authentication"
 msgid "Authenticator App"
@@ -2861,23 +2881,23 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_manage/ticket.coffee:11
 #: app/assets/javascripts/app/views/settings/ticket_auto_assignment.jst.eco:7
-#: db/seeds/settings.rb:2541
+#: db/seeds/settings.rb:2544
 msgid "Auto Assignment"
 msgstr "自動割り当て"
 
-#: db/seeds/settings.rb:2584
+#: db/seeds/settings.rb:2587
 #, fuzzy
 #| msgid "Auto Assignment"
 msgid "Auto Assignment Ignored Users"
 msgstr "自動割り当て"
 
-#: db/seeds/settings.rb:2567
+#: db/seeds/settings.rb:2570
 #, fuzzy
 #| msgid "Auto Assignment"
 msgid "Auto Assignment Selector"
 msgstr "自動割り当て"
 
-#: db/seeds/settings.rb:6002
+#: db/seeds/settings.rb:6005
 msgid "Auto Shutdown"
 msgstr ""
 
@@ -2885,7 +2905,7 @@ msgstr ""
 msgid "Auto Wizard"
 msgstr ""
 
-#: db/seeds/settings.rb:4521
+#: db/seeds/settings.rb:4524
 msgid "Auto close"
 msgstr "自動クローズ"
 
@@ -2893,7 +2913,7 @@ msgstr "自動クローズ"
 msgid "Auto create"
 msgstr "自動生成"
 
-#: db/seeds/settings.rb:4547
+#: db/seeds/settings.rb:4550
 #, fuzzy
 #| msgid "Auto close state"
 msgid "Auto-close state"
@@ -2909,11 +2929,11 @@ msgstr ""
 msgid "Automated setup"
 msgstr ""
 
-#: db/seeds/settings.rb:1245
+#: db/seeds/settings.rb:1248
 msgid "Automatic account link on initial logon"
 msgstr "初回ログオン時の自動アカウントリンク"
 
-#: db/seeds/settings.rb:1271
+#: db/seeds/settings.rb:1274
 #, fuzzy
 #| msgid "Automatic account link on initial logon"
 msgid "Automatic account linking notification"
@@ -2939,11 +2959,11 @@ msgstr ""
 "自動的にchat.cssファイルを読み込みます。 独自のCSSを使用する場合は、falseに設"
 "定します。"
 
-#: app/frontend/shared/components/Form/Form.vue:1275
+#: app/frontend/shared/components/Form/Form.vue:1295
 msgid "Autosave in progress…"
 msgstr ""
 
-#: app/frontend/shared/components/Form/Form.vue:1284
+#: app/frontend/shared/components/Form/Form.vue:1304
 msgid "Autosaving is taking longer than expected…"
 msgstr ""
 
@@ -3030,7 +3050,7 @@ msgstr "平均: %s%"
 msgid "Azure AI"
 msgstr ""
 
-#: db/seeds/settings.rb:3482
+#: db/seeds/settings.rb:3485
 msgid "BCC address for all outgoing emails"
 msgstr ""
 
@@ -3175,7 +3195,7 @@ msgstr "ユーザに対するパスワード"
 msgid "Bind User"
 msgstr "ユーザ名"
 
-#: db/seeds/settings.rb:3459
+#: db/seeds/settings.rb:3462
 msgid "Block Notifications"
 msgstr "通知をブロック"
 
@@ -3213,7 +3233,7 @@ msgstr "青"
 msgid "Body"
 msgstr "本文"
 
-#: db/seeds/settings.rb:3339
+#: db/seeds/settings.rb:3342
 msgid "Body - Search for follow-up also in mail body."
 msgstr ""
 
@@ -3256,11 +3276,29 @@ msgstr "バルクアクションが実行されました！"
 msgid "Bulk action failed"
 msgstr "バルクアクションが実行されました！"
 
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:307
+#: app/frontend/apps/desktop/entities/user/current/stores/ticketBulkUpdate.ts:71
+msgid ""
+"Bulk action failed for %s ticket(s). Check attribute values and try again."
+msgstr ""
+
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditButton.vue:33
+#: app/frontend/apps/desktop/entities/user/current/stores/ticketBulkUpdate.ts:52
+#, fuzzy
+#| msgid "Bulk action executed!"
+msgid "Bulk action in progress…"
+msgstr "バルクアクションが実行されました！"
+
 #: app/assets/javascripts/app/controllers/widget/ticket_bulk_form.coffee:199
 msgid "Bulk action stopped by error(s): %s!"
 msgstr ""
 
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditButton.vue:33
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:298
+#: app/frontend/apps/desktop/entities/user/current/stores/ticketBulkUpdate.ts:68
+msgid "Bulk action successful for %s ticket(s)."
+msgstr ""
+
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditButton.vue:42
 #, fuzzy
 #| msgid "Actions"
 msgid "Bulk actions"
@@ -3280,7 +3318,7 @@ msgstr "営業時間"
 msgid "But it's only available in these languages:"
 msgstr ""
 
-#: db/seeds/settings.rb:3329
+#: db/seeds/settings.rb:3332
 #, fuzzy
 #| msgid ""
 #| "By default the follow-up check is done via the subject of an email. With "
@@ -3324,7 +3362,7 @@ msgstr ""
 #: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:235
 #: app/frontend/shared/entities/ticket-article/action/plugins/email/forward.ts:30
 #: app/frontend/shared/entities/ticket/composables/useTicketEditForm.ts:189
-#: db/seeds/object_manager_attributes.rb:509
+#: db/seeds/object_manager_attributes.rb:523
 msgid "CC"
 msgstr ""
 
@@ -3361,21 +3399,21 @@ msgstr "CTI"
 msgid "CTI (generic)"
 msgstr ""
 
-#: db/seeds/settings.rb:5257
+#: db/seeds/settings.rb:5260
 msgid "CTI Token"
 msgstr ""
 
-#: db/seeds/settings.rb:5244
+#: db/seeds/settings.rb:5247
 #, fuzzy
 #| msgid "Config"
 msgid "CTI config"
 msgstr "設定"
 
-#: db/seeds/settings.rb:5278
+#: db/seeds/settings.rb:5281
 msgid "CTI customer last activity"
 msgstr ""
 
-#: db/seeds/settings.rb:5216
+#: db/seeds/settings.rb:5219
 #, fuzzy
 #| msgid "Integrations"
 msgid "CTI integration"
@@ -3502,7 +3540,7 @@ msgstr ""
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleReplyDialog.vue:136
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/TicketActionChangeCustomerDialog.vue:68
 #: app/frontend/shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantLoadingBanner/AiAssistantLoadingBanner.vue:46
-#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:170
+#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:169
 msgid "Cancel"
 msgstr "取消"
 
@@ -3528,13 +3566,13 @@ msgstr "サインアウト"
 
 #: app/frontend/apps/desktop/components/CommonDialog/CommonDialogActionFooter.vue:20
 #: app/frontend/apps/desktop/components/CommonFlyout/CommonFlyoutActionFooter.vue:10
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:301
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:398
 #: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactorMethods.vue:53
 #: app/frontend/apps/desktop/pages/authentication/views/AdminPasswordAuth.vue:116
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:111
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:118
 #: app/frontend/apps/desktop/pages/authentication/views/PasswordResetVerify.vue:147
 #: app/frontend/apps/desktop/pages/authentication/views/Signup.vue:135
-#: app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketCreateContent.vue:424
+#: app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketCreateContent.vue:425
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSharedDraftConflictDialog.vue:67
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSharedDraftFlyout.vue:218
 #, fuzzy
@@ -3615,7 +3653,7 @@ msgstr ""
 msgid "Caution!"
 msgstr "期間"
 
-#: db/seeds/settings.rb:1961
+#: db/seeds/settings.rb:1964
 #, fuzzy
 #| msgid "SMS Notification"
 msgid "Certificate (PEM)"
@@ -3649,7 +3687,7 @@ msgstr "オブジェクトの変更"
 msgid "Change Your Password"
 msgstr "パスワードを変更してください"
 
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/actions/TicketChangeCustomer/TicketChangeCustomerFlyout.vue:50
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/actions/TicketChangeCustomer/TicketChangeCustomerFlyout.vue:51
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:70
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent.vue:75
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/TicketActionChangeCustomerDialog.vue:65
@@ -3916,7 +3954,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/checklist_template.coffee:3
 #: app/assets/javascripts/app/views/checklist_template/index.jst.eco:7
-#: db/seeds/permissions.rb:335 db/seeds/settings.rb:5975
+#: db/seeds/permissions.rb:335 db/seeds/settings.rb:5978
 #, fuzzy
 #| msgid "Checksum"
 msgid "Checklists"
@@ -3926,15 +3964,15 @@ msgstr "チェックサム"
 msgid "Checkmk"
 msgstr ""
 
-#: db/seeds/settings.rb:4668
+#: db/seeds/settings.rb:4671
 msgid "Checkmk integration"
 msgstr ""
 
-#: db/seeds/settings.rb:4789
+#: db/seeds/settings.rb:4792
 msgid "Checkmk token"
 msgstr ""
 
-#: db/seeds/settings.rb:2462
+#: db/seeds/settings.rb:2465
 msgid "Checksum"
 msgstr "チェックサム"
 
@@ -4021,7 +4059,7 @@ msgstr ""
 msgid "Christmas holiday"
 msgstr "クリスマス休暇"
 
-#: db/seeds/object_manager_attributes.rb:1327
+#: db/seeds/object_manager_attributes.rb:1357
 msgid "City"
 msgstr "住所"
 
@@ -4101,6 +4139,8 @@ msgstr "最近見た"
 msgid "Clear search"
 msgstr "検索"
 
+#: app/frontend/apps/desktop/components/CommonTable/CellContent/BulkCheckbox.vue:61
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:405
 #: app/frontend/apps/desktop/components/Form/fields/FieldAutoComplete/FieldAutoCompleteInput.vue:640
 #: app/frontend/apps/desktop/components/Form/fields/FieldDate/FieldDateTimeInput.vue:369
 #: app/frontend/apps/desktop/components/Form/fields/FieldSelect/FieldSelectInput.vue:306
@@ -4125,11 +4165,11 @@ msgstr "セレクター"
 msgid "Clearbit"
 msgstr ""
 
-#: db/seeds/settings.rb:5380
+#: db/seeds/settings.rb:5383
 msgid "Clearbit config"
 msgstr ""
 
-#: db/seeds/settings.rb:5354
+#: db/seeds/settings.rb:5357
 msgid "Clearbit integration"
 msgstr ""
 
@@ -4150,14 +4190,14 @@ msgstr ""
 #: app/assets/javascripts/app/views/integration/idoit.jst.eco:21
 #: app/assets/javascripts/app/views/microsoft365/app_config.jst.eco:9
 #: app/assets/javascripts/app/views/microsoft_graph/app_config.jst.eco:9
-#: db/seeds/settings.rb:1487
+#: db/seeds/settings.rb:1490
 msgid "Client ID"
 msgstr ""
 
 #: app/assets/javascripts/app/views/exchange/app_config.jst.eco:17
 #: app/assets/javascripts/app/views/microsoft365/app_config.jst.eco:17
 #: app/assets/javascripts/app/views/microsoft_graph/app_config.jst.eco:17
-#: db/seeds/settings.rb:1493
+#: db/seeds/settings.rb:1496
 msgid "Client Secret"
 msgstr "クライアントの秘密"
 
@@ -4212,6 +4252,12 @@ msgstr "現在のタブを閉じる"
 msgid "Close dialog"
 msgstr "ダイアログを確認/送信"
 
+#: app/frontend/shared/components/CommonNotifications/CommonNotificationsItem.vue:57
+#, fuzzy
+#| msgid "Block Notifications"
+msgid "Close notification"
+msgstr "通知をブロック"
+
 #: app/frontend/apps/desktop/components/CommonFlyout/CommonFlyout.vue:347
 #, fuzzy
 #| msgid "Close tab"
@@ -4221,14 +4267,14 @@ msgstr "完了タブ"
 #: app/assets/javascripts/app/models/macro.coffee:9
 #: app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco:41
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts:12
-#: db/seeds/settings.rb:3014
+#: db/seeds/settings.rb:3017
 msgid "Close tab"
 msgstr "完了タブ"
 
 #: app/assets/javascripts/app/models/macro.coffee:9
 #: app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco:46
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts:16
-#: db/seeds/settings.rb:3015
+#: db/seeds/settings.rb:3018
 msgid "Close tab on ticket close"
 msgstr ""
 
@@ -4260,16 +4306,16 @@ msgstr ""
 msgid "Closed Tickets"
 msgstr "完了チケット"
 
-#: app/frontend/apps/desktop/pages/organization/components/OrganizationRelatedTickets.vue:27
-#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:136
-#: app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets.vue:43
+#: app/frontend/apps/desktop/pages/organization/components/OrganizationRelatedTickets.vue:29
+#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:138
+#: app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets.vue:31
 #, fuzzy
 #| msgid "Closed Tickets"
 msgid "Closed tickets"
 msgstr "完了チケット"
 
 #: app/assets/javascripts/app/models/ticket.coffee:25
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:74
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:77
 #: app/graphql/gql/types/overview_type.rb:110
 msgid "Closing time"
 msgstr "閉店時間"
@@ -4329,7 +4375,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/lib/app_post/two_factor_methods/security_keys.coffee:6
 #: app/frontend/shared/entities/two-factor/plugins/security-keys.ts:10
-#: db/seeds/settings.rb:5855
+#: db/seeds/settings.rb:5858
 msgid "Complete the sign-in with your security key."
 msgstr ""
 
@@ -4572,7 +4618,7 @@ msgid "Connection to Elasticsearch Vector DB failed"
 msgstr ""
 
 #: app/assets/javascripts/app/views/widget/two_factor_login/help_text.jst.eco:8
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:288
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:303
 #: app/frontend/apps/mobile/pages/authentication/views/Login.vue:162
 msgid "Contact the administrator if you have any problems logging in."
 msgstr ""
@@ -4641,7 +4687,7 @@ msgstr "内容"
 #: app/frontend/apps/desktop/pages/guided-setup/components/GuidedSetupActionFooter.vue:46
 #: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSource.vue:52
 #: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupManual/GuidedSetupManualChannelEmail.vue:136
-#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:525
+#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:523
 msgid "Continue"
 msgstr "続ける"
 
@@ -4664,7 +4710,7 @@ msgstr "セッションを継続"
 
 #: app/assets/javascripts/app/controllers/_plugin/mobile_detection.coffee:61
 #: app/assets/javascripts/app/views/login.jst.eco:125
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:298
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:313
 #, fuzzy
 #| msgid "Continue session"
 msgid "Continue to mobile"
@@ -4674,7 +4720,7 @@ msgstr "セッションを継続"
 msgid "Contributing Translations"
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:75
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:76
 #: app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket_summary.coffee:4
 msgid "Conversation Summary"
 msgstr ""
@@ -4890,7 +4936,7 @@ msgstr ""
 msgid "Counting entries. This may take a while."
 msgstr "登録された内容を集計中です。しばらくお待ちください。"
 
-#: db/seeds/object_manager_attributes.rb:1367
+#: db/seeds/object_manager_attributes.rb:1398
 msgid "Country"
 msgstr "国"
 
@@ -4908,7 +4954,7 @@ msgstr "国"
 #: app/frontend/apps/desktop/entities/user/composables/useUserCreate.ts:78
 #: app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingNewAccessTokenFlyout.vue:114
 #: app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketCreateContent.vue:298
-#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:476
+#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:474
 msgid "Create"
 msgstr "作成"
 
@@ -5071,14 +5117,14 @@ msgid "Create tag"
 msgstr "次で作成済"
 
 #: app/frontend/apps/mobile/pages/ticket/routes.ts:64
-#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:476
+#: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:474
 #, fuzzy
 #| msgid "Create a Test Ticket"
 msgid "Create ticket"
 msgstr "テストチケットの作成"
 
 #: app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco:14
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:417
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:428
 msgid "Create your first ticket"
 msgstr "チケット作成"
 
@@ -5158,7 +5204,7 @@ msgstr "テストチケットの作成"
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/useArticleMeta.ts:54
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/TicketSimpleTable.vue:37
 #: app/frontend/shared/entities/organization/stores/objectAttributes.ts:24
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:99
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:102
 #: app/frontend/shared/entities/user/stores/objectAttributes.ts:25
 #: app/graphql/gql/types/overview_type.rb:113
 msgid "Created at"
@@ -5186,7 +5232,7 @@ msgstr "次で作成済"
 #: app/assets/javascripts/app/models/ticket_article.coffee:15
 #: app/assets/javascripts/app/models/user.coffee:14
 #: app/frontend/shared/entities/organization/stores/objectAttributes.ts:14
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:88
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:91
 #: app/frontend/shared/entities/user/stores/objectAttributes.ts:14
 #: app/graphql/gql/types/overview_type.rb:112
 msgid "Created by"
@@ -5249,7 +5295,7 @@ msgstr ""
 msgid "Current user has no permission to use 'From'/'X-On-Behalf-Of'!"
 msgstr ""
 
-#: app/frontend/apps/mobile/pages/ticket/views/TicketOverview.vue:204
+#: app/frontend/apps/mobile/pages/ticket/views/TicketOverview.vue:203
 msgid "Currently no overview is assigned to your roles."
 msgstr ""
 
@@ -5261,14 +5307,14 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/ticket_zoom/attribute_bar.coffee:145
 #: app/frontend/apps/desktop/components/AiAgent/AiAgentPopoverWithTrigger.vue:25
-#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:184
+#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:218
 #: app/frontend/apps/mobile/components/Ticket/TicketItem.vue:35
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketViewersDialog.vue:41
 msgid "Currently processing this ticket…"
 msgstr ""
 
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingOverviews.vue:146
-#: app/frontend/apps/desktop/pages/ticket-overviews/views/TicketOverviews.vue:131
+#: app/frontend/apps/desktop/pages/ticket-overviews/views/TicketOverviews.vue:132
 #, fuzzy
 #| msgid "Unable to verify email. Please contact your administrator."
 msgid ""
@@ -5337,7 +5383,7 @@ msgstr "翻訳"
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/plugins/customer.ts:13
 #: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/plugins/customer.ts:6
 #: app/graphql/gql/types/overview_type.rb:93
-#: db/seeds/object_manager_attributes.rb:61 db/seeds/roles.rb:23
+#: db/seeds/object_manager_attributes.rb:63 db/seeds/roles.rb:23
 #: db/seeds/ticket_article_senders.rb:4 lib/excel_sheet/ticket.rb:29
 msgid "Customer"
 msgstr "顧客"
@@ -5347,14 +5393,14 @@ msgstr "顧客"
 msgid "Customer Chat"
 msgstr "顧客チャット"
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:68
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:69
 #: app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket_summary.coffee:3
 #, fuzzy
 #| msgid "Recent Customer Tickets"
 msgid "Customer Intent"
 msgstr "最近の顧客チケット"
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:94
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:95
 #: app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket_summary.coffee:7
 #, fuzzy
 #| msgid "Recent Customer Tickets"
@@ -5371,7 +5417,7 @@ msgstr ""
 msgid "Customer intent"
 msgstr "最近の顧客チケット"
 
-#: db/seeds/settings.rb:3383
+#: db/seeds/settings.rb:3386
 msgid "Customer selection based on sender and receiver list"
 msgstr "送受信リストによる顧客選択"
 
@@ -5381,7 +5427,7 @@ msgstr "送受信リストによる顧客選択"
 msgid "Customer sentiment"
 msgstr "最近の顧客チケット"
 
-#: db/seeds/permissions.rb:417
+#: db/seeds/permissions.rb:417 db/seeds/settings.rb:1138
 #, fuzzy
 #| msgid "Recent Customer Tickets"
 msgid "Customer tickets"
@@ -5394,7 +5440,7 @@ msgid ""
 msgstr ""
 
 #: app/assets/javascripts/app/models/organization.coffee:7
-#: db/seeds/object_manager_attributes.rb:1751
+#: db/seeds/object_manager_attributes.rb:1791
 #, fuzzy
 #| msgid "Customers in the organization can view each other items."
 msgid "Customers in the organization can view each other's items."
@@ -5476,7 +5522,7 @@ msgstr "日付"
 msgid "Date & time field"
 msgstr "日時"
 
-#: db/seeds/settings.rb:2441
+#: db/seeds/settings.rb:2444
 msgid "Date (Year.Month.Day.SystemID.Counter)"
 msgstr ""
 
@@ -5581,11 +5627,11 @@ msgstr ""
 msgid "Default Notifications"
 msgstr "通知を無効にする"
 
-#: db/seeds/settings.rb:3615
+#: db/seeds/settings.rb:3618
 msgid "Default Screen"
 msgstr ""
 
-#: db/seeds/settings.rb:2602
+#: db/seeds/settings.rb:2605
 #, fuzzy
 #| msgid "Block Notifications"
 msgid "Default Ticket Agent Notifications"
@@ -5595,7 +5641,7 @@ msgstr "通知をブロック"
 msgid "Default at Signup"
 msgstr "サインアップ時のデフォルト"
 
-#: db/seeds/settings.rb:4194
+#: db/seeds/settings.rb:4197
 msgid "Default calendar tickets subscriptions"
 msgstr ""
 
@@ -5637,44 +5683,44 @@ msgid "Default value is required."
 msgstr "デフォルトの呼出しID。"
 
 #: app/assets/javascripts/app/views/settings/ticket_auto_assignment.jst.eco:15
-#: db/seeds/settings.rb:2587
+#: db/seeds/settings.rb:2590
 msgid ""
 "Define an exception of \"automatic assignment\" for certain users (e.g. "
 "executives)."
 msgstr ""
 "特定のユーザー（例：エグゼクティブ）の「自動割り当て」の例外を定義します。"
 
-#: db/seeds/settings.rb:3718
+#: db/seeds/settings.rb:3721
 msgid "Define if asciifolding analyzer should be used in Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3682
+#: db/seeds/settings.rb:3685
 msgid "Define max. attachment size for Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3691
+#: db/seeds/settings.rb:3694
 msgid "Define max. payload size for Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3709
+#: db/seeds/settings.rb:3712
 msgid "Define model configuration for Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3700
+#: db/seeds/settings.rb:3703
 msgid "Define pipeline name for Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:4340
+#: db/seeds/settings.rb:4343
 msgid ""
 "Define postmaster filter to check if follow-ups get created (based on admin "
 "settings)."
 msgstr ""
 
-#: db/seeds/settings.rb:4277
+#: db/seeds/settings.rb:4280
 msgid "Define postmaster filter to import archive mailboxes."
 msgstr ""
 
-#: db/seeds/settings.rb:4274
+#: db/seeds/settings.rb:4277
 msgid "Define postmaster filter."
 msgstr ""
 
@@ -5685,7 +5731,7 @@ msgid ""
 "relevant call entries and notifications."
 msgstr ""
 
-#: db/seeds/settings.rb:2605
+#: db/seeds/settings.rb:2608
 #, fuzzy
 #| msgid "Default visibility for new note."
 msgid "Define the default agent notifications for new users."
@@ -5695,106 +5741,106 @@ msgstr "新しいメモに対する初期表示"
 msgid "Define the maximum number of ticket shown in overviews."
 msgstr ""
 
-#: db/seeds/settings.rb:3664
+#: db/seeds/settings.rb:3667
 #, fuzzy
 #| msgid "Defines the sender of email notifications."
 msgid "Defines Elasticsearch SSL verification."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:3655
+#: db/seeds/settings.rb:3658
 msgid "Defines Elasticsearch index name."
 msgstr ""
 
-#: db/seeds/settings.rb:3931
+#: db/seeds/settings.rb:3934
 #, fuzzy
 msgid "Defines Freshdesk endpoint authentication API key."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:3646
+#: db/seeds/settings.rb:3649
 msgid "Defines HTTP basic auth password of Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3637
+#: db/seeds/settings.rb:3640
 msgid "Defines HTTP basic auth user of Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3838
+#: db/seeds/settings.rb:3841
 msgid ""
 "Defines HTTP basic authentication password (only if OTRS is protected via "
 "HTTP basic auth)."
 msgstr ""
 
-#: db/seeds/settings.rb:3819
+#: db/seeds/settings.rb:3822
 msgid ""
 "Defines HTTP basic authentication user (only if OTRS is protected via HTTP "
 "basic auth)."
 msgstr ""
 
-#: db/seeds/settings.rb:3986
+#: db/seeds/settings.rb:3989
 msgid "Defines Kayako endpoint authentication password."
 msgstr ""
 
-#: db/seeds/settings.rb:3968
+#: db/seeds/settings.rb:3971
 #, fuzzy
 msgid "Defines Kayako endpoint authentication user."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:3800
+#: db/seeds/settings.rb:3803
 msgid "Defines OTRS endpoint authentication key."
 msgstr ""
 
-#: db/seeds/settings.rb:3875
+#: db/seeds/settings.rb:3878
 #, fuzzy
 msgid "Defines Zendesk endpoint authentication API key."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:3894
+#: db/seeds/settings.rb:3897
 msgid "Defines Zendesk endpoint authentication user."
 msgstr ""
 
-#: db/seeds/settings.rb:3913
+#: db/seeds/settings.rb:3916
 msgid ""
 "Defines a Freshdesk endpoint to import users, tickets, states, and articles."
 msgstr ""
 
-#: db/seeds/settings.rb:3950
+#: db/seeds/settings.rb:3953
 msgid ""
 "Defines a Kayako endpoint to import users, tickets, states, and articles."
 msgstr ""
 
-#: db/seeds/settings.rb:3857
+#: db/seeds/settings.rb:3860
 msgid ""
 "Defines a Zendesk endpoint to import users, tickets, states, and articles."
 msgstr ""
 
-#: db/seeds/settings.rb:5458
+#: db/seeds/settings.rb:5461
 msgid "Defines a dashboard stats backend that gets scheduled automatically."
 msgstr ""
 
-#: db/seeds/settings.rb:3112
+#: db/seeds/settings.rb:3115
 msgid ""
 "Defines a limit for how many tickets can be created via web form from one IP "
 "address per day."
 msgstr ""
 
-#: db/seeds/settings.rb:3091
+#: db/seeds/settings.rb:3094
 msgid ""
 "Defines a limit for how many tickets can be created via web form from one IP "
 "address per hour."
 msgstr ""
 
-#: db/seeds/settings.rb:3133
+#: db/seeds/settings.rb:3136
 msgid ""
 "Defines a limit for how many tickets can be created via web form per day."
 msgstr ""
 
-#: db/seeds/settings.rb:2230
+#: db/seeds/settings.rb:2233
 #, fuzzy
 #| msgid "Number of failed logins after account will be deactivated."
 msgid "Defines after how many failed logins accounts will be deactivated."
 msgstr "次の回数ログインに失敗すると、アカウントを無効にします"
 
-#: db/seeds/settings.rb:3782
+#: db/seeds/settings.rb:3785
 msgid ""
 "Defines an OTRS endpoint to import users, tickets, states, and articles."
 msgstr ""
@@ -5813,11 +5859,11 @@ msgid ""
 "arrow."
 msgstr ""
 
-#: db/seeds/settings.rb:3673
+#: db/seeds/settings.rb:3676
 msgid "Defines attachment extensions which will be ignored by Elasticsearch."
 msgstr ""
 
-#: db/seeds/settings.rb:3628
+#: db/seeds/settings.rb:3631
 msgid "Defines endpoint of Elasticsearch."
 msgstr ""
 
@@ -5827,7 +5873,7 @@ msgid ""
 "ticket zoom."
 msgstr ""
 
-#: db/seeds/settings.rb:2980
+#: db/seeds/settings.rb:2983
 #, fuzzy
 #| msgid ""
 #| "Defines groups for which a customer can create tickets via web interface. "
@@ -5839,13 +5885,13 @@ msgstr ""
 "ウェブ画面で、チケット作成を許可するグループを指定します。 \"-\" はすべてのグ"
 "ループに対して許可します。"
 
-#: db/seeds/settings.rb:3229
+#: db/seeds/settings.rb:3232
 msgid ""
 "Defines how the From field of emails (sent from answers and email tickets) "
 "should look like."
 msgstr "Fromヘッダーの様式 ( 回答とメールチケットからの送信分 )を定義します。"
 
-#: db/seeds/settings.rb:2349
+#: db/seeds/settings.rb:2352
 #, fuzzy
 #| msgid "Defines if a customer can create tickets via the web interface."
 msgid ""
@@ -5854,63 +5900,63 @@ msgstr "ウェブインターフェイスで、顧客がチケット作成をで
 
 #: db/seeds/settings.rb:313
 msgid ""
-"Defines how to reach websocket server. \"websocket\" is default on "
-"production, \"websocketPort\" is for CI"
+"Defines how to reach WebSocket server. \"websocket\" is default on "
+"production, \"websocketPort\" is for CI."
 msgstr ""
 
-#: db/seeds/settings.rb:4671
+#: db/seeds/settings.rb:4674
 msgid "Defines if Checkmk (https://checkmk.com/) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5357
+#: db/seeds/settings.rb:5360
 msgid "Defines if Clearbit (http://www.clearbit.com) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:4958
+#: db/seeds/settings.rb:4961
 msgid "Defines if Exchange is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:4475
+#: db/seeds/settings.rb:4478
 msgid "Defines if Icinga (http://www.icinga.org) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5568
+#: db/seeds/settings.rb:5571
 msgid ""
 "Defines if Knowledge Base navbar button is enabled for users without "
 "Knowledge Base permission."
 msgstr ""
 
-#: db/seeds/settings.rb:5553
+#: db/seeds/settings.rb:5556
 msgid "Defines if Knowledge Base navbar button is enabled."
 msgstr ""
 
-#: db/seeds/settings.rb:4905
+#: db/seeds/settings.rb:4908
 msgid "Defines if LDAP is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:4804
+#: db/seeds/settings.rb:4807
 msgid "Defines if Monit (https://mmonit.com/monit/) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:4573
+#: db/seeds/settings.rb:4576
 msgid "Defines if Nagios (http://www.nagios.org) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5723
+#: db/seeds/settings.rb:5726
 #, fuzzy
 #| msgid "Authentication"
 msgid "Defines if PGP encryption is enabled or not."
 msgstr "認証"
 
-#: db/seeds/settings.rb:5294
+#: db/seeds/settings.rb:5297
 msgid "Defines if Placetel (http://www.placetel.de) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5681
+#: db/seeds/settings.rb:5684
 msgid "Defines if S/MIME encryption is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:2953
+#: db/seeds/settings.rb:2956
 msgid "Defines if a customer can create tickets via the web interface."
 msgstr "ウェブインターフェイスで、顧客がチケット作成をできるかを定義します。"
 
@@ -5922,43 +5968,43 @@ msgstr ""
 msgid "Defines if application is used as online service."
 msgstr ""
 
-#: db/seeds/settings.rb:5806
+#: db/seeds/settings.rb:5809
 msgid ""
 "Defines if calendar weeks are shown in the picker of date/datetime fields to "
 "easily select the correct date."
 msgstr ""
 
-#: db/seeds/settings.rb:5219
+#: db/seeds/settings.rb:5222
 msgid "Defines if generic CTI integration is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5898
+#: db/seeds/settings.rb:5901
 msgid ""
 "Defines if recovery codes can be used by users in the event they lose access "
 "to other two-factor authentication methods."
 msgstr ""
 
-#: db/seeds/settings.rb:5136
+#: db/seeds/settings.rb:5139
 msgid "Defines if sipgate.io (http://www.sipgate.io) is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:6043
+#: db/seeds/settings.rb:6046
 #, fuzzy
 #| msgid "Not configured"
 msgid "Defines if the AI provider is configured."
 msgstr "未設定"
 
-#: db/seeds/settings.rb:5067
+#: db/seeds/settings.rb:5070
 msgid ""
 "Defines if the GitHub (http://www.github.com) integration is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5025
+#: db/seeds/settings.rb:5028
 msgid ""
 "Defines if the GitLab (http://www.gitlab.com) integration is enabled or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5765
+#: db/seeds/settings.rb:5768
 #, fuzzy
 #| msgid "Authentication"
 msgid "Defines if the PGP recipient alias configuration is enabled or not."
@@ -5976,13 +6022,13 @@ msgid ""
 "password and password reset will work without email delivery)."
 msgstr ""
 
-#: db/seeds/settings.rb:6134
+#: db/seeds/settings.rb:6137
 msgid ""
 "Defines if the bubble menu feature of the richtext editor is enabled. Note "
 "that this setting will be ignored if the writing assistant is turned on."
 msgstr ""
 
-#: db/seeds/settings.rb:5950
+#: db/seeds/settings.rb:5953
 msgid ""
 "Defines if the change of the primary organization of a user will update the "
 "100 most recent tickets for this user as well."
@@ -5990,8 +6036,8 @@ msgstr ""
 
 #: db/seeds/settings.rb:604
 msgid ""
-"Defines if the core workflow communication should run over ajax instead of "
-"websockets."
+"Defines if the core workflow communication should run over AJAX instead of "
+"WebSocket."
 msgstr ""
 
 #: db/seeds/settings.rb:630
@@ -6000,36 +6046,36 @@ msgid ""
 "organization widget."
 msgstr ""
 
-#: db/seeds/settings.rb:4985
+#: db/seeds/settings.rb:4988
 msgid ""
 "Defines if the i-doit (https://www.i-doit.org/) integration is enabled or "
 "not."
 msgstr ""
 
-#: db/seeds/settings.rb:2376
+#: db/seeds/settings.rb:2379
 msgid ""
 "Defines if the ticket conditions editor supports complex logical expressions."
 msgstr ""
 
-#: db/seeds/settings.rb:2402
+#: db/seeds/settings.rb:2405
 msgid ""
 "Defines if the ticket conditions editor supports regular expression "
 "operators for triggers and ticket auto assignment."
 msgstr ""
 
-#: db/seeds/settings.rb:4134
+#: db/seeds/settings.rb:4137
 #, fuzzy
 #| msgid "Authentication"
 msgid "Defines if the time accounting types are enabled."
 msgstr "認証"
 
-#: db/seeds/settings.rb:5866
+#: db/seeds/settings.rb:5869
 msgid ""
 "Defines if the two-factor authentication method authenticator app is enabled "
 "or not."
 msgstr ""
 
-#: db/seeds/settings.rb:5834
+#: db/seeds/settings.rb:5837
 #, fuzzy
 #| msgid "Authentication"
 msgid ""
@@ -6037,144 +6083,144 @@ msgid ""
 "not."
 msgstr "認証"
 
-#: db/seeds/settings.rb:3034
+#: db/seeds/settings.rb:3037
 msgid "Defines if tickets can be created via web form."
 msgstr ""
 
-#: db/seeds/settings.rb:4524
+#: db/seeds/settings.rb:4527
 msgid "Defines if tickets should be closed if service is recovered."
 msgstr ""
 "サービスが復旧した場合、チケットがクローズされるべきかどうかを定義します。"
 
-#: db/seeds/settings.rb:4376
+#: db/seeds/settings.rb:4379
 msgid "Defines postmaster filter for filters managed via admin interface."
 msgstr ""
 
-#: db/seeds/settings.rb:4286
+#: db/seeds/settings.rb:4289
 msgid ""
 "Defines postmaster filter to check if email has been created by Zammad "
 "itself and will set the article sender."
 msgstr ""
 
-#: db/seeds/settings.rb:4295
+#: db/seeds/settings.rb:4298
 msgid ""
 "Defines postmaster filter to check if the email is a self-created "
 "notification email, then ignore it to prevent email loops."
 msgstr ""
 
-#: db/seeds/settings.rb:4322
+#: db/seeds/settings.rb:4325
 msgid "Defines postmaster filter to handle secure mailing."
 msgstr ""
 
-#: db/seeds/settings.rb:4439
+#: db/seeds/settings.rb:4442
 msgid ""
 "Defines postmaster filter to identify Jira mails for correct follow-ups."
 msgstr ""
 
-#: db/seeds/settings.rb:4421
+#: db/seeds/settings.rb:4424
 msgid ""
 "Defines postmaster filter to identify ServiceNow mails for correct follow-"
 "ups."
 msgstr ""
 
-#: db/seeds/settings.rb:4232
+#: db/seeds/settings.rb:4235
 msgid ""
 "Defines postmaster filter to identify auto responses to prevent auto replies "
 "from Zammad."
 msgstr ""
 
-#: db/seeds/settings.rb:4250
+#: db/seeds/settings.rb:4253
 msgid ""
 "Defines postmaster filter to identify follow-up ticket for merged tickets."
 msgstr ""
 
-#: db/seeds/settings.rb:4241
+#: db/seeds/settings.rb:4244
 msgid ""
 "Defines postmaster filter to identify follow-ups (based on admin settings)."
 msgstr ""
 
-#: db/seeds/settings.rb:4331
+#: db/seeds/settings.rb:4334
 msgid ""
 "Defines postmaster filter to identify out-of-office emails for follow-up "
 "detection and keeping current ticket state."
 msgstr ""
 
-#: db/seeds/settings.rb:4358
+#: db/seeds/settings.rb:4361
 msgid ""
 "Defines postmaster filter to identify postmaster bounces; and disables "
 "sending notification if delivery fails permanently."
 msgstr ""
 
-#: db/seeds/settings.rb:4349
+#: db/seeds/settings.rb:4352
 msgid ""
 "Defines postmaster filter to identify postmaster bounces; and handles them "
-"as follow-up of the original tickets"
+"as follow-up of the original tickets."
 msgstr ""
 
-#: db/seeds/settings.rb:4367
+#: db/seeds/settings.rb:4370
 msgid ""
 "Defines postmaster filter to identify postmaster bounces; and reopens "
 "tickets if delivery fails permanently."
 msgstr ""
 
-#: db/seeds/settings.rb:4313
+#: db/seeds/settings.rb:4316
 msgid "Defines postmaster filter to identify sender user."
 msgstr ""
 
-#: db/seeds/settings.rb:4304
+#: db/seeds/settings.rb:4307
 msgid "Defines postmaster filter to identify session user."
 msgstr ""
 
-#: db/seeds/settings.rb:4466
+#: db/seeds/settings.rb:4469
 msgid "Defines postmaster filter to identify ticket group."
 msgstr ""
 
-#: db/seeds/settings.rb:4403
+#: db/seeds/settings.rb:4406
 msgid ""
 "Defines postmaster filter to manage Checkmk (http://mathias-kettner.com/"
 "check_mk.html) emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4385
+#: db/seeds/settings.rb:4388
 msgid ""
 "Defines postmaster filter to manage Icinga (http://www.icinga.org) emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4412
+#: db/seeds/settings.rb:4415
 msgid ""
 "Defines postmaster filter to manage Monit (https://mmonit.com/monit/) emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4394
+#: db/seeds/settings.rb:4397
 msgid ""
 "Defines postmaster filter to manage Nagios (http://www.nagios.org) emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4223
+#: db/seeds/settings.rb:4226
 msgid ""
 "Defines postmaster filter to remove X-Zammad headers from untrustworthy "
 "sources."
 msgstr ""
 
-#: db/seeds/settings.rb:4259
+#: db/seeds/settings.rb:4262
 msgid ""
 "Defines postmaster filter to set the owner (based on group follow up "
 "assignment)."
 msgstr ""
 
-#: db/seeds/settings.rb:4268
+#: db/seeds/settings.rb:4271
 msgid ""
 "Defines postmaster filter to set the sender/from of emails based on reply-to "
 "header."
 msgstr ""
 
-#: db/seeds/settings.rb:4457
+#: db/seeds/settings.rb:4460
 msgid ""
 "Defines postmaster filter which sets the articles visibility to internal if "
 "it is a rely to an internal article or the last outgoing email is internal."
 msgstr ""
 
-#: db/seeds/settings.rb:4220
+#: db/seeds/settings.rb:4223
 msgid "Defines postmaster filter."
 msgstr ""
 
@@ -6182,37 +6228,37 @@ msgstr ""
 msgid "Defines pretty date format."
 msgstr "日付の形式を定義します。"
 
-#: db/seeds/settings.rb:5447
+#: db/seeds/settings.rb:5450
 msgid "Defines processing timeout for the html sanitizer."
 msgstr ""
 
-#: db/seeds/settings.rb:5106
+#: db/seeds/settings.rb:5109
 msgid "Defines sync transaction backend."
 msgstr ""
 
-#: db/seeds/settings.rb:5435
+#: db/seeds/settings.rb:5438
 msgid "Defines the CSS font information for HTML emails."
 msgstr ""
 
-#: db/seeds/settings.rb:5247
+#: db/seeds/settings.rb:5250
 msgid "Defines the CTI config."
 msgstr ""
 
-#: db/seeds/settings.rb:4792
+#: db/seeds/settings.rb:4795
 msgid "Defines the Checkmk token for allowing updates."
 msgstr ""
 
-#: db/seeds/settings.rb:5383
+#: db/seeds/settings.rb:5386
 msgid "Defines the Clearbit config."
 msgstr ""
 
-#: db/seeds/settings.rb:4945
+#: db/seeds/settings.rb:4948
 #, fuzzy
 #| msgid "Defines pretty date format."
 msgid "Defines the Exchange OAuth config."
 msgstr "日付の形式を定義します。"
 
-#: db/seeds/settings.rb:4932
+#: db/seeds/settings.rb:4935
 msgid "Defines the Exchange config."
 msgstr ""
 
@@ -6222,21 +6268,21 @@ msgstr ""
 msgid "Defines the HTTP protocol of your instance."
 msgstr "お使いのHTTPプロトコルを定義します。"
 
-#: db/seeds/settings.rb:5751
+#: db/seeds/settings.rb:5754
 #, fuzzy
 #| msgid "Defines pretty date format."
 msgid "Defines the PGP config."
 msgstr "日付の形式を定義します。"
 
-#: db/seeds/settings.rb:5322
+#: db/seeds/settings.rb:5325
 msgid "Defines the Placetel config."
 msgstr ""
 
-#: db/seeds/settings.rb:5709
+#: db/seeds/settings.rb:5712
 msgid "Defines the S/MIME config."
 msgstr ""
 
-#: db/seeds/settings.rb:5424
+#: db/seeds/settings.rb:5427
 #, fuzzy
 #| msgid "Defines pretty date format."
 msgid "Defines the agent limit."
@@ -6278,28 +6324,28 @@ msgstr "ユーザーと組織画像検索用のバックエンドを定義しま
 msgid "Defines the backend service for ticket article language detection."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:2889
+#: db/seeds/settings.rb:2892
 msgid ""
 "Defines the configuration how many articles can be created in a minute range "
 "globally."
 msgstr ""
 
-#: db/seeds/settings.rb:2870
+#: db/seeds/settings.rb:2873
 msgid ""
 "Defines the configuration how many articles can be created in a minute range "
 "per ticket."
 msgstr ""
 
-#: db/seeds/settings.rb:4116
+#: db/seeds/settings.rb:4119
 msgid ""
 "Defines the custom unit to be shown next to the time accounting input field."
 msgstr ""
 
-#: db/seeds/settings.rb:4197
+#: db/seeds/settings.rb:4200
 msgid "Defines the default calendar tickets subscription settings."
 msgstr ""
 
-#: db/seeds/settings.rb:3618
+#: db/seeds/settings.rb:3621
 msgid "Defines the default screen."
 msgstr ""
 
@@ -6315,7 +6361,7 @@ msgstr "デフォルトの言語設定を定義します。"
 msgid "Defines the default system timezone."
 msgstr "デフォルトの言語設定を定義します。"
 
-#: db/seeds/settings.rb:4152
+#: db/seeds/settings.rb:4155
 #, fuzzy
 #| msgid "Defines the system default language."
 msgid "Defines the default time accounting type."
@@ -6327,13 +6373,13 @@ msgstr "デフォルトの言語設定を定義します。"
 msgid "Defines the default visibility for new notes."
 msgstr "新しいメモに対する初期表示"
 
-#: db/seeds/settings.rb:5281
+#: db/seeds/settings.rb:5284
 msgid ""
 "Defines the duration of customer activity (in seconds) on a call until the "
 "user profile dialog is shown."
 msgstr ""
 
-#: db/seeds/settings.rb:6120
+#: db/seeds/settings.rb:6123
 msgid ""
 "Defines the fixed instructions that guide the AI Writing Assistant on e.g. "
 "how to format its output."
@@ -6349,19 +6395,19 @@ msgstr ""
 "れ、#{setting.fqdn}はアプリケーションで使用されるすべてのメッセージ入力フォー"
 "ムで使用され、システム内のチケットへのリンクを埋め込みます。"
 
-#: db/seeds/settings.rb:4720
+#: db/seeds/settings.rb:4723
 msgid "Defines the group of created tickets."
 msgstr ""
 
-#: db/seeds/settings.rb:3068
+#: db/seeds/settings.rb:3071
 msgid "Defines the group of tickets created via web form."
 msgstr ""
 
-#: db/seeds/settings.rb:5012
+#: db/seeds/settings.rb:5015
 msgid "Defines the i-doit config."
 msgstr ""
 
-#: db/seeds/settings.rb:4018
+#: db/seeds/settings.rb:4021
 msgid "Defines the log levels for various logging actions of the Sequencer."
 msgstr ""
 
@@ -6369,7 +6415,7 @@ msgstr ""
 msgid "Defines the logo of the application, shown in the web interface."
 msgstr "ウェブインターフェイスに表示されるアプリケーションのロゴを定義します。"
 
-#: db/seeds/settings.rb:3279
+#: db/seeds/settings.rb:3282
 msgid "Defines the maximum accepted email size in MB."
 msgstr ""
 
@@ -6391,37 +6437,39 @@ msgstr ""
 "ウェブインターフェイス、ウェブブラウザーのタブ、タイトルバーに表示されるアプ"
 "リケーション名を定義します。"
 
-#: db/seeds/settings.rb:2783
+#: db/seeds/settings.rb:2786
 #, fuzzy
 #| msgid "Defines the backend for user and organization image lookups."
 msgid "Defines the permission level used for lookups."
 msgstr "ユーザーと組織画像検索用のバックエンドを定義します。"
 
 #: db/seeds/settings.rb:321
-msgid "Defines the port of the websocket server."
-msgstr ""
+#, fuzzy
+#| msgid "Defines the sender of email notifications."
+msgid "Defines the port of the WebSocket server."
+msgstr "通知メール送信者の定義"
 
 #: db/seeds/settings.rb:7
 msgid "Defines the random application secret."
 msgstr ""
 
-#: db/seeds/settings.rb:4501
+#: db/seeds/settings.rb:4504
 msgid "Defines the sender email address of Icinga emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4599
+#: db/seeds/settings.rb:4602
 msgid "Defines the sender email address of Nagios emails."
 msgstr ""
 
-#: db/seeds/settings.rb:4697
+#: db/seeds/settings.rb:4700
 msgid "Defines the sender email address of the service emails."
 msgstr ""
 
-#: db/seeds/settings.rb:3439
+#: db/seeds/settings.rb:3442
 msgid "Defines the sender of email notifications."
 msgstr "通知メール送信者の定義"
 
-#: db/seeds/settings.rb:3257
+#: db/seeds/settings.rb:3260
 msgid ""
 "Defines the separator between the agent's real name and the given group "
 "email address."
@@ -6435,11 +6483,11 @@ msgid ""
 "permissions the highest timeout value will be used, otherwise the default."
 msgstr ""
 
-#: db/seeds/settings.rb:5185
+#: db/seeds/settings.rb:5188
 msgid "Defines the sipgate.io config."
 msgstr ""
 
-#: db/seeds/settings.rb:4550
+#: db/seeds/settings.rb:4553
 #, fuzzy
 #| msgid "Defines the sender of email notifications."
 msgid "Defines the state of auto-closed tickets."
@@ -6452,93 +6500,93 @@ msgid ""
 "follow-ups (useful when communicating between two instances of Zammad)."
 msgstr ""
 
-#: db/seeds/settings.rb:3005
+#: db/seeds/settings.rb:3008
 msgid "Defines the tab behaviour after a ticket action."
 msgstr ""
 
-#: db/seeds/settings.rb:2800
+#: db/seeds/settings.rb:2803
 #, fuzzy
 #| msgid "Defines the backend for user and organization image lookups."
 msgid "Defines the ticket states used for lookups."
 msgstr "ユーザーと組織画像検索用のバックエンドを定義します。"
 
-#: db/seeds/settings.rb:5580
+#: db/seeds/settings.rb:5583
 msgid "Defines the timeframe during which a self-created note can be deleted."
 msgstr ""
 
-#: db/seeds/settings.rb:5336
+#: db/seeds/settings.rb:5339
 #, fuzzy
 #| msgid "Defines pretty date format."
 msgid "Defines the token for Placetel."
 msgstr "日付の形式を定義します。"
 
-#: db/seeds/settings.rb:5127
+#: db/seeds/settings.rb:5130
 msgid ""
 "Defines the transaction backend to detect customer signatures in emails."
 msgstr ""
 
-#: db/seeds/settings.rb:5109
+#: db/seeds/settings.rb:5112
 msgid "Defines the transaction backend to execute triggers."
 msgstr ""
 
-#: db/seeds/settings.rb:5118
+#: db/seeds/settings.rb:5121
 msgid "Defines the transaction backend to send agent notifications."
 msgstr ""
 
-#: db/seeds/settings.rb:5405
+#: db/seeds/settings.rb:5408
 msgid ""
 "Defines the transaction backend which detects caller IDs in objects and "
 "stores them for CTI lookups."
 msgstr ""
 
-#: db/seeds/settings.rb:5414
+#: db/seeds/settings.rb:5417
 msgid "Defines the transaction backend which executes time based triggers."
 msgstr ""
 
-#: db/seeds/settings.rb:5396
+#: db/seeds/settings.rb:5399
 msgid ""
 "Defines the transaction backend which will enrich customer and organization "
 "information from Clearbit (http://www.clearbit.com)."
 msgstr ""
 
 #: app/assets/javascripts/app/views/time_accounting/settings.jst.eco:14
-#: db/seeds/settings.rb:4098
+#: db/seeds/settings.rb:4101
 msgid "Defines the unit to be shown next to the time accounting input field."
 msgstr ""
 
-#: db/seeds/settings.rb:2732
+#: db/seeds/settings.rb:2735
 msgid ""
 "Defines the warning message that is shown when a matching ticket is present."
 msgstr ""
 
-#: db/seeds/settings.rb:2715
+#: db/seeds/settings.rb:2718
 msgid ""
 "Defines the warning title that is shown when a matching ticket is present."
 msgstr ""
 
-#: db/seeds/settings.rb:5115
+#: db/seeds/settings.rb:5118
 msgid "Defines transaction backend."
 msgstr ""
 
-#: db/seeds/settings.rb:2766
+#: db/seeds/settings.rb:2769
 msgid ""
 "Defines whether the matching tickets are shown in case of already existing "
 "tickets."
 msgstr ""
 
-#: db/seeds/settings.rb:3155
+#: db/seeds/settings.rb:3158
 msgid "Defines which parameters are allowed to be submitted via the form API."
 msgstr ""
 
-#: db/seeds/settings.rb:6034
-msgid "Defines which roles are allowed to access the desktop UI beta switch."
+#: db/seeds/settings.rb:6037
+msgid "Defines which roles are allowed to access the desktop BETA UI switch."
 msgstr ""
 
-#: db/seeds/settings.rb:2698
+#: db/seeds/settings.rb:2701
 msgid "Defines which ticket attributes are checked before creating a ticket."
 msgstr ""
 
-#: db/seeds/settings.rb:2749
+#: db/seeds/settings.rb:2752
 msgid ""
 "Defines which user roles will receive a warning in case of matching tickets."
 msgstr ""
@@ -6795,7 +6843,7 @@ msgstr "配信に失敗しました"
 msgid "Delivery failed: \"%s\""
 msgstr "配信に失敗しました"
 
-#: db/seeds/object_manager_attributes.rb:1208
+#: db/seeds/object_manager_attributes.rb:1235
 msgid "Department"
 msgstr "部署"
 
@@ -6823,14 +6871,13 @@ msgstr "説明"
 msgid "Description (shown as title tag for screen readers)"
 msgstr ""
 
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:471
 #: app/frontend/apps/desktop/components/CommonTable/CommonSimpleTable.vue:76
 #, fuzzy
 #| msgid "select"
 msgid "Deselect all entries"
 msgstr "選択"
 
-#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:36
+#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:45
 #: app/frontend/apps/desktop/components/CommonTable/CommonSimpleTable.vue:132
 #, fuzzy
 #| msgid "Delete User"
@@ -6844,6 +6891,18 @@ msgstr "デザイナー"
 
 #: app/assets/javascripts/app/views/channel/chat.jst.eco:25
 msgid "Desktop"
+msgstr ""
+
+#: db/seeds/settings.rb:6016
+msgid "Desktop BETA UI Switch"
+msgstr ""
+
+#: db/seeds/settings.rb:6025
+msgid "Desktop BETA UI Switch Admin Menu"
+msgstr ""
+
+#: db/seeds/settings.rb:6034
+msgid "Desktop BETA UI Switch Roles"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_channel/email.coffee:263
@@ -6883,14 +6942,14 @@ msgid "Destination group > Sending email address"
 msgstr "デスティネーショングループ"
 
 #: app/assets/javascripts/app/views/settings/ticket_duplicate_detection.jst.eco:7
-#: db/seeds/settings.rb:2669
+#: db/seeds/settings.rb:2672
 #, fuzzy
 #| msgid "Enable Ticket creation"
 msgid "Detect Duplicate Ticket Creation"
 msgstr "チケット作成を有効化"
 
 #: app/assets/javascripts/app/views/ticket_zoom/article_view.jst.eco:158
-#: db/seeds/object_manager_attributes.rb:736
+#: db/seeds/object_manager_attributes.rb:752
 #, fuzzy
 #| msgid "Language"
 msgid "Detected Language"
@@ -6968,7 +7027,7 @@ msgid ""
 "this channel and switch to using a different mailbox type. %l"
 msgstr ""
 
-#: db/seeds/settings.rb:2175
+#: db/seeds/settings.rb:2178
 msgid "Digit required"
 msgstr "必要な桁数"
 
@@ -7007,7 +7066,7 @@ msgstr "通知を無効にする"
 msgid "Disable the banner for the BETA switch"
 msgstr ""
 
-#: db/seeds/settings.rb:1300
+#: db/seeds/settings.rb:1303
 msgid "Disables user creation on logon with a third-party application."
 msgstr ""
 
@@ -7033,7 +7092,7 @@ msgid "Discard article"
 msgstr "変更を廃棄"
 
 #: app/frontend/apps/desktop/components/CommonConfirmationDialog/CommonConfirmationDialog.vue:56
-#: app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketCreateContent.vue:421
+#: app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketCreateContent.vue:422
 #: app/frontend/apps/mobile/components/CommonDialogObjectForm/CommonDialogObjectForm.vue:65
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleReplyDialog.vue:59
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/TicketActionChangeCustomerDialog.vue:36
@@ -7097,7 +7156,7 @@ msgid "Display Zammad with the new BETA user interface"
 msgstr ""
 
 #: app/assets/javascripts/app/models/email_address.coffee:32
-#: db/seeds/settings.rb:1883
+#: db/seeds/settings.rb:1886
 msgid "Display name"
 msgstr "表示名"
 
@@ -7121,7 +7180,7 @@ msgstr ""
 msgid "Do not sign email"
 msgstr ""
 
-#: db/seeds/settings.rb:5960
+#: db/seeds/settings.rb:5963
 #, fuzzy
 #| msgid "You have not created a ticket yet."
 msgid "Do not update any tickets."
@@ -7183,7 +7242,7 @@ msgstr "このオブジェクトを削除してもよろしいですか？"
 msgid "Document file"
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:1792
+#: db/seeds/object_manager_attributes.rb:1833
 msgid "Domain"
 msgstr "ドメイン"
 
@@ -7194,7 +7253,7 @@ msgstr "ドメイン"
 msgid "Domain Alias"
 msgstr "ドメイン"
 
-#: db/seeds/object_manager_attributes.rb:1792
+#: db/seeds/object_manager_attributes.rb:1833
 msgid "Domain based assignment"
 msgstr "ドメインベースの割当て"
 
@@ -7404,7 +7463,7 @@ msgstr "イースター休暇"
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingTwoFactorAuth.vue:159
 #: app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/edit.ts:10
 #: app/frontend/apps/mobile/pages/home/views/Home.vue:71
-#: app/frontend/apps/mobile/pages/organization/views/OrganizationDetailView.vue:46
+#: app/frontend/apps/mobile/pages/organization/views/OrganizationDetailView.vue:52
 #: app/frontend/apps/mobile/pages/user/views/UserDetailView.vue:54
 msgid "Edit"
 msgstr "編集"
@@ -7467,7 +7526,7 @@ msgstr ""
 
 #: app/frontend/apps/desktop/entities/organization/composables/useOrganizationEdit.ts:59
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarOrganization/TicketSidebarOrganizationContent.vue:39
-#: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/TicketInformationOrganization.vue:76
+#: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/TicketInformationOrganization.vue:77
 #, fuzzy
 #| msgid "Edit Organization"
 msgid "Edit organization"
@@ -7504,51 +7563,51 @@ msgstr "顧客を編集"
 msgid "Editor"
 msgstr "編集"
 
-#: db/seeds/settings.rb:3715
+#: db/seeds/settings.rb:3718
 #, fuzzy
 #| msgid "Your Email Configuration"
 msgid "Elasticsearch Asciifolding Configuration"
 msgstr "お使いのメール設定"
 
-#: db/seeds/settings.rb:3670
+#: db/seeds/settings.rb:3673
 msgid "Elasticsearch Attachment Extensions"
 msgstr ""
 
-#: db/seeds/settings.rb:3679
+#: db/seeds/settings.rb:3682
 msgid "Elasticsearch Attachment Size"
 msgstr ""
 
-#: db/seeds/settings.rb:3652
+#: db/seeds/settings.rb:3655
 msgid "Elasticsearch Endpoint Index"
 msgstr ""
 
-#: db/seeds/settings.rb:3643
+#: db/seeds/settings.rb:3646
 msgid "Elasticsearch Endpoint Password"
 msgstr ""
 
-#: db/seeds/settings.rb:3625
+#: db/seeds/settings.rb:3628
 msgid "Elasticsearch Endpoint URL"
 msgstr ""
 
-#: db/seeds/settings.rb:3634
+#: db/seeds/settings.rb:3637
 msgid "Elasticsearch Endpoint User"
 msgstr ""
 
-#: db/seeds/settings.rb:3706
+#: db/seeds/settings.rb:3709
 #, fuzzy
 #| msgid "Your Email Configuration"
 msgid "Elasticsearch Model Configuration"
 msgstr "お使いのメール設定"
 
-#: db/seeds/settings.rb:3697
+#: db/seeds/settings.rb:3700
 msgid "Elasticsearch Pipeline Name"
 msgstr ""
 
-#: db/seeds/settings.rb:3661
+#: db/seeds/settings.rb:3664
 msgid "Elasticsearch SSL verification"
 msgstr ""
 
-#: db/seeds/settings.rb:3688
+#: db/seeds/settings.rb:3691
 msgid "Elasticsearch Total Payload Size"
 msgstr ""
 
@@ -7590,7 +7649,7 @@ msgstr "最終同期"
 #: app/frontend/apps/desktop/pages/guided-setup/components/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceZendesk.vue:34
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/plugins/email.ts:11
 #: app/frontend/shared/entities/ticket-article/action/plugins/email.ts:145
-#: db/seeds/object_manager_attributes.rb:904 db/seeds/permissions.rb:131
+#: db/seeds/object_manager_attributes.rb:924 db/seeds/permissions.rb:131
 #: public/assets/form/form.js:32
 msgid "Email"
 msgstr "メール"
@@ -7735,7 +7794,7 @@ msgstr ""
 msgid "Email sent to %s"
 msgstr "招待を送信しました！"
 
-#: app/frontend/apps/desktop/pages/authentication/routes.ts:110
+#: app/frontend/apps/desktop/pages/authentication/routes.ts:111
 #: app/frontend/apps/desktop/pages/authentication/views/SignupVerify.vue:110
 #, fuzzy
 #| msgid "Email Notification"
@@ -7756,7 +7815,7 @@ msgstr ""
 msgid "Empty"
 msgstr "空にする"
 
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:424
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:435
 #, fuzzy
 #| msgid "Overview"
 msgid "Empty overview"
@@ -7774,11 +7833,11 @@ msgstr "概要"
 msgid "Enable"
 msgstr "有効"
 
-#: db/seeds/settings.rb:3566
+#: db/seeds/settings.rb:3569
 msgid "Enable Chat"
 msgstr "チャットをオン"
 
-#: app/assets/javascripts/app/views/api.jst.eco:33 db/seeds/settings.rb:3521
+#: app/assets/javascripts/app/views/api.jst.eco:33 db/seeds/settings.rb:3524
 msgid ""
 "Enable REST API access using the username/email address and password for the "
 "authentication user."
@@ -7799,17 +7858,17 @@ msgstr ""
 "有効にしてください。 各ユーザーは、ユーザープロファイルに自分自身のアクセス"
 "トークンを作成する必要があります。"
 
-#: db/seeds/settings.rb:3496
+#: db/seeds/settings.rb:3499
 msgid ""
 "Enable REST API using tokens (not username/email address and password). Each "
 "user needs to create its own access tokens in user profile."
 msgstr ""
 
-#: db/seeds/settings.rb:5895
+#: db/seeds/settings.rb:5898
 msgid "Enable Recovery Codes"
 msgstr ""
 
-#: db/seeds/settings.rb:2950
+#: db/seeds/settings.rb:2953
 msgid "Enable Ticket creation"
 msgstr "チケット作成を有効化"
 
@@ -7819,7 +7878,7 @@ msgid ""
 "types below when adding accounted time."
 msgstr ""
 
-#: db/seeds/settings.rb:2570
+#: db/seeds/settings.rb:2573
 msgid "Enable auto assignment for following matching tickets."
 msgstr ""
 
@@ -7827,7 +7886,7 @@ msgstr ""
 msgid "Enable automatic assignment the first time an agent opens a ticket."
 msgstr ""
 
-#: db/seeds/settings.rb:5978
+#: db/seeds/settings.rb:5981
 #, fuzzy
 #| msgid "Enable Chat"
 msgid "Enable checklists."
@@ -7854,7 +7913,7 @@ msgstr ""
 "の返答メールの末尾に挿入されます。もし文章の一部だけを挿入のなら、当該部分を"
 "選択した状態で[返信]を押してください。(この機能はいつでも利用可能です)"
 
-#: db/seeds/settings.rb:6005
+#: db/seeds/settings.rb:6008
 msgid ""
 "Enable or disable self-shutdown of Zammad processes after significant "
 "configuration changes. This should only be used if the controlling process "
@@ -7877,11 +7936,11 @@ msgid ""
 "session."
 msgstr ""
 
-#: db/seeds/settings.rb:6073
+#: db/seeds/settings.rb:6076
 msgid "Enable or disable the ticket summary."
 msgstr ""
 
-#: db/seeds/settings.rb:6106
+#: db/seeds/settings.rb:6109
 msgid "Enable or disable the writing assistant text tools."
 msgstr ""
 
@@ -7889,11 +7948,11 @@ msgstr ""
 msgid "Enable the banner for the BETA switch"
 msgstr ""
 
-#: db/seeds/settings.rb:2544
+#: db/seeds/settings.rb:2547
 msgid "Enable ticket auto assignment."
 msgstr ""
 
-#: db/seeds/settings.rb:4053
+#: db/seeds/settings.rb:4056
 msgid "Enable time accounting."
 msgstr ""
 
@@ -7901,7 +7960,7 @@ msgstr ""
 msgid "Enable/disable inline translations"
 msgstr "インライン翻訳をオン/オフ"
 
-#: db/seeds/settings.rb:3569
+#: db/seeds/settings.rb:3572
 msgid "Enable/disable online chat."
 msgstr ""
 
@@ -7914,13 +7973,13 @@ msgid "Enables a sidebar to show an overview of all attachments."
 msgstr ""
 
 #: app/assets/javascripts/app/views/settings/ticket_duplicate_detection.jst.eco:12
-#: db/seeds/settings.rb:2672
+#: db/seeds/settings.rb:2675
 msgid ""
 "Enables a warning to users during ticket creation if there is an existing "
 "ticket with the same attributes."
 msgstr ""
 
-#: db/seeds/settings.rb:5776
+#: db/seeds/settings.rb:5779
 msgid ""
 "Enables button for user authentication via %s. The button will redirect to /"
 "auth/sso on user interaction."
@@ -7938,13 +7997,13 @@ msgstr ""
 msgid "Enables preview of attachments."
 msgstr ""
 
-#: db/seeds/settings.rb:1274
+#: db/seeds/settings.rb:1277
 msgid ""
 "Enables sending of an email notification to a user when they link their "
 "account with a third-party application."
 msgstr ""
 
-#: db/seeds/settings.rb:1248
+#: db/seeds/settings.rb:1251
 msgid ""
 "Enables the automatic linking of an existing account on initial login via a "
 "third party application. If this is disabled, an existing user must first "
@@ -7952,17 +8011,17 @@ msgid ""
 "account via Profile -> Linked Accounts."
 msgstr ""
 
-#: db/seeds/settings.rb:1185
+#: db/seeds/settings.rb:1188
 msgid "Enables user authentication via %s."
 msgstr ""
 
-#: db/seeds/settings.rb:1326
+#: db/seeds/settings.rb:1329
 msgid ""
 "Enables user authentication via %s. Register your app first at [%s](%s)."
 msgstr ""
 "%sでユーザー認証を有効化します。 まず[%s](%s)で、アプリを登録してください。"
 
-#: db/seeds/settings.rb:1611
+#: db/seeds/settings.rb:1614
 #, fuzzy
 #| msgid ""
 #| "Enables user authentication via %s. Register your app first at [%s](%s)."
@@ -7970,19 +8029,19 @@ msgid "Enables user authentication via GitHub."
 msgstr ""
 "%sでユーザー認証を有効化します。 まず[%s](%s)で、アプリを登録してください。"
 
-#: db/seeds/settings.rb:1675
+#: db/seeds/settings.rb:1678
 msgid "Enables user authentication via GitLab."
 msgstr ""
 
-#: db/seeds/settings.rb:1483
+#: db/seeds/settings.rb:1486
 msgid "Enables user authentication via Google."
 msgstr ""
 
-#: db/seeds/settings.rb:1547
+#: db/seeds/settings.rb:1550
 msgid "Enables user authentication via LinkedIn."
 msgstr ""
 
-#: db/seeds/settings.rb:1746
+#: db/seeds/settings.rb:1749
 #, fuzzy
 #| msgid ""
 #| "Enables user authentication via %s. Register your app first at [%s](%s)."
@@ -7990,7 +8049,7 @@ msgid "Enables user authentication via Microsoft 365."
 msgstr ""
 "%sでユーザー認証を有効化します。 まず[%s](%s)で、アプリを登録してください。"
 
-#: db/seeds/settings.rb:2037
+#: db/seeds/settings.rb:2040
 #, fuzzy
 #| msgid ""
 #| "Enables user authentication via %s. Register your app first at [%s](%s)."
@@ -7998,11 +8057,11 @@ msgid "Enables user authentication via OpenID Connect."
 msgstr ""
 "%sでユーザー認証を有効化します。 まず[%s](%s)で、アプリを登録してください。"
 
-#: db/seeds/settings.rb:1879
+#: db/seeds/settings.rb:1882
 msgid "Enables user authentication via SAML."
 msgstr ""
 
-#: db/seeds/settings.rb:1816
+#: db/seeds/settings.rb:1819
 msgid "Enables user authentication via Weibo."
 msgstr ""
 
@@ -8078,13 +8137,13 @@ msgstr "エンドポイント"
 msgid "Endpoint Settings"
 msgstr "個人設定"
 
-#: db/seeds/settings.rb:5922
+#: db/seeds/settings.rb:5925
 #, fuzzy
 #| msgid "Authentication"
 msgid "Enforce the setup of the two-factor authentication"
 msgstr "認証"
 
-#: db/seeds/settings.rb:5929
+#: db/seeds/settings.rb:5932
 #, fuzzy
 #| msgid "How to use it"
 msgid "Enforced for user roles"
@@ -8100,7 +8159,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/out_of_office.coffee:73
 #: app/assets/javascripts/app/controllers/ticket_customer.coffee:9
-#: db/seeds/object_manager_attributes.rb:70
+#: db/seeds/object_manager_attributes.rb:72
 msgid "Enter Person or Organization/Company"
 msgstr ""
 
@@ -8359,7 +8418,7 @@ msgid "Escalation Times"
 msgstr "エスカレーション時間"
 
 #: app/assets/javascripts/app/models/ticket.coffee:17
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:18
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:21
 #: app/graphql/gql/types/overview_type.rb:102
 msgid "Escalation at"
 msgstr ""
@@ -8369,7 +8428,7 @@ msgstr ""
 msgid "Escalation at (Close Time)"
 msgstr ""
 
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:39
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:42
 #, fuzzy
 #| msgid "Escalation Times"
 msgid "Escalation at (Close time)"
@@ -8380,7 +8439,7 @@ msgstr "エスカレーション時間"
 msgid "Escalation at (First Response Time)"
 msgstr ""
 
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:25
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:28
 #, fuzzy
 #| msgid "First Response Time"
 msgid "Escalation at (First response time)"
@@ -8391,7 +8450,7 @@ msgstr "初回応答期限"
 msgid "Escalation at (Update Time)"
 msgstr ""
 
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:32
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:35
 #, fuzzy
 #| msgid "Escalation Times"
 msgid "Escalation at (Update time)"
@@ -8509,16 +8568,16 @@ msgstr "例外ユーザー"
 msgid "Exchange"
 msgstr ""
 
-#: db/seeds/settings.rb:4942
+#: db/seeds/settings.rb:4945
 #, fuzzy
 msgid "Exchange OAuth"
 msgstr "変更済"
 
-#: db/seeds/settings.rb:4929
+#: db/seeds/settings.rb:4932
 msgid "Exchange config"
 msgstr ""
 
-#: db/seeds/settings.rb:4955
+#: db/seeds/settings.rb:4958
 msgid "Exchange integration"
 msgstr ""
 
@@ -8655,7 +8714,7 @@ msgstr ""
 #: app/controllers/first_steps_controller.rb:27
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:18
 #: app/frontend/shared/entities/ticket-article/action/plugins/facebook.ts:43
-#: db/seeds/permissions.rb:167 db/seeds/settings.rb:1407
+#: db/seeds/permissions.rb:167 db/seeds/settings.rb:1410
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -8669,7 +8728,7 @@ msgstr "Facebook"
 msgid "Facebook Account"
 msgstr ""
 
-#: db/seeds/settings.rb:1416
+#: db/seeds/settings.rb:1419
 msgid "Facebook App Credentials"
 msgstr ""
 
@@ -8679,7 +8738,7 @@ msgstr ""
 msgid "Facebook App Secret"
 msgstr "アプリの秘訣"
 
-#: db/seeds/settings.rb:1408
+#: db/seeds/settings.rb:1411
 #, fuzzy
 #| msgid "App Secret"
 msgid "Facebook Developer Site"
@@ -8763,7 +8822,7 @@ msgid "Failed to upload."
 msgstr ""
 
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/plugins/fax.ts:7
-#: db/seeds/object_manager_attributes.rb:1076
+#: db/seeds/object_manager_attributes.rb:1100
 msgid "Fax"
 msgstr "Fax"
 
@@ -8811,11 +8870,11 @@ msgstr "ご意見フォーム"
 msgid "Feedback Form"
 msgstr "ご意見フォーム"
 
-#: db/seeds/settings.rb:2069
+#: db/seeds/settings.rb:2072
 msgid "Field that uniquely identifies the user. If unset, \"sub\" is used."
 msgstr ""
 
-#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:135
+#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:152
 msgid "File '%s' is uploading"
 msgstr ""
 
@@ -8938,14 +8997,14 @@ msgstr "最初のステップ"
 
 #: app/assets/javascripts/app/models/user.coffee:9
 #: app/frontend/apps/desktop/composables/authentication/useSignupForm.ts:14
-#: db/seeds/object_manager_attributes.rb:800
+#: db/seeds/object_manager_attributes.rb:818
 #, fuzzy
 #| msgid "Firstname"
 msgid "First name"
 msgstr "姓"
 
 #: app/assets/javascripts/app/models/ticket.coffee:24
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:67
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:70
 #: app/graphql/gql/types/overview_type.rb:109
 msgid "First response"
 msgstr "最初の応答"
@@ -8995,12 +9054,12 @@ msgid "Folders"
 msgstr ""
 
 #: app/assets/javascripts/app/models/group.coffee:9
-#: db/seeds/object_manager_attributes.rb:2132
+#: db/seeds/object_manager_attributes.rb:2182
 msgid "Follow-up for closed ticket possible or not."
 msgstr ""
 
 #: app/assets/javascripts/app/models/group.coffee:9
-#: db/seeds/object_manager_attributes.rb:2122
+#: db/seeds/object_manager_attributes.rb:2172
 msgid "Follow-up possible"
 msgstr ""
 
@@ -9069,7 +9128,7 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/ticket/views/TicketCreate.vue:23
 #: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:448
 #: app/frontend/shared/errors/useErrorHandler.ts:29
-#: app/frontend/shared/router/guards/before/permission.ts:31
+#: app/frontend/shared/router/guards/before/permission.ts:26
 msgid "Forbidden"
 msgstr ""
 
@@ -9086,13 +9145,13 @@ msgid "Forgot Password Screen"
 msgstr "パスワードを忘れましたか？"
 
 #: app/assets/javascripts/app/views/login.jst.eco:53
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:137
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:83
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:154
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:82
 msgid "Forgot password?"
 msgstr "パスワードを忘れましたか？"
 
 #: app/assets/javascripts/app/views/password/reset.jst.eco:4
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:86
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:93
 msgid "Forgot your password?"
 msgstr "パスワードをお忘れですか？"
 
@@ -9102,7 +9161,7 @@ msgstr "パスワードをお忘れですか？"
 msgid "Form"
 msgstr "送信者"
 
-#: db/seeds/settings.rb:3152
+#: db/seeds/settings.rb:3155
 msgid "Form Allowed Parameters"
 msgstr ""
 
@@ -9363,7 +9422,7 @@ msgstr "アカウントが確認されていません"
 
 #: app/assets/javascripts/app/lib/app_post/two_factor_methods/authenticator_app.coffee:6
 #: app/frontend/shared/entities/two-factor/plugins/authenticator-app.ts:10
-#: db/seeds/settings.rb:5887
+#: db/seeds/settings.rb:5890
 msgid "Get the security code from the authenticator app on your device."
 msgstr ""
 
@@ -9381,27 +9440,27 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/useTicketExternalIssueTracker.ts:47
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/plugins/github.ts:11
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:39
-#: db/seeds/settings.rb:1600
+#: db/seeds/settings.rb:1603
 msgid "GitHub"
 msgstr ""
 
-#: db/seeds/settings.rb:1608
+#: db/seeds/settings.rb:1611
 #, fuzzy
 #| msgid "Twitter App Credentials"
 msgid "GitHub App Credentials"
 msgstr "ツイッターアプリの認証情報"
 
-#: db/seeds/settings.rb:1601
+#: db/seeds/settings.rb:1604
 #, fuzzy
 #| msgid "Applications"
 msgid "GitHub OAuth Applications"
 msgstr "アプリケーション"
 
-#: db/seeds/settings.rb:5091
+#: db/seeds/settings.rb:5094
 msgid "GitHub config"
 msgstr ""
 
-#: db/seeds/settings.rb:5064
+#: db/seeds/settings.rb:5067
 msgid "GitHub integration"
 msgstr ""
 
@@ -9418,25 +9477,25 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/useTicketExternalIssueTracker.ts:48
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/plugins/gitlab.ts:11
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:46
-#: db/seeds/settings.rb:1664
+#: db/seeds/settings.rb:1667
 msgid "GitLab"
 msgstr ""
 
-#: db/seeds/settings.rb:1672
+#: db/seeds/settings.rb:1675
 msgid "GitLab App Credentials"
 msgstr ""
 
-#: db/seeds/settings.rb:1665
+#: db/seeds/settings.rb:1668
 #, fuzzy
 #| msgid "Applications"
 msgid "GitLab Applications"
 msgstr "アプリケーション"
 
-#: db/seeds/settings.rb:5049
+#: db/seeds/settings.rb:5052
 msgid "GitLab config"
 msgstr ""
 
-#: db/seeds/settings.rb:5022
+#: db/seeds/settings.rb:5025
 msgid "GitLab integration"
 msgstr ""
 
@@ -9493,7 +9552,7 @@ msgstr ""
 msgid "Go home"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:234
+#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:233
 #, fuzzy
 #| msgid "Login"
 msgid "Go to login"
@@ -9512,17 +9571,17 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:96
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:60
-#: db/seeds/settings.rb:1472
+#: db/seeds/settings.rb:1475
 msgid "Google"
 msgstr ""
 
-#: db/seeds/settings.rb:1473
+#: db/seeds/settings.rb:1476
 #, fuzzy
 #| msgid "Client Secret"
 msgid "Google API Console Site"
 msgstr "クライアントの秘密"
 
-#: db/seeds/settings.rb:1480
+#: db/seeds/settings.rb:1483
 msgid "Google App Credentials"
 msgstr ""
 
@@ -9587,7 +9646,7 @@ msgstr ""
 #: app/views/messaging/ticket_create/zh-tw.md.erb:3
 #: app/views/messaging/ticket_info/pt-br.md.erb:3
 #: app/views/messaging/ticket_info/zh-tw.md.erb:3
-#: db/seeds/object_manager_attributes.rb:163 db/seeds/settings.rb:2977
+#: db/seeds/object_manager_attributes.rb:168 db/seeds/settings.rb:2980
 #: lib/excel_sheet/ticket.rb:27
 msgid "Group"
 msgstr "グループ"
@@ -9632,18 +9691,18 @@ msgstr ""
 
 #: app/assets/javascripts/app/models/role.coffee:8
 #: app/assets/javascripts/app/models/user.coffee:13
-#: db/seeds/object_manager_attributes.rb:1624
+#: db/seeds/object_manager_attributes.rb:1661
 #, fuzzy
 #| msgid "Permissions"
 msgid "Group permissions"
 msgstr "許可"
 
 #: app/assets/javascripts/app/views/channel/form.jst.eco:18
-#: db/seeds/settings.rb:2977
+#: db/seeds/settings.rb:2980
 msgid "Group selection for Ticket creation"
 msgstr "チケット作成用のグループ選択"
 
-#: db/seeds/settings.rb:3065
+#: db/seeds/settings.rb:3068
 #, fuzzy
 #| msgid "Group selection for Ticket creation"
 msgid "Group selection for ticket creation"
@@ -9687,11 +9746,11 @@ msgstr "グループ"
 msgid "HMAC SHA1 Signature Token"
 msgstr ""
 
-#: db/seeds/settings.rb:5432
+#: db/seeds/settings.rb:5435
 msgid "HTML Email CSS Font"
 msgstr ""
 
-#: db/seeds/settings.rb:5444
+#: db/seeds/settings.rb:5447
 msgid "HTML Sanitizer Processing Timeout"
 msgstr ""
 
@@ -9773,7 +9832,7 @@ msgid ""
 msgstr ""
 
 #: app/assets/javascripts/app/views/widget/two_factor_login/help_text.jst.eco:3
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:254
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:269
 #: app/frontend/apps/mobile/pages/authentication/views/Login.vue:133
 msgid "Having problems?"
 msgstr ""
@@ -9987,11 +10046,11 @@ msgstr ""
 msgid "Highlight icon"
 msgstr ""
 
-#: db/seeds/settings.rb:5596
+#: db/seeds/settings.rb:5599
 msgid "Highlights if the note a user is writing is public or private"
 msgstr ""
 
-#: db/seeds/settings.rb:5593
+#: db/seeds/settings.rb:5596
 msgid "Hint for adding an article to an existing ticket."
 msgstr ""
 
@@ -10101,19 +10160,19 @@ msgstr ""
 msgid "ID:"
 msgstr ""
 
-#: db/seeds/settings.rb:1890
+#: db/seeds/settings.rb:1893
 msgid "IDP SSO target URL"
 msgstr ""
 
-#: db/seeds/settings.rb:1898
+#: db/seeds/settings.rb:1901
 msgid "IDP Single Logout target URL"
 msgstr ""
 
-#: db/seeds/settings.rb:1906
+#: db/seeds/settings.rb:1909
 msgid "IDP certificate"
 msgstr ""
 
-#: db/seeds/settings.rb:1914
+#: db/seeds/settings.rb:1917
 msgid "IDP certificate fingerprint"
 msgstr ""
 
@@ -10125,7 +10184,7 @@ msgstr ""
 msgid "Icinga"
 msgstr ""
 
-#: db/seeds/settings.rb:4472
+#: db/seeds/settings.rb:4475
 msgid "Icinga integration"
 msgstr ""
 
@@ -10141,7 +10200,7 @@ msgstr "アイコンとリンクの色"
 msgid "Icon Set"
 msgstr "アイコンセット"
 
-#: db/seeds/settings.rb:2048 lib/excel_sheet/ai/analytics/errors.rb:24
+#: db/seeds/settings.rb:2051 lib/excel_sheet/ai/analytics/errors.rb:24
 #: lib/excel_sheet/ai/analytics/with_usage.rb:24
 #, fuzzy
 #| msgid "Account not verified"
@@ -10154,7 +10213,7 @@ msgstr "アカウントが確認されていません"
 msgid "Identifier of the chat topic."
 msgstr "チャットトピックのID"
 
-#: db/seeds/settings.rb:3596
+#: db/seeds/settings.rb:3599
 msgid "Idle timeout in seconds until agent is set offline automatically."
 msgstr ""
 
@@ -10186,7 +10245,7 @@ msgid ""
 "automatically."
 msgstr ""
 
-#: db/seeds/settings.rb:3386
+#: db/seeds/settings.rb:3389
 #, fuzzy
 #| msgid ""
 #| "If the sender is an agent, set the first user in the recipient list as a "
@@ -10197,7 +10256,7 @@ msgid ""
 msgstr ""
 "送信者がエージェントだったら、受信リストの先頭ユーザーを顧客として登録する"
 
-#: db/seeds/settings.rb:3462
+#: db/seeds/settings.rb:3465
 msgid "If this regex matches, no notification will be sent by the sender."
 msgstr "正規表現にマッチした場合、通知されません。"
 
@@ -10215,7 +10274,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/admin_password_auth/request_sent.jst.eco:5
 #: app/assets/javascripts/app/views/password/reset_sent.jst.eco:5
 #: app/frontend/apps/desktop/pages/authentication/views/AdminPasswordAuth.vue:109
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:104
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:111
 msgid ""
 "If you don't receive instructions within a minute or two, check your email's "
 "spam and junk filters, or try resending your request."
@@ -10231,7 +10290,7 @@ msgid ""
 msgstr ""
 
 #: app/assets/javascripts/app/views/login.jst.eco:105
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:275
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:290
 #: app/frontend/apps/mobile/pages/authentication/views/Login.vue:150
 msgid ""
 "If you have problems with the third-party login you can request a one-time "
@@ -10281,7 +10340,7 @@ msgstr ""
 msgid "Ignore Escalation"
 msgstr "エスカレーション"
 
-#: db/seeds/settings.rb:3756
+#: db/seeds/settings.rb:3759
 msgid "Ignore Escalation/SLA Information"
 msgstr ""
 
@@ -10289,11 +10348,11 @@ msgstr ""
 msgid "Ignore Message"
 msgstr ""
 
-#: db/seeds/settings.rb:3759
+#: db/seeds/settings.rb:3762
 msgid "Ignore escalation/SLA information for import."
 msgstr ""
 
-#: db/seeds/settings.rb:2821
+#: db/seeds/settings.rb:2824
 msgid "Ignore system_id"
 msgstr ""
 
@@ -10319,7 +10378,7 @@ msgstr "画像サービス"
 msgid "Image file size is too large, please try inserting a smaller file."
 msgstr ""
 
-#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:105
+#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:122
 #, fuzzy
 #| msgid "Manage %s"
 msgid "Image of %s"
@@ -10353,55 +10412,55 @@ msgstr ""
 msgid "Import API key could not be extracted from URL."
 msgstr ""
 
-#: db/seeds/settings.rb:3928
+#: db/seeds/settings.rb:3931
 msgid "Import API key for requesting the Freshdesk API"
 msgstr ""
 
-#: db/seeds/settings.rb:3872
+#: db/seeds/settings.rb:3875
 msgid "Import API key for requesting the Zendesk API"
 msgstr ""
 
-#: db/seeds/settings.rb:3747
+#: db/seeds/settings.rb:3750
 msgid "Import Backend"
 msgstr ""
 
-#: db/seeds/settings.rb:4002
+#: db/seeds/settings.rb:4005
 msgid "Import Backends"
 msgstr ""
 
-#: db/seeds/settings.rb:3779
+#: db/seeds/settings.rb:3782
 msgid "Import Endpoint"
 msgstr "インポートのエンドポイント"
 
-#: db/seeds/settings.rb:3797
+#: db/seeds/settings.rb:3800
 msgid "Import Key"
 msgstr "インポートキー"
 
-#: db/seeds/settings.rb:3725
+#: db/seeds/settings.rb:3728
 msgid "Import Mode"
 msgstr "インポートモード"
 
-#: db/seeds/settings.rb:3835
+#: db/seeds/settings.rb:3838
 msgid "Import Password for HTTP basic authentication"
 msgstr ""
 
-#: db/seeds/settings.rb:3983
+#: db/seeds/settings.rb:3986
 msgid "Import Password for requesting the Kayako API"
 msgstr ""
 
-#: db/seeds/settings.rb:3816
+#: db/seeds/settings.rb:3819
 msgid "Import User for HTTP basic authentication"
 msgstr ""
 
-#: db/seeds/settings.rb:3965
+#: db/seeds/settings.rb:3968
 msgid "Import User for requesting the Kayako API"
 msgstr ""
 
-#: db/seeds/settings.rb:3891
+#: db/seeds/settings.rb:3894
 msgid "Import User for requesting the Zendesk API"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:191
+#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:190
 #, fuzzy
 #| msgid "The import was successful."
 msgid "Import finished successfully!"
@@ -10474,7 +10533,7 @@ msgstr ""
 msgid "Inbound:"
 msgstr "受信"
 
-#: db/seeds/object_manager_attributes.rb:130
+#: db/seeds/object_manager_attributes.rb:134
 msgid "Incident"
 msgstr ""
 
@@ -10552,13 +10611,13 @@ msgstr "新規顧客を作成"
 msgid "Incomplete credentials"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:384
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:385
 #, fuzzy
 #| msgid "Create new Customer"
 msgid "Incomplete ticket checklist"
 msgstr "新規顧客を作成"
 
-#: db/seeds/settings.rb:2440
+#: db/seeds/settings.rb:2443
 msgid "Increment (SystemID.Counter)"
 msgstr ""
 
@@ -10587,7 +10646,7 @@ msgstr "分"
 msgid "Indent text"
 msgstr "次のテキストモジュール"
 
-#: app/frontend/apps/desktop/components/CommonProgressBar/CommonProgressBar.vue:16
+#: app/frontend/shared/components/CommonProgressBar/CommonProgressBar.vue:40
 #, fuzzy
 #| msgid "Your tickets in process"
 msgid "Indicating progress"
@@ -10765,7 +10824,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/knowledge_base/content_can_be_published_form.coffee:105
 #: app/assets/javascripts/app/controllers/knowledge_base/content_controller.coffee:133
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:142
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:154
 #: app/frontend/shared/entities/ticket/composables/useTicketEditForm.ts:160
 msgid "Internal"
 msgstr ""
@@ -10775,6 +10834,12 @@ msgstr ""
 #| msgid "Delete Knowledge Base"
 msgid "Internal Knowledge Base feed:"
 msgstr "ナレッジベースの削除"
+
+#: app/models/object_manager/attribute.rb:694
+#, fuzzy
+#| msgid "%s Object(s) are created."
+msgid "Internal attributes cannot be deleted"
+msgstr "%s オブジェクトを作成。"
 
 #: app/frontend/shared/errors/useErrorHandler.ts:33
 #, fuzzy
@@ -11026,7 +11091,7 @@ msgstr "%s URL"
 msgid "Issue status"
 msgstr "メッセージ"
 
-#: db/seeds/settings.rb:2056
+#: db/seeds/settings.rb:2059
 #, fuzzy
 #| msgid "no issues"
 msgid "Issuer"
@@ -11198,25 +11263,25 @@ msgstr "ナレッジベース"
 msgid "Knowledge Base Reader"
 msgstr ""
 
-#: db/seeds/settings.rb:5550
+#: db/seeds/settings.rb:5553
 #, fuzzy
 #| msgid "Knowledge Base"
 msgid "Knowledge Base active"
 msgstr "ナレッジベース"
 
-#: db/seeds/settings.rb:5565
+#: db/seeds/settings.rb:5568
 #, fuzzy
 #| msgid "Knowledge Base"
 msgid "Knowledge Base active publicly"
 msgstr "ナレッジベース"
 
-#: db/seeds/settings.rb:5539
+#: db/seeds/settings.rb:5542
 msgid "Knowledge Base multilingual support"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_integration/ldap.coffee:3
 #: app/assets/javascripts/app/views/integration/ldap_wizard.jst.eco:8
-#: db/seeds/settings.rb:1219
+#: db/seeds/settings.rb:1222
 msgid "LDAP"
 msgstr ""
 
@@ -11224,7 +11289,7 @@ msgstr ""
 msgid "LDAP Host"
 msgstr "LDAPホスト"
 
-#: db/seeds/settings.rb:4902
+#: db/seeds/settings.rb:4905
 msgid "LDAP integration"
 msgstr ""
 
@@ -11313,7 +11378,7 @@ msgid "Last changed"
 msgstr "が変更されました"
 
 #: app/assets/javascripts/app/models/ticket.coffee:26
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:81
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:84
 #: app/graphql/gql/types/overview_type.rb:111
 #, fuzzy
 #| msgid "Closing time"
@@ -11322,21 +11387,21 @@ msgstr "閉店時間"
 
 #: app/assets/javascripts/app/controllers/_ui_element/object_selector.coffee:232
 #: app/assets/javascripts/app/models/ticket.coffee:21
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:46
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:49
 #: app/graphql/gql/types/overview_type.rb:106
 msgid "Last contact"
 msgstr "直近のコンタクト"
 
 #: app/assets/javascripts/app/controllers/_ui_element/object_selector.coffee:236
 #: app/assets/javascripts/app/models/ticket.coffee:22
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:53
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:56
 #: app/graphql/gql/types/overview_type.rb:107
 msgid "Last contact (agent)"
 msgstr "最近のコンタクト（エージェント）"
 
 #: app/assets/javascripts/app/controllers/_ui_element/object_selector.coffee:240
 #: app/assets/javascripts/app/models/ticket.coffee:23
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:60
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:63
 #: app/graphql/gql/types/overview_type.rb:108
 msgid "Last contact (customer)"
 msgstr "最近のコンタクト（顧客）"
@@ -11354,13 +11419,13 @@ msgstr "最終実行"
 
 #: app/assets/javascripts/app/models/user.coffee:10
 #: app/frontend/apps/desktop/composables/authentication/useSignupForm.ts:23
-#: db/seeds/object_manager_attributes.rb:852
+#: db/seeds/object_manager_attributes.rb:871
 #, fuzzy
 #| msgid "Lastname"
 msgid "Last name"
 msgstr "名"
 
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:124
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:127
 #, fuzzy
 #| msgid "Latest updates"
 msgid "Last owner update"
@@ -11464,15 +11529,15 @@ msgstr ""
 msgid "Limit priorities and provide optional descriptions"
 msgstr ""
 
-#: db/seeds/settings.rb:3109
+#: db/seeds/settings.rb:3112
 msgid "Limit tickets by IP per day"
 msgstr ""
 
-#: db/seeds/settings.rb:3088
+#: db/seeds/settings.rb:3091
 msgid "Limit tickets by IP per hour"
 msgstr ""
 
-#: db/seeds/settings.rb:3130
+#: db/seeds/settings.rb:3133
 msgid "Limit tickets per day"
 msgstr ""
 
@@ -11522,7 +11587,7 @@ msgstr ""
 msgid "Link Related Answer"
 msgstr ""
 
-#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:148
+#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:147
 #, fuzzy
 #| msgid "Link %s"
 msgid "Link URL"
@@ -11573,7 +11638,7 @@ msgstr "アップデートができました！"
 msgid "Link template"
 msgstr "テンプレート"
 
-#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:150
+#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:149
 #, fuzzy
 #| msgid "Open Tickets"
 msgid "Link text"
@@ -11618,15 +11683,15 @@ msgstr "リンクされたアカウント"
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:76
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:32
-#: db/seeds/settings.rb:1536
+#: db/seeds/settings.rb:1539
 msgid "LinkedIn"
 msgstr ""
 
-#: db/seeds/settings.rb:1544
+#: db/seeds/settings.rb:1547
 msgid "LinkedIn App Credentials"
 msgstr "LinkedIn アプリの認証情報"
 
-#: db/seeds/settings.rb:1537
+#: db/seeds/settings.rb:1540
 msgid "LinkedIn Developer Site"
 msgstr ""
 
@@ -11752,7 +11817,7 @@ msgstr ""
 #: app/assets/javascripts/app/models/user.coffee:8
 #: app/assets/javascripts/app/views/maintenance.jst.eco:25
 #: app/controllers/time_accountings_controller.rb:101
-#: db/seeds/object_manager_attributes.rb:768
+#: db/seeds/object_manager_attributes.rb:785
 msgid "Login"
 msgstr "ログイン"
 
@@ -11817,7 +11882,7 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/_ai/ai_agent.coffee:11
 #: app/assets/javascripts/app/controllers/macro.coffee:3
 #: app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco:78
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:193
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:205
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/TicketAgentUpdateButton.vue:48
 #: db/seeds/permissions.rb:47
 msgid "Macros"
@@ -12332,7 +12397,7 @@ msgid "Match none (NOT)"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:38
-#: db/seeds/settings.rb:2797
+#: db/seeds/settings.rb:2800
 msgid "Match tickets in following states"
 msgstr ""
 
@@ -12345,6 +12410,18 @@ msgstr ""
 #| msgid "Disable Notifications"
 msgid "Mattermost Notifications"
 msgstr "通知を無効にする"
+
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:381
+#, fuzzy
+#| msgid "%s tickets selected"
+msgid "Max %s result(s) selected"
+msgstr "％s チケットが選択されました"
+
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:80
+#, fuzzy
+#| msgid "%s tickets selected"
+msgid "Max %s ticket(s) selected"
+msgstr "％s チケットが選択されました"
 
 #: app/models/object_manager/attribute/data_option_validator.rb:35
 msgid "Max length must be an integer."
@@ -12367,7 +12444,7 @@ msgstr ""
 msgid "Max. length"
 msgstr "最小文字数"
 
-#: db/seeds/settings.rb:3164
+#: db/seeds/settings.rb:3167
 msgid "Max. length of the subject in an email reply."
 msgstr "返信メールのタイトルの文字数上限"
 
@@ -12391,15 +12468,15 @@ msgstr ""
 msgid "Maximal value must be lower than 2147483648"
 msgstr ""
 
-#: db/seeds/settings.rb:3276
+#: db/seeds/settings.rb:3279
 msgid "Maximum Email Size"
 msgstr "メールのサイズ上限"
 
-#: db/seeds/settings.rb:2905
+#: db/seeds/settings.rb:2908
 msgid "Maximum Recursive Ticket Triggers Depth"
 msgstr ""
 
-#: db/seeds/settings.rb:2227
+#: db/seeds/settings.rb:2230
 msgid "Maximum failed logins"
 msgstr "最大失敗回数"
 
@@ -12407,7 +12484,7 @@ msgstr "最大失敗回数"
 msgid "Maximum number of open tabs."
 msgstr ""
 
-#: db/seeds/settings.rb:2908
+#: db/seeds/settings.rb:2911
 msgid "Maximum number of recursively executed triggers."
 msgstr ""
 
@@ -12459,7 +12536,7 @@ msgstr "接続テスト成功"
 #: app/frontend/apps/desktop/components/Organization/OrganizationPopoverWithTrigger/OrganizationPopover.vue:79
 #: app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContent.vue:115
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarOrganization/TicketSidebarOrganizationContent.vue:71
-#: app/frontend/apps/mobile/components/Organization/OrganizationMembersList.vue:29
+#: app/frontend/apps/mobile/components/Organization/OrganizationMembersList.vue:36
 msgid "Members"
 msgstr "メンバー"
 
@@ -12591,13 +12668,13 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:91
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:53
-#: db/seeds/settings.rb:1735
+#: db/seeds/settings.rb:1738
 #, fuzzy
 #| msgid "Macros"
 msgid "Microsoft"
 msgstr "マクロ"
 
-#: db/seeds/settings.rb:1743
+#: db/seeds/settings.rb:1746
 #, fuzzy
 #| msgid "Twitter App Credentials"
 msgid "Microsoft 365 App Credentials"
@@ -12621,7 +12698,7 @@ msgstr "ツイッターアプリの認証情報"
 msgid "Microsoft 365 IMAP Email"
 msgstr "ツイッターアプリの認証情報"
 
-#: db/seeds/settings.rb:1736
+#: db/seeds/settings.rb:1739
 msgid "Microsoft Application Registration Portal"
 msgstr ""
 
@@ -12668,7 +12745,7 @@ msgstr ""
 msgid "Milestone"
 msgstr "マイルストーン"
 
-#: db/seeds/settings.rb:2472
+#: db/seeds/settings.rb:2475
 msgid "Min. size of number"
 msgstr "数の最小サイズ"
 
@@ -12688,7 +12765,7 @@ msgstr ""
 msgid "Minimal value must be lower than 2147483648"
 msgstr ""
 
-#: db/seeds/settings.rb:2109
+#: db/seeds/settings.rb:2112
 msgid "Minimum length"
 msgstr "最小文字数"
 
@@ -12713,7 +12790,7 @@ msgid "Mistral AI"
 msgstr ""
 
 #: app/assets/javascripts/app/views/channel/chat.jst.eco:23
-#: db/seeds/object_manager_attributes.rb:1036
+#: db/seeds/object_manager_attributes.rb:1059
 msgid "Mobile"
 msgstr "携帯電話"
 
@@ -12747,7 +12824,7 @@ msgstr "月曜日"
 msgid "Monit"
 msgstr ""
 
-#: db/seeds/settings.rb:4801
+#: db/seeds/settings.rb:4804
 msgid "Monit integration"
 msgstr ""
 
@@ -12757,7 +12834,7 @@ msgstr ""
 msgid "Monitoring"
 msgstr "モニタリング"
 
-#: db/seeds/settings.rb:3544
+#: db/seeds/settings.rb:3547
 msgid "Monitoring Token"
 msgstr ""
 
@@ -12896,7 +12973,7 @@ msgstr "処理中のあなたのチケット"
 msgid "Nagios"
 msgstr "Nagios"
 
-#: db/seeds/settings.rb:4570
+#: db/seeds/settings.rb:4573
 msgid "Nagios integration"
 msgstr ""
 
@@ -12905,7 +12982,7 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/_ui_element/object_attribute_options_context.coffee:21
 #: app/assets/javascripts/app/controllers/chat.coffee:559
 #: app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/security_keys.coffee:58
-#: app/assets/javascripts/app/models/_application_model.coffee:156
+#: app/assets/javascripts/app/models/_application_model.coffee:158
 #: app/assets/javascripts/app/models/ai_agent.coffee:6
 #: app/assets/javascripts/app/models/ai_text_tool.coffee:6
 #: app/assets/javascripts/app/models/application.coffee:7
@@ -12967,11 +13044,11 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSharedDraftFlyout.vue:180
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/IdoitFlyout/IdoitObjectList.vue:17
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarSharedDraftStart/TicketSidebarSharedDraftStartContent.vue:163
-#: db/seeds/object_manager_attributes.rb:1706 public/assets/form/form.js:24
+#: db/seeds/object_manager_attributes.rb:1745 public/assets/form/form.js:24
 msgid "Name"
 msgstr "名前"
 
-#: db/seeds/settings.rb:1922
+#: db/seeds/settings.rb:1925
 msgid "Name Identifier Format"
 msgstr ""
 
@@ -13031,7 +13108,7 @@ msgstr ""
 msgid "Need user_id or organization_id as param"
 msgstr ""
 
-#: db/seeds/settings.rb:2182
+#: db/seeds/settings.rb:2185
 msgid "Needed"
 msgstr "必要"
 
@@ -13190,7 +13267,7 @@ msgid "New Source"
 msgstr "ソース"
 
 #: app/assets/javascripts/app/views/tag/index.jst.eco:14
-#: db/seeds/settings.rb:4167
+#: db/seeds/settings.rb:4170
 msgid "New Tags"
 msgstr "新規タグ"
 
@@ -13337,8 +13414,8 @@ msgstr "新規チケット"
 msgid "New user"
 msgstr "新規ユーザー"
 
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:209
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:133
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:224
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:144
 #, fuzzy
 #| msgid "New User"
 msgid "New user?"
@@ -13367,7 +13444,7 @@ msgstr "状態"
 #: app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco:52
 #: app/assets/javascripts/app/views/ticket_zoom/overview_navigator.jst.eco:12
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts:21
-#: db/seeds/settings.rb:3016
+#: db/seeds/settings.rb:3019
 msgid "Next in overview"
 msgstr "次の概要"
 
@@ -13640,7 +13717,7 @@ msgid "No organizations found"
 msgstr "組織"
 
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingOverviews.vue:143
-#: app/frontend/apps/desktop/pages/ticket-overviews/views/TicketOverviews.vue:128
+#: app/frontend/apps/desktop/pages/ticket-overviews/views/TicketOverviews.vue:129
 #, fuzzy
 #| msgid "Overviews"
 msgid "No overviews"
@@ -13745,7 +13822,7 @@ msgstr "まだテンプレートは作成されていません。"
 msgid "No template created yet."
 msgstr "まだテンプレートは作成されていません。"
 
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:425
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:436
 #, fuzzy
 #| msgid "Your tickets in process"
 msgid "No tickets in this state."
@@ -13773,7 +13850,7 @@ msgstr "未読通知はありません。 :)"
 msgid "No unread notifications."
 msgstr "通知"
 
-#: db/seeds/settings.rb:1297
+#: db/seeds/settings.rb:1300
 msgid "No user creation on logon"
 msgstr ""
 
@@ -13788,7 +13865,7 @@ msgid "No x-zammad-session-user-id, no sender set!"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/ticket_zoom/checklist_modal.coffee:8
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:387
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:388
 #, fuzzy
 #| msgid "You have closed a ticket"
 msgid "No, just close the ticket"
@@ -13801,7 +13878,7 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/knowledge_base/permissions_dialog.coffee:9
 #: app/assets/javascripts/app/controllers/ticket_zoom/time_unit.coffee:55
 #: app/assets/javascripts/app/views/data_privacy/tasks.jst.eco:65
-#: app/graphql/gql/types/ticket_type.rb:109 db/seeds/settings.rb:1954
+#: app/graphql/gql/types/ticket_type.rb:109 db/seeds/settings.rb:1957
 msgid "None"
 msgstr "該当なし"
 
@@ -13902,10 +13979,10 @@ msgstr "該当なし"
 #: app/assets/javascripts/app/views/integration/cti.jst.eco:38
 #: app/assets/javascripts/app/views/integration/placetel.jst.eco:54
 #: app/assets/javascripts/app/views/integration/sipgate.jst.eco:47
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:102
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:114
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/plugins/note.ts:7
 #: app/frontend/shared/entities/ticket-article/action/plugins/note.ts:14
-#: db/seeds/object_manager_attributes.rb:1534
+#: db/seeds/object_manager_attributes.rb:1569
 msgid "Note"
 msgstr "メモ"
 
@@ -13932,7 +14009,7 @@ msgstr ""
 #: app/assets/javascripts/app/models/job.coffee:15
 #: app/assets/javascripts/app/models/role.coffee:10
 #: app/assets/javascripts/app/models/signature.coffee:26
-#: db/seeds/object_manager_attributes.rb:1541
+#: db/seeds/object_manager_attributes.rb:1576
 msgid "Notes are visible to agents only, never to customers."
 msgstr "メモはエージェントのみが見ることができ、顧客には決して見えません。"
 
@@ -13959,7 +14036,7 @@ msgstr "通知"
 msgid "Notification"
 msgstr "通知"
 
-#: db/seeds/settings.rb:3436
+#: db/seeds/settings.rb:3439
 msgid "Notification Sender"
 msgstr "通知の送信者"
 
@@ -14194,12 +14271,12 @@ msgid "On %s, %s wrote:"
 msgstr "On %s, %s wrote:"
 
 #: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:49
-#: db/seeds/object_manager_attributes.rb:2413
+#: db/seeds/object_manager_attributes.rb:2471
 msgid "On ticket detail opening"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:53
-#: db/seeds/object_manager_attributes.rb:2417
+#: db/seeds/object_manager_attributes.rb:2475
 msgid "On ticket summary sidebar activation"
 msgstr ""
 
@@ -14248,13 +14325,13 @@ msgid ""
 "Zammad and complete the translation."
 msgstr ""
 
-#: db/seeds/settings.rb:1957
+#: db/seeds/settings.rb:1960
 #, fuzzy
 #| msgid "Encrypt"
 msgid "Only Encrypting"
 msgstr "暗号化"
 
-#: db/seeds/settings.rb:1956
+#: db/seeds/settings.rb:1959
 #, fuzzy
 #| msgid "Sign in"
 msgid "Only Signing"
@@ -14321,7 +14398,7 @@ msgstr "対応中"
 msgid "Open %s"
 msgstr "対応中"
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:82
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:83
 #: app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket_summary.coffee:5
 #, fuzzy
 #| msgid "Options"
@@ -14421,10 +14498,10 @@ msgid "Open ticket indicator"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:38
-#: app/frontend/apps/desktop/pages/organization/components/OrganizationRelatedTickets.vue:21
+#: app/frontend/apps/desktop/pages/organization/components/OrganizationRelatedTickets.vue:22
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomer.vue:51
-#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:127
-#: app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets.vue:35
+#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:128
+#: app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets.vue:23
 #, fuzzy
 #| msgid "Open Tickets"
 msgid "Open tickets"
@@ -14443,13 +14520,13 @@ msgstr "対応中"
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:116
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:90
-#: db/seeds/settings.rb:2026
+#: db/seeds/settings.rb:2029
 #, fuzzy
 #| msgid "Connect"
 msgid "OpenID Connect"
 msgstr "接続"
 
-#: db/seeds/settings.rb:2034
+#: db/seeds/settings.rb:2037
 #, fuzzy
 #| msgid "Test Connection"
 msgid "OpenID Connect Options"
@@ -14568,7 +14645,7 @@ msgstr "概要"
 #: app/frontend/apps/mobile/pages/organization/views/OrganizationDetailView.vue:30
 #: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/plugins/organization.ts:6
 #: app/graphql/gql/types/overview_type.rb:94
-#: db/seeds/object_manager_attributes.rb:95 db/seeds/settings.rb:141
+#: db/seeds/object_manager_attributes.rb:98 db/seeds/settings.rb:141
 #: lib/excel_sheet/ticket.rb:30
 msgid "Organization"
 msgstr "組織"
@@ -14617,7 +14694,7 @@ msgstr "組織名"
 msgid "Organization support"
 msgstr "組織サポート"
 
-#: app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContent.vue:162
+#: app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContent.vue:165
 #: app/frontend/apps/mobile/pages/user/views/UserDetailView.vue:79
 #, fuzzy
 #| msgid "My Organization Tickets"
@@ -14808,7 +14885,7 @@ msgstr "概要"
 msgid "Overview order list"
 msgstr "概要"
 
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:380
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:391
 #, fuzzy
 #| msgid "Overviews"
 msgid "Overview: %s"
@@ -14850,7 +14927,7 @@ msgstr ""
 #: app/views/messaging/ticket_create/zh-tw.md.erb:4
 #: app/views/messaging/ticket_info/pt-br.md.erb:4
 #: app/views/messaging/ticket_info/zh-tw.md.erb:4
-#: db/seeds/object_manager_attributes.rb:208 lib/excel_sheet/ticket.rb:28
+#: db/seeds/object_manager_attributes.rb:214 lib/excel_sheet/ticket.rb:28
 msgid "Owner"
 msgstr "所有者"
 
@@ -14867,23 +14944,23 @@ msgstr ""
 msgid "PGP"
 msgstr ""
 
-#: db/seeds/settings.rb:5762
+#: db/seeds/settings.rb:5765
 msgid "PGP Recipient Alias Configuration"
 msgstr ""
 
-#: db/seeds/settings.rb:5748
+#: db/seeds/settings.rb:5751
 #, fuzzy
 #| msgid "Config"
 msgid "PGP config"
 msgstr "設定"
 
-#: db/seeds/settings.rb:5720
+#: db/seeds/settings.rb:5723
 #, fuzzy
 #| msgid "Integrations"
 msgid "PGP integration"
 msgstr "統合"
 
-#: db/seeds/settings.rb:2080
+#: db/seeds/settings.rb:2083
 msgid "PKCE"
 msgstr ""
 
@@ -14930,7 +15007,7 @@ msgstr ""
 msgid "Parent"
 msgstr "親"
 
-#: db/seeds/object_manager_attributes.rb:2056
+#: db/seeds/object_manager_attributes.rb:2104
 #, fuzzy
 #| msgid "Parent"
 msgid "Parent group"
@@ -14953,13 +15030,13 @@ msgstr "親"
 #: app/frontend/apps/desktop/entities/channel-email/composables/useEmailAccountForm.ts:41
 #: app/frontend/apps/desktop/entities/channel-email/composables/useEmailInboundForm.ts:127
 #: app/frontend/apps/desktop/entities/channel-email/composables/useEmailOutboundForm.ts:83
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:112
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:113
 #: app/frontend/apps/desktop/pages/authentication/views/PasswordResetVerify.vue:48
 #: app/frontend/apps/desktop/pages/guided-setup/components/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceKayako.vue:47
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSetting/plugins/password.ts:8
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingPassword.vue:32
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:52
-#: db/seeds/object_manager_attributes.rb:1448 db/seeds/permissions.rb:462
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:53
+#: db/seeds/object_manager_attributes.rb:1481 db/seeds/permissions.rb:462
 msgid "Password"
 msgstr "パスワード"
 
@@ -15016,26 +15093,26 @@ msgstr "プロキシ接続のパスワードです。"
 msgid "Password for proxy connection."
 msgstr "プロキシ接続のパスワードです。"
 
-#: db/seeds/settings.rb:2152
+#: db/seeds/settings.rb:2155
 #, fuzzy
 #| msgid "Password needs to contain 2 lower and 2 upper characters."
 msgid "Password needs to contain 2 lower case and 2 upper case characters."
 msgstr "パスワードには小文字2つと大文字2つ必要です。"
 
-#: db/seeds/settings.rb:2178
+#: db/seeds/settings.rb:2181
 msgid "Password needs to contain at least one digit."
 msgstr "パスワードに数字を必須にしますか？"
 
-#: db/seeds/settings.rb:2204
+#: db/seeds/settings.rb:2207
 msgid "Password needs to contain at least one special character."
 msgstr ""
 
-#: db/seeds/settings.rb:2112
+#: db/seeds/settings.rb:2115
 msgid "Password needs to have at least a minimal number of characters."
 msgstr "パスワードの最小文字数"
 
 #: app/assets/javascripts/app/views/password/reset_sent.jst.eco:4
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:99
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:106
 #, fuzzy
 #| msgid "We've sent password reset instructions to your email address."
 msgid "Password reset instructions were sent to your email address."
@@ -15103,7 +15180,7 @@ msgstr "私の保留中の到達チケット"
 
 #: app/assets/javascripts/app/models/ticket.coffee:13
 #: app/graphql/gql/types/overview_type.rb:98
-#: db/seeds/object_manager_attributes.rb:308
+#: db/seeds/object_manager_attributes.rb:316
 msgid "Pending till"
 msgstr "保留時間"
 
@@ -15122,7 +15199,7 @@ msgid "Permanently Delete Knowledge Base"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:37
-#: db/seeds/settings.rb:2780
+#: db/seeds/settings.rb:2783
 msgid "Permission level for looking up tickets"
 msgstr ""
 
@@ -15162,7 +15239,7 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/cti.coffee:322
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/plugins/phone.ts:7
 #: app/frontend/shared/entities/ticket-article/action/plugins/phone.ts:12
-#: db/seeds/object_manager_attributes.rb:996 db/seeds/permissions.rb:356
+#: db/seeds/object_manager_attributes.rb:1018 db/seeds/permissions.rb:356
 msgid "Phone"
 msgstr "電話"
 
@@ -15217,17 +15294,17 @@ msgstr ""
 msgid "Placetel"
 msgstr "電話"
 
-#: db/seeds/settings.rb:5333
+#: db/seeds/settings.rb:5336
 #, fuzzy
 #| msgid "Placetel"
 msgid "Placetel Token"
 msgstr "電話"
 
-#: db/seeds/settings.rb:5319
+#: db/seeds/settings.rb:5322
 msgid "Placetel config"
 msgstr ""
 
-#: db/seeds/settings.rb:5291
+#: db/seeds/settings.rb:5294
 msgid "Placetel integration"
 msgstr ""
 
@@ -15255,7 +15332,7 @@ msgid "Please add categories and/or answers"
 msgstr ""
 
 #: app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco:12
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:410
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:421
 #, fuzzy
 #| msgid "Please click the button below to create your first one."
 msgid "Please click on the button below to create your first one."
@@ -15334,7 +15411,7 @@ msgid ""
 "side beforehand. %l"
 msgstr ""
 
-#: db/seeds/settings.rb:1919
+#: db/seeds/settings.rb:1922
 msgid ""
 "Please note that this attribute is deprecated within one of the next "
 "versions of Zammad. Use the IDP certificate instead."
@@ -15521,7 +15598,7 @@ msgstr ""
 msgid "Preview"
 msgstr "プレビュー"
 
-#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:93
+#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:110
 #, fuzzy
 #| msgid "Preview"
 msgid "Preview %s"
@@ -15606,25 +15683,25 @@ msgstr "Prio"
 #: app/assets/javascripts/app/views/agent_ticket_view/detail.jst.eco:39
 #: app/assets/javascripts/app/views/popover/ticket.jst.eco:30
 #: app/graphql/gql/types/overview_type.rb:99
-#: db/seeds/object_manager_attributes.rb:351 lib/excel_sheet/ticket.rb:26
+#: db/seeds/object_manager_attributes.rb:360 lib/excel_sheet/ticket.rb:26
 msgid "Priority"
 msgstr "優先度"
 
-#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:79
+#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:105
 #, fuzzy
 #| msgid "Priority"
 msgid "Priority icon"
 msgstr "優先度"
 
-#: db/seeds/settings.rb:1968
+#: db/seeds/settings.rb:1971
 msgid "Private key (PEM)"
 msgstr ""
 
-#: db/seeds/settings.rb:1975
+#: db/seeds/settings.rb:1978
 msgid "Private key secret"
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:131
+#: db/seeds/object_manager_attributes.rb:135
 msgid "Problem"
 msgstr ""
 
@@ -15680,7 +15757,7 @@ msgstr "プロキシ設定"
 msgid "Profiles"
 msgstr "プロファイル"
 
-#: db/seeds/settings.rb:2090
+#: db/seeds/settings.rb:2093
 msgid ""
 "Proof Key for Code Exchange is currently only supporting SHA256 as code "
 "challenge method."
@@ -15690,24 +15767,24 @@ msgstr ""
 msgid "Protocol"
 msgstr "プロトコル"
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:77
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:78
 msgid ""
 "Provide a summary of the conversation between customer and support agent."
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:70
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:71
 msgid "Provide a summary of the problem the customer needs to get resolved."
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:84
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:85
 msgid "Provide a summary of the questions raised in the conversation."
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:90
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:91
 msgid "Provide a summary of the upcoming events based on the conversation."
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:96
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:97
 msgid ""
 "Provide an assessment of the customer sentiment based on the conversation."
 msgstr ""
@@ -15747,7 +15824,7 @@ msgid "Proxy address"
 msgstr "プロキシ住所です。"
 
 #: app/assets/javascripts/app/controllers/knowledge_base/content_can_be_published_form.coffee:109
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:137
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:149
 #: app/frontend/shared/entities/ticket/composables/useTicketEditForm.ts:165
 msgid "Public"
 msgstr "外部"
@@ -15807,7 +15884,7 @@ msgstr ""
 "ログインページにメッセージを入れて下さい。 変更するには、下のテキストエリアを"
 "クリックして、インラインで変更してください。"
 
-#: db/seeds/settings.rb:3728
+#: db/seeds/settings.rb:3731
 msgid "Puts Zammad into import mode (disables some triggers)."
 msgstr ""
 
@@ -16009,7 +16086,7 @@ msgid ""
 "access to other two-factor authentication methods."
 msgstr ""
 
-#: db/seeds/settings.rb:2841
+#: db/seeds/settings.rb:2844
 msgid "Recursive Ticket Triggers"
 msgstr ""
 
@@ -16019,7 +16096,7 @@ msgstr ""
 msgid "Redis version"
 msgstr "新バージョン"
 
-#: db/seeds/settings.rb:3338
+#: db/seeds/settings.rb:3341
 msgid ""
 "References - Search for follow-up also in In-Reply-To or References headers."
 msgstr ""
@@ -16044,8 +16121,8 @@ msgstr "レコード削除"
 msgid "Regeneration Of ID"
 msgstr "レポートレート"
 
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:211
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:139
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:226
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:150
 msgid "Register"
 msgstr ""
 
@@ -16076,7 +16153,7 @@ msgstr "テストチケットの作成"
 msgid "Related Object Type"
 msgstr "テストチケットの作成"
 
-#: app/frontend/apps/desktop/pages/user/components/UserDetailViewContent.vue:150
+#: app/frontend/apps/desktop/pages/user/components/UserDetailViewContent.vue:153
 #, fuzzy
 #| msgid "Create a Test Ticket"
 msgid "Related tickets"
@@ -16099,8 +16176,8 @@ msgstr "アプリケーションを再ロード"
 
 #: app/assets/javascripts/app/views/generic/login_preview.jst.eco:43
 #: app/assets/javascripts/app/views/login.jst.eco:45
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:126
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:69
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:143
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:70
 msgid "Remember me"
 msgstr "このアカウントを記憶する"
 
@@ -16137,7 +16214,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/object_manager/attribute/select.jst.eco:25
 #: app/assets/javascripts/app/views/profile/devices.jst.eco:15
 #: app/assets/javascripts/app/views/profile/password.jst.eco:81
-#: app/frontend/apps/desktop/components/Form/fields/FieldGroupPermissions/FieldGroupPermissionsInput.vue:252
+#: app/frontend/apps/desktop/components/Form/fields/FieldGroupPermissions/FieldGroupPermissionsInput.vue:255
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationPasswordCheck.vue:59
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationSecurityKeys.vue:147
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingTwoFactorAuth.vue:177
@@ -16145,7 +16222,7 @@ msgstr ""
 msgid "Remove"
 msgstr "削除"
 
-#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:160
+#: app/frontend/shared/components/CommonFilePreview/CommonFilePreview.vue:178
 #, fuzzy
 #| msgid "Remove"
 msgid "Remove %s"
@@ -16213,7 +16290,7 @@ msgstr "削除"
 msgid "Remove item"
 msgstr "削除"
 
-#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:160
+#: app/frontend/shared/components/Form/fields/FieldEditor/features/link/LinkForm.vue:159
 #, fuzzy
 #| msgid "Remove"
 msgid "Remove link"
@@ -16297,7 +16374,7 @@ msgid "Reopening rate"
 msgstr "レポートレート"
 
 #: app/assets/javascripts/app/models/group.coffee:10
-#: db/seeds/object_manager_attributes.rb:2159
+#: db/seeds/object_manager_attributes.rb:2210
 #, fuzzy
 #| msgid "Reopening rate"
 msgid "Reopening time in days"
@@ -16391,7 +16468,7 @@ msgstr "権限のリクエスト"
 msgid "Request Method"
 msgstr "削除"
 
-#: db/seeds/object_manager_attributes.rb:132
+#: db/seeds/object_manager_attributes.rb:136
 msgid "Request for Change"
 msgstr ""
 
@@ -16401,7 +16478,7 @@ msgid "Request password login for admin?"
 msgstr ""
 
 #: app/assets/javascripts/app/views/login.jst.eco:106
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:280
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:295
 #: app/frontend/apps/mobile/pages/authentication/views/Login.vue:155
 msgid "Request the password login here."
 msgstr ""
@@ -16423,7 +16500,7 @@ msgstr ""
 msgid "Requirements"
 msgstr "要件"
 
-#: db/seeds/settings.rb:5925
+#: db/seeds/settings.rb:5928
 #, fuzzy
 #| msgid "Authentication"
 msgid ""
@@ -16604,7 +16681,7 @@ msgstr "デフォルトを復元"
 msgid "Result:"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/search/components/SearchContent.vue:365
+#: app/frontend/apps/desktop/pages/search/components/SearchContent.vue:411
 #, fuzzy
 #| msgid "Restore Defaults"
 msgid "Results"
@@ -16616,10 +16693,10 @@ msgstr "デフォルトを復元"
 #: app/assets/javascripts/app/views/widget/two_factor_login/security_keys.jst.eco:16
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationRecoveryCodes.vue:68
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationSecurityKeys.vue:64
-#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:169
+#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:180
 #: app/frontend/apps/desktop/pages/authentication/views/AdminPasswordAuth.vue:131
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarSummary/TicketSidebarSummaryContent.vue:91
-#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:172
+#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:183
 msgid "Retry"
 msgstr ""
 
@@ -16643,7 +16720,7 @@ msgstr ""
 msgid "Rewrite complex section and make it easy to understand"
 msgstr ""
 
-#: db/seeds/settings.rb:6131
+#: db/seeds/settings.rb:6134
 msgid "Richtext Bubble Menu"
 msgstr ""
 
@@ -16673,7 +16750,7 @@ msgstr "説明"
 
 #: app/assets/javascripts/app/controllers/role.coffee:3
 #: app/assets/javascripts/app/views/integration/ldap_wizard.jst.eco:193
-#: db/seeds/object_manager_attributes.rb:1579 db/seeds/permissions.rb:23
+#: db/seeds/object_manager_attributes.rb:1615 db/seeds/permissions.rb:23
 msgid "Roles"
 msgstr "ロール"
 
@@ -16739,7 +16816,7 @@ msgid ""
 "encrypted messages."
 msgstr ""
 
-#: db/seeds/settings.rb:5706
+#: db/seeds/settings.rb:5709
 msgid "S/MIME config"
 msgstr ""
 
@@ -16747,17 +16824,17 @@ msgstr ""
 msgid "S/MIME enables you to send digitally signed and encrypted messages."
 msgstr ""
 
-#: db/seeds/settings.rb:5678
+#: db/seeds/settings.rb:5681
 msgid "S/MIME integration"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:106
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:74
-#: db/seeds/settings.rb:1868
+#: db/seeds/settings.rb:1871
 msgid "SAML"
 msgstr ""
 
-#: db/seeds/settings.rb:1876
+#: db/seeds/settings.rb:1879
 msgid "SAML App Credentials"
 msgstr ""
 
@@ -16851,7 +16928,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:111
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:81
-#: db/seeds/settings.rb:5794
+#: db/seeds/settings.rb:5797
 msgid "SSO"
 msgstr ""
 
@@ -17002,11 +17079,11 @@ msgstr "スケジューラー"
 msgid "Schedulers"
 msgstr "スケジューラー"
 
-#: db/seeds/settings.rb:2072
+#: db/seeds/settings.rb:2075
 msgid "Scopes"
 msgstr ""
 
-#: db/seeds/settings.rb:2077
+#: db/seeds/settings.rb:2080
 msgid ""
 "Scopes that are included, separated by a single space character. If unset, "
 "\"openid email profile\" is used."
@@ -17044,7 +17121,7 @@ msgstr "下にスクロールして、新規メッセージを見て下さい"
 #: app/assets/javascripts/app/views/integration/idoit_object_selector.jst.eco:3
 #: app/assets/javascripts/app/views/knowledge_base/search_field_widget.jst.eco:1
 #: app/assets/javascripts/app/views/widget/text_module.jst.eco:4
-#: app/frontend/apps/desktop/pages/search/components/SearchContent.vue:363
+#: app/frontend/apps/desktop/pages/search/components/SearchContent.vue:409
 #: app/frontend/apps/desktop/pages/search/routes.ts:10
 #: app/frontend/apps/mobile/pages/search/routes.ts:8
 #: app/frontend/apps/mobile/pages/search/views/SearchOverview.vue:220
@@ -17311,7 +17388,7 @@ msgstr "検索"
 #: app/frontend/apps/desktop/pages/user/components/UserDetailViewContent.vue:121
 #: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/TicketInformationCustomer.vue:88
 #: app/frontend/apps/mobile/pages/user/views/UserDetailView.vue:133
-#: db/seeds/object_manager_attributes.rb:1161
+#: db/seeds/object_manager_attributes.rb:1187
 #, fuzzy
 #| msgid "Shared organization"
 msgid "Secondary organizations"
@@ -17364,15 +17441,15 @@ msgstr "セキュリティー"
 
 #: app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/security_keys.coffee:4
 #: app/assets/javascripts/app/lib/app_post/two_factor_methods/security_keys.coffee:5
-#: db/seeds/settings.rb:5831
+#: db/seeds/settings.rb:5834
 #, fuzzy
 #| msgid "Security"
 msgid "Security Keys"
 msgstr "セキュリティー"
 
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationAuthenticatorApp.vue:286
-#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:40
-#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:47
+#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:46
+#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:53
 #, fuzzy
 #| msgid "Security"
 msgid "Security code"
@@ -17479,6 +17556,12 @@ msgstr ""
 "お使いになりたいカレンダーアプリに次のURLを追加して、カレンダーでご自身のチ"
 "ケットを見て下さい。"
 
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:285
+#, fuzzy
+#| msgid "Selector"
+msgid "Select"
+msgstr "セレクター"
+
 #: app/assets/javascripts/app/controllers/_plugin/electron_events.coffee:38
 msgid "Select All"
 msgstr ""
@@ -17496,7 +17579,13 @@ msgstr ""
 msgid "Select Template"
 msgstr "テンプレートを選択"
 
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:470
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:396
+#, fuzzy
+#| msgid "select"
+msgid "Select all %s results"
+msgstr "選択"
+
+#: app/frontend/apps/desktop/components/CommonTable/CellContent/BulkCheckbox.vue:61
 #: app/frontend/apps/desktop/components/CommonTable/CommonSimpleTable.vue:76
 #, fuzzy
 #| msgid "select"
@@ -17516,6 +17605,12 @@ msgstr "アイテムを選択"
 #| msgid "Select Template"
 msgid "Select locale…"
 msgstr "テンプレートを選択"
+
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:395
+#, fuzzy
+#| msgid "select"
+msgid "Select max %s results"
+msgstr "選択"
 
 #: app/frontend/apps/desktop/components/CommonTable/TableRow.vue:68
 #, fuzzy
@@ -17544,7 +17639,7 @@ msgstr "チケットの顧客を選択するか、作成します。"
 msgid "Select this avatar"
 msgstr "ユーザー削除"
 
-#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:36
+#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:45
 #: app/frontend/apps/desktop/components/CommonTable/CommonSimpleTable.vue:132
 #, fuzzy
 #| msgid "Delete User"
@@ -17668,11 +17763,11 @@ msgid ""
 "hour window is about to expire."
 msgstr ""
 
-#: db/seeds/settings.rb:3409
+#: db/seeds/settings.rb:3412
 msgid "Send postmaster mail if mail too large"
 msgstr ""
 
-#: db/seeds/settings.rb:3412
+#: db/seeds/settings.rb:3415
 msgid "Send postmaster reject mail to sender of mail if mail is too large."
 msgstr ""
 
@@ -17684,16 +17779,16 @@ msgstr "クライアントに送信"
 #: app/assets/javascripts/app/views/channel/sms_account_overview.jst.eco:51
 #: app/models/channel/driver/sms/massenversand.rb:45
 #: app/models/channel/driver/sms/message_bird.rb:92
-#: app/models/channel/driver/sms/twilio.rb:106 db/seeds/settings.rb:3226
+#: app/models/channel/driver/sms/twilio.rb:106 db/seeds/settings.rb:3229
 #: lib/excel_sheet/ticket.rb:32
 msgid "Sender"
 msgstr "送信者"
 
-#: db/seeds/settings.rb:3226
+#: db/seeds/settings.rb:3229
 msgid "Sender Format"
 msgstr "送信者のフォーマット"
 
-#: db/seeds/settings.rb:3254
+#: db/seeds/settings.rb:3257
 msgid "Sender Format Separator"
 msgstr "送信者の区切り文字"
 
@@ -17704,7 +17799,7 @@ msgstr "送信者の区切り文字"
 msgid "Sender Type"
 msgstr "送信者"
 
-#: db/seeds/settings.rb:3355
+#: db/seeds/settings.rb:3358
 msgid "Sender based on Reply-To header"
 msgstr "返信アドレス (Reply-to ヘッダー)"
 
@@ -17714,7 +17809,7 @@ msgstr "返信アドレス (Reply-to ヘッダー)"
 msgid "Sender of last article"
 msgstr "最後の記事に返信"
 
-#: db/seeds/object_manager_attributes.rb:2224
+#: db/seeds/object_manager_attributes.rb:2277
 #, fuzzy
 #| msgid "Email Address"
 msgid "Sending Email Address"
@@ -17748,7 +17843,7 @@ msgstr ""
 msgid "September"
 msgstr "9月"
 
-#: db/seeds/settings.rb:4015
+#: db/seeds/settings.rb:4018
 msgid "Sequencer log level"
 msgstr ""
 
@@ -17807,7 +17902,7 @@ msgstr ""
 msgid "Set a title for your ticket"
 msgstr "チケット作成"
 
-#: db/seeds/settings.rb:5421
+#: db/seeds/settings.rb:5424
 msgid "Set agent limit"
 msgstr ""
 
@@ -17837,7 +17932,7 @@ msgstr "認証"
 msgid "Set available ticket types"
 msgstr ""
 
-#: db/seeds/settings.rb:3750
+#: db/seeds/settings.rb:3753
 msgid "Set backend which is being used for import."
 msgstr ""
 
@@ -17875,10 +17970,10 @@ msgstr "外部呼び出しIDを設定"
 msgid "Set security keys as default"
 msgstr "既定に設定"
 
-#: db/seeds/settings.rb:5583
+#: db/seeds/settings.rb:5586
 msgid ""
 "Set timeframe in seconds. If it's set to 0 you can delete notes without time "
-"limits"
+"limits."
 msgstr ""
 
 #: app/frontend/shared/entities/ticket-article/action/plugins/changeVisibility.ts:29
@@ -17937,7 +18032,7 @@ msgstr "認証"
 msgid "Set up two-factor authentication: %s"
 msgstr "認証"
 
-#: db/seeds/settings.rb:3358
+#: db/seeds/settings.rb:3361
 msgid ""
 "Set/overwrite sender/from of email based on \"Reply-To\" header. Useful to "
 "set correct customer if email is received from a third-party system on "
@@ -17989,7 +18084,7 @@ msgstr "共有"
 
 #: app/assets/javascripts/app/controllers/agent_ticket_create/sidebar_shared_draft.coffee:12
 #: app/assets/javascripts/app/models/group.coffee:17
-#: db/seeds/object_manager_attributes.rb:2293
+#: db/seeds/object_manager_attributes.rb:2348
 #, fuzzy
 #| msgid "Shared"
 msgid "Shared Drafts"
@@ -18009,7 +18104,7 @@ msgstr "共有"
 
 #: app/controllers/tickets_controller.rb:89
 #: app/services/service/ticket/create.rb:180
-#: app/services/service/ticket/update.rb:72
+#: app/services/service/ticket/update.rb:71
 msgid "Shared draft cannot be selected for this ticket."
 msgstr ""
 
@@ -18050,7 +18145,7 @@ msgid "Shared mailbox"
 msgstr "Eメールの送信"
 
 #: app/assets/javascripts/app/models/organization.coffee:7
-#: db/seeds/object_manager_attributes.rb:1746
+#: db/seeds/object_manager_attributes.rb:1786
 msgid "Shared organization"
 msgstr "組織の共有"
 
@@ -18108,7 +18203,7 @@ msgstr "全て表示…"
 msgid "Show authenticator app secret"
 msgstr "%sで認証"
 
-#: db/seeds/settings.rb:5803
+#: db/seeds/settings.rb:5806
 msgid "Show calendar weeks in the picker of date/datetime fields"
 msgstr ""
 
@@ -18131,7 +18226,7 @@ msgstr ""
 msgid "Show matching ticket(s) in the warning"
 msgstr ""
 
-#: db/seeds/settings.rb:2763
+#: db/seeds/settings.rb:2766
 msgid "Show matching tickets in the warning"
 msgstr ""
 
@@ -18198,7 +18293,7 @@ msgid "Show ticket viewers"
 msgstr "概要"
 
 #: app/assets/javascripts/app/views/time_accounting/settings.jst.eco:6
-#: db/seeds/settings.rb:4080
+#: db/seeds/settings.rb:4083
 #, fuzzy
 #| msgid "Enable time accounting for following matching tickets."
 msgid "Show time accounting dialog when updating matching tickets."
@@ -18208,7 +18303,7 @@ msgstr "マッチした次のチケットに対する時間会計を有効化し
 msgid "Show title in form."
 msgstr "フォームのタイトルを表示。"
 
-#: db/seeds/settings.rb:2746
+#: db/seeds/settings.rb:2749
 #, fuzzy
 #| msgid "How to use it"
 msgid "Show to user roles"
@@ -18273,14 +18368,14 @@ msgstr "サインアウト"
 #: app/assets/javascripts/app/views/login.jst.eco:50
 #: app/assets/javascripts/app/views/widget/two_factor_login/security_code.jst.eco:26
 #: app/frontend/apps/desktop/pages/authentication/components/LoginRecoveryCode.vue:77
-#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:143
+#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:154
 #: app/frontend/apps/desktop/pages/authentication/routes.ts:13
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:216
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:149
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:231
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:160
 #: app/frontend/apps/mobile/pages/authentication/components/LoginRecoveryCode.vue:80
-#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:147
+#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:158
 #: app/frontend/apps/mobile/pages/authentication/routes.ts:15
-#: app/frontend/apps/mobile/pages/playground/views/PlaygroundOverview.vue:475
+#: app/frontend/apps/mobile/pages/playground/views/PlaygroundOverview.vue:624
 msgid "Sign in"
 msgstr "サインイン"
 
@@ -18299,7 +18394,7 @@ msgid "Sign out"
 msgstr "サインアウト"
 
 #: app/assets/javascripts/app/controllers/signup.coffee:18
-#: app/frontend/apps/desktop/pages/authentication/routes.ts:97
+#: app/frontend/apps/desktop/pages/authentication/routes.ts:98
 msgid "Sign up"
 msgstr "サインアップ"
 
@@ -18316,7 +18411,7 @@ msgstr "サインイン"
 #: app/assets/javascripts/app/controllers/ticket_shared_draft_modal.coffee:174
 #: app/assets/javascripts/app/models/group.coffee:13
 #: app/controllers/integration/smime_controller.rb:119
-#: db/seeds/object_manager_attributes.rb:2259
+#: db/seeds/object_manager_attributes.rb:2313
 msgid "Signature"
 msgstr "署名"
 
@@ -18346,7 +18441,7 @@ msgstr "署名"
 msgid "Signed"
 msgstr ""
 
-#: db/seeds/settings.rb:1949
+#: db/seeds/settings.rb:1952
 #, fuzzy
 #| msgid "or sign in using"
 msgid "Signing & Encrypting"
@@ -18358,7 +18453,7 @@ msgstr "or sign in using"
 msgid "Signup Screen"
 msgstr "署名"
 
-#: db/seeds/settings.rb:2725
+#: db/seeds/settings.rb:2728
 #, fuzzy
 #| msgid "assign tickets"
 msgid "Similar tickets found"
@@ -18394,11 +18489,11 @@ msgstr "メールを確認できません。 管理者に問い合わせて下�
 msgid "Simple Storage Service not reachable."
 msgstr ""
 
-#: db/seeds/settings.rb:1806
+#: db/seeds/settings.rb:1809
 msgid "Sina Weibo"
 msgstr ""
 
-#: db/seeds/settings.rb:1806
+#: db/seeds/settings.rb:1809
 msgid "Sina Weibo Open Portal"
 msgstr ""
 
@@ -18429,7 +18524,7 @@ msgstr "確認メールを再送信"
 msgid "Sipgate"
 msgstr ""
 
-#: db/seeds/settings.rb:1691
+#: db/seeds/settings.rb:1694
 msgid "Site"
 msgstr "Site"
 
@@ -18493,27 +18588,27 @@ msgstr ""
 msgid "Sorry, there is currently no CTI backend enabled."
 msgstr ""
 
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:262
+#, fuzzy
+#| msgid "pending"
+msgid "Sort by %s ascending"
+msgstr "保留中"
+
+#: app/frontend/apps/desktop/components/CommonTable/TableHeader.vue:266
+#, fuzzy
+#| msgid "pending"
+msgid "Sort by %s descending"
+msgstr "保留中"
+
 #: app/frontend/apps/desktop/composables/dragAndDrop/useKeyboardKeysForDragAndDrop.ts:146
 msgid ""
 "Sortable list focused. Use up and down arrows to navigate items. Press Space "
-"to select and item and again on another item to swap them."
+"to select an item and again on another item to swap them."
 msgstr ""
 
 #: app/frontend/apps/desktop/composables/dragAndDrop/useAccessibleDragAndDrop.ts:50
 msgid "Sorted %s in user taskbar list to position %s."
 msgstr ""
-
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:511
-#, fuzzy
-#| msgid "pending"
-msgid "Sorted ascending"
-msgstr "保留中"
-
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:512
-#, fuzzy
-#| msgid "pending"
-msgid "Sorted descending"
-msgstr "保留中"
 
 #: app/assets/javascripts/app/controllers/ticket_overview/settings.coffee:40
 #: app/assets/javascripts/app/models/overview.coffee:23
@@ -18543,7 +18638,7 @@ msgstr "ソース"
 msgid "Sources"
 msgstr "ソース"
 
-#: db/seeds/settings.rb:2201
+#: db/seeds/settings.rb:2204
 msgid "Special character required"
 msgstr ""
 
@@ -18699,7 +18794,7 @@ msgstr "Zammadの起動"
 msgid "Starting Zammad…"
 msgstr "Zammadの起動"
 
-#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:186
+#: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupImport/GuidedSetupImportSource/GuidedSetupImportSourceStatus.vue:185
 #, fuzzy
 #| msgid "Starting Zammad"
 msgid "Starting import…"
@@ -18718,17 +18813,17 @@ msgstr "Zammadの起動"
 #: app/views/messaging/ticket_create/zh-tw.md.erb:5
 #: app/views/messaging/ticket_info/pt-br.md.erb:5
 #: app/views/messaging/ticket_info/zh-tw.md.erb:5
-#: db/seeds/object_manager_attributes.rb:249 lib/excel_sheet/ticket.rb:25
+#: db/seeds/object_manager_attributes.rb:256 lib/excel_sheet/ticket.rb:25
 msgid "State"
 msgstr "状態"
 
-#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:91
+#: app/frontend/apps/desktop/components/Ticket/TicketListTable.vue:121
 #, fuzzy
 #| msgid "State"
 msgid "State icon"
 msgstr "状態"
 
-#: db/seeds/settings.rb:5455
+#: db/seeds/settings.rb:5458
 msgid "Stats Backend"
 msgstr ""
 
@@ -18766,7 +18861,7 @@ msgstr "ステータス"
 #: app/assets/javascripts/app/models/macro.coffee:9
 #: app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco:58
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts:8
-#: db/seeds/settings.rb:3017
+#: db/seeds/settings.rb:3020
 msgid "Stay on tab"
 msgstr "タブに留まる"
 
@@ -18812,26 +18907,26 @@ msgstr "ストレージメカニズム"
 msgid "Store"
 msgstr "保存"
 
-#: db/seeds/settings.rb:6057
+#: db/seeds/settings.rb:6060
 #, fuzzy
 #| msgid "Save configuration"
 msgid "Stores the AI provider configuration."
 msgstr "設定保存"
 
-#: db/seeds/settings.rb:5094
+#: db/seeds/settings.rb:5097
 msgid "Stores the GitHub configuration."
 msgstr ""
 
-#: db/seeds/settings.rb:5052
+#: db/seeds/settings.rb:5055
 msgid "Stores the GitLab configuration."
 msgstr ""
 
-#: db/seeds/settings.rb:6087
+#: db/seeds/settings.rb:6090
 msgid ""
 "Stores the ticket summarization options (e.g. which content is visible)."
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:1248
+#: db/seeds/object_manager_attributes.rb:1276
 msgid "Street"
 msgstr "建物名"
 
@@ -18850,7 +18945,7 @@ msgstr "建物名"
 msgid "Subject"
 msgstr "表題"
 
-#: db/seeds/settings.rb:3341
+#: db/seeds/settings.rb:3344
 msgid ""
 "Subject & References - Additional search for same article subject and same "
 "message ID in references header if no follow-up was recognized using default "
@@ -18879,7 +18974,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/settings/ticket_hook_position.jst.eco:11
 #: app/assets/javascripts/app/views/settings/ticket_number.jst.eco:17
 #: app/frontend/apps/desktop/pages/authentication/views/AdminPasswordAuth.vue:127
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:121
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:128
 #: app/frontend/apps/desktop/pages/authentication/views/PasswordResetVerify.vue:158
 #: app/frontend/apps/desktop/pages/guided-setup/components/GuidedSetupActionFooter.vue:50
 #: app/frontend/shared/form/i18n/locales.ts:41
@@ -18954,7 +19049,7 @@ msgid "Summarize section to about half its current size"
 msgstr ""
 
 #: app/assets/javascripts/app/views/ai/ticket_summary.jst.eco:42
-#: db/seeds/object_manager_attributes.rb:2403
+#: db/seeds/object_manager_attributes.rb:2461
 #, fuzzy
 #| msgid "Block Notifications"
 msgid "Summary Generation"
@@ -18988,7 +19083,7 @@ msgstr "日"
 msgid "Sunday"
 msgstr "日曜日"
 
-#: db/seeds/settings.rb:5542
+#: db/seeds/settings.rb:5545
 msgid "Support of multilingual Knowledge Base."
 msgstr ""
 
@@ -19004,7 +19099,7 @@ msgstr ""
 msgid "Switch to new layout"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:307
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:322
 #, fuzzy
 #| msgid "set to internal"
 msgid "Switch to old interface"
@@ -19028,7 +19123,7 @@ msgstr ""
 msgid "System"
 msgstr "システム"
 
-#: db/seeds/settings.rb:3238
+#: db/seeds/settings.rb:3241
 msgid "System Address Display Name"
 msgstr ""
 
@@ -19076,7 +19171,7 @@ msgid ""
 "Weblate, give it a try!"
 msgstr ""
 
-#: db/seeds/settings.rb:5615
+#: db/seeds/settings.rb:5618
 msgid ""
 "System-wide configuration of the query polling mechanism for ticket "
 "overviews."
@@ -19086,7 +19181,7 @@ msgstr ""
 msgid "SystemID"
 msgstr "システムID"
 
-#: db/seeds/settings.rb:3002
+#: db/seeds/settings.rb:3005
 msgid "Tab behaviour after ticket action"
 msgstr ""
 
@@ -19122,18 +19217,18 @@ msgstr "%s オブジェクトを削除。"
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketTags.vue:75
 #: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/TicketInformationDetails.vue:164
 #: app/views/knowledge_base/public/answers/show.html.erb:30
-#: db/seeds/object_manager_attributes.rb:393 db/seeds/permissions.rb:59
+#: db/seeds/object_manager_attributes.rb:403 db/seeds/permissions.rb:59
 #: lib/excel_sheet/ticket.rb:33
 msgid "Tags"
 msgstr "タグ"
 
-#: db/seeds/settings.rb:3369
+#: db/seeds/settings.rb:3372
 msgid ""
 "Take Reply-To header as sender/from of email and use the real name of origin "
 "from."
 msgstr ""
 
-#: db/seeds/settings.rb:3368
+#: db/seeds/settings.rb:3371
 msgid "Take Reply-To header as sender/from of email."
 msgstr ""
 
@@ -19240,7 +19335,7 @@ msgstr "テスト中"
 #: app/assets/javascripts/app/models/ticket_article.coffee:11
 #: app/assets/javascripts/app/views/ticket_shared_draft_modal.jst.eco:20
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSharedDraftFlyout.vue:208
-#: db/seeds/object_manager_attributes.rb:537
+#: db/seeds/object_manager_attributes.rb:552
 msgid "Text"
 msgstr "本文"
 
@@ -19327,12 +19422,6 @@ msgstr ""
 msgid "Thanks for the feedback. Please explain what went wrong?"
 msgstr ""
 
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:231
-#, fuzzy
-#| msgid "Update successful!"
-msgid "The %s selected tickets have been updated successfully."
-msgstr "アップデートができました！"
-
 #: lib/secure_mailing/pgp/tool/exec/agent.rb:13
 #, fuzzy
 #| msgid "%s Object(s) are created."
@@ -19395,7 +19484,7 @@ msgid "The OTRS import failed."
 msgstr "インポートが成功しました。"
 
 #: app/services/service/system/import/apply_otrs_configuration.rb:78
-msgid "The OTRS migrator plugin is not accessable. Please verify the API key."
+msgid "The OTRS migrator plugin is not accessible. Please verify the API key."
 msgstr ""
 
 #: lib/secure_mailing/pgp/tool/error.rb:106
@@ -19854,12 +19943,12 @@ msgstr ""
 msgid "The device could not be deleted."
 msgstr "%s オブジェクトを作成。"
 
-#: db/seeds/settings.rb:2296
+#: db/seeds/settings.rb:2299
 msgid "The divider between TicketHook and ticket number. E. g. ': '."
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_ai/provider.coffee:92
-#: app/assets/javascripts/app/lib/app_post/utils.coffee:1695
+#: app/assets/javascripts/app/lib/app_post/utils.coffee:1691
 #, fuzzy
 #| msgid "Unable to verify email. Please contact your administrator."
 msgid "The download could not be started. Please try again later."
@@ -20022,7 +20111,7 @@ msgstr "%s オブジェクトを更新。"
 msgid "The hours overlay"
 msgstr "メモボックスを開く"
 
-#: db/seeds/settings.rb:2271
+#: db/seeds/settings.rb:2274
 msgid ""
 "The identifier for a ticket, e.g. Ticket#, Call#, MyTicket#. The default is "
 "Ticket#."
@@ -20226,7 +20315,7 @@ msgstr "メールを確認できません。 管理者に問い合わせて下�
 msgid "The password is invalid."
 msgstr "署名"
 
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:85
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:92
 #, fuzzy
 #| msgid "Connection test successful"
 msgid "The password reset request was successful."
@@ -20690,12 +20779,12 @@ msgstr "%s オブジェクトを作成。"
 msgid "The test run was successful."
 msgstr ""
 
-#: db/seeds/settings.rb:3207
+#: db/seeds/settings.rb:3210
 msgid ""
 "The text at the beginning of the subject in an email forward, e. g. FWD."
 msgstr ""
 
-#: db/seeds/settings.rb:3185
+#: db/seeds/settings.rb:3188
 msgid ""
 "The text at the beginning of the subject in an email reply, e.g. RE, AW, or "
 "AS."
@@ -20713,7 +20802,7 @@ msgstr ""
 msgid "The text tool with the given ID could not be found."
 msgstr "%s オブジェクトを作成。"
 
-#: app/frontend/shared/components/Form/fields/FieldEditor/extensions/AiAssistantTextTools.ts:142
+#: app/frontend/shared/components/Form/fields/FieldEditor/extensions/AiAssistantTextTools.ts:144
 msgid ""
 "The text was modified. Your request has been aborted to prevent overwriting."
 msgstr ""
@@ -20844,7 +20933,7 @@ msgstr "認証"
 
 #: app/assets/javascripts/app/controllers/customer_ticket_create/sidebar_customer_default.coffee:29
 #: app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco:11
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:407
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:418
 msgid "The way to communicate with us is this thing called \"ticket\"."
 msgstr "弊社との通信方法は、この「チケット」と呼ばれるものです。"
 
@@ -21013,7 +21102,7 @@ msgstr "通知音"
 msgid "There was no public PGP key found."
 msgstr "オンラインのエージェントはいません。"
 
-#: lib/secure_mailing/backend/handler_security_options.rb:43
+#: lib/secure_mailing/backend/handler_security_options.rb:41
 #, fuzzy
 #| msgid "No results found"
 msgid "There was no recipient found."
@@ -21707,11 +21796,11 @@ msgstr "自動割り当て"
 msgid "Ticket Categorizer"
 msgstr "顧客を編集"
 
-#: db/seeds/settings.rb:2373
+#: db/seeds/settings.rb:2376
 msgid "Ticket Conditions Expert Mode"
 msgstr ""
 
-#: db/seeds/settings.rb:2399
+#: db/seeds/settings.rb:2402
 msgid "Ticket Conditions Regular Expression Operators"
 msgstr ""
 
@@ -21737,45 +21826,45 @@ msgstr "チケット作成を有効化"
 msgid "Ticket Group Dispatcher"
 msgstr "チケットのアップデート"
 
-#: db/seeds/settings.rb:2268
+#: db/seeds/settings.rb:2271
 msgid "Ticket Hook"
 msgstr "チケットフック"
 
-#: db/seeds/settings.rb:2293
+#: db/seeds/settings.rb:2296
 msgid "Ticket Hook Divider"
 msgstr ""
 
-#: db/seeds/settings.rb:2314
+#: db/seeds/settings.rb:2317
 msgid "Ticket Hook Position"
 msgstr "チケットフックの位置"
 
-#: db/seeds/settings.rb:2346
+#: db/seeds/settings.rb:2349
 msgid "Ticket Last Contact Behaviour"
 msgstr ""
 
-#: db/seeds/settings.rb:2425
+#: db/seeds/settings.rb:2428
 msgid "Ticket Number Format"
 msgstr "チケット番号のフォーマット"
 
-#: db/seeds/settings.rb:2455
+#: db/seeds/settings.rb:2458
 msgid "Ticket Number Increment"
 msgstr "チケット番号増分"
 
-#: db/seeds/settings.rb:2512
+#: db/seeds/settings.rb:2515
 msgid "Ticket Number Increment Date"
 msgstr ""
 
-#: db/seeds/settings.rb:2814
+#: db/seeds/settings.rb:2817
 msgid "Ticket Number ignore system_id"
 msgstr ""
 
-#: db/seeds/settings.rb:5947
+#: db/seeds/settings.rb:5950
 #, fuzzy
 #| msgid "Tickets of Organization"
 msgid "Ticket Organization Reassignment"
 msgstr "組織のチケット"
 
-#: db/seeds/settings.rb:5612
+#: db/seeds/settings.rb:5615
 #, fuzzy
 #| msgid "New Overview"
 msgid "Ticket Overview Query Polling"
@@ -21835,15 +21924,15 @@ msgstr "チケットのアップデート"
 msgid "Ticket States"
 msgstr "チケットのアップデート"
 
-#: db/seeds/settings.rb:3204
+#: db/seeds/settings.rb:3207
 msgid "Ticket Subject Forward"
 msgstr ""
 
-#: db/seeds/settings.rb:3182
+#: db/seeds/settings.rb:3185
 msgid "Ticket Subject Reply"
 msgstr "チケット件名返信"
 
-#: db/seeds/settings.rb:3161
+#: db/seeds/settings.rb:3164
 msgid "Ticket Subject Size"
 msgstr "チケット表題のサイズ"
 
@@ -21853,13 +21942,13 @@ msgstr "チケットのサブスクリプション"
 
 #: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:2
 #: app/assets/javascripts/app/views/ai/ticket_summary.jst.eco:7
-#: db/seeds/permissions.rb:239 db/seeds/settings.rb:6070
+#: db/seeds/permissions.rb:239 db/seeds/settings.rb:6073
 #, fuzzy
 #| msgid "Ticket update"
 msgid "Ticket Summary"
 msgstr "チケットのアップデート"
 
-#: db/seeds/settings.rb:6084
+#: db/seeds/settings.rb:6087
 #, fuzzy
 #| msgid "Ticket Number Format"
 msgid "Ticket Summary Config"
@@ -21879,11 +21968,11 @@ msgstr ""
 msgid "Ticket Title Rewriter"
 msgstr "新規概要"
 
-#: db/seeds/settings.rb:2886
+#: db/seeds/settings.rb:2889
 msgid "Ticket Trigger Loop Protection Articles Total"
 msgstr ""
 
-#: db/seeds/settings.rb:2867
+#: db/seeds/settings.rb:2870
 msgid "Ticket Trigger Loop Protection Articles per Ticket"
 msgstr ""
 
@@ -22084,7 +22173,7 @@ msgid "Ticket update failed."
 msgstr "チケットのアップデート"
 
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/useTicketEditTitle.ts:26
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:476
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:477
 #: app/frontend/apps/mobile/pages/ticket/views/TicketDetailView.vue:158
 #, fuzzy
 #| msgid "Update successful!"
@@ -22123,7 +22212,7 @@ msgid ""
 "</div>\n"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/ticket/routes.ts:41
+#: app/frontend/apps/desktop/pages/ticket/routes.ts:47
 #: app/frontend/apps/mobile/pages/ticket/views/TicketDetailView.vue:68
 msgid ""
 "Ticket with specified ID was not found. Try checking the URL for errors."
@@ -22169,10 +22258,10 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSetting/plugins/calendar.ts:8
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSetting/plugins/notifications.ts:8
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSetting/plugins/ticketOverviews.ts:8
-#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:118
+#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:119
 #: app/frontend/apps/mobile/pages/search/plugins/ticket.ts:9
 #: app/frontend/apps/mobile/pages/ticket/routes.ts:50
-#: app/frontend/apps/mobile/pages/ticket/views/TicketOverview.vue:159
+#: app/frontend/apps/mobile/pages/ticket/views/TicketOverview.vue:158
 msgid "Tickets"
 msgstr "チケット"
 
@@ -22189,7 +22278,7 @@ msgstr ""
 msgid "Tickets assigned to me: %s of %s"
 msgstr "私に割り当てられたチケット: %s 中 %s"
 
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:282
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:379
 #, fuzzy
 #| msgid "Ticket update"
 msgid "Tickets bulk edit"
@@ -22214,7 +22303,7 @@ msgstr "ユーザーのチケット"
 msgid "Tickets with \"%s\""
 msgstr "ユーザーのチケット"
 
-#: db/seeds/settings.rb:2742
+#: db/seeds/settings.rb:2745
 msgid "Tickets with the same attributes were found."
 msgstr ""
 
@@ -22233,33 +22322,33 @@ msgstr "時間"
 #: app/assets/javascripts/app/controllers/_ui_element/object_selector.coffee:134
 #: app/assets/javascripts/app/controllers/ticket_zoom/time_accounting_modal.coffee:12
 #: app/assets/javascripts/app/controllers/time_accounting.coffee:3
-#: db/seeds/permissions.rb:107 db/seeds/settings.rb:4050
+#: db/seeds/permissions.rb:107 db/seeds/settings.rb:4053
 msgid "Time Accounting"
 msgstr "時間会計"
 
-#: db/seeds/settings.rb:4113
+#: db/seeds/settings.rb:4116
 #, fuzzy
 #| msgid "Time Accounting"
 msgid "Time Accounting Custom Unit"
 msgstr "時間会計"
 
-#: db/seeds/settings.rb:4149
+#: db/seeds/settings.rb:4152
 #, fuzzy
 #| msgid "Time Accounting"
 msgid "Time Accounting Default Type"
 msgstr "時間会計"
 
-#: db/seeds/settings.rb:4077
+#: db/seeds/settings.rb:4080
 msgid "Time Accounting Selector"
 msgstr ""
 
-#: db/seeds/settings.rb:4131
+#: db/seeds/settings.rb:4134
 #, fuzzy
 #| msgid "Time Accounting"
 msgid "Time Accounting Types"
 msgstr "時間会計"
 
-#: db/seeds/settings.rb:4095
+#: db/seeds/settings.rb:4098
 #, fuzzy
 #| msgid "Time Accounting"
 msgid "Time Accounting Unit"
@@ -22351,7 +22440,7 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/TicketSimpleTable.vue:34
 #: app/frontend/apps/mobile/pages/ticket/views/TicketCreate.vue:136
 #: app/graphql/gql/types/overview_type.rb:92
-#: db/seeds/object_manager_attributes.rb:33 lib/excel_sheet/ticket.rb:24
+#: db/seeds/object_manager_attributes.rb:34 lib/excel_sheet/ticket.rb:24
 msgid "Title"
 msgstr "タイトル"
 
@@ -22368,11 +22457,11 @@ msgstr "フォームのタイトル"
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleMetadataDialog.vue:89
 #: app/frontend/shared/entities/ticket-article/action/plugins/email/forward.ts:29
 #: app/frontend/shared/entities/ticket/composables/useTicketEditForm.ts:177
-#: db/seeds/object_manager_attributes.rb:483
+#: db/seeds/object_manager_attributes.rb:496
 msgid "To"
 msgstr "宛先"
 
-#: db/seeds/settings.rb:3485
+#: db/seeds/settings.rb:3488
 msgid ""
 "To archive all outgoing emails from Zammad to external, you can store a BCC "
 "email address here."
@@ -22528,15 +22617,15 @@ msgstr "トークンアクセス"
 msgid "Token authorization failed."
 msgstr "認証"
 
-#: db/seeds/settings.rb:5260
+#: db/seeds/settings.rb:5263
 msgid "Token for CTI."
 msgstr ""
 
-#: db/seeds/settings.rb:5164
+#: db/seeds/settings.rb:5167
 msgid "Token for Sipgate."
 msgstr ""
 
-#: db/seeds/settings.rb:3547
+#: db/seeds/settings.rb:3550
 msgid "Token for monitoring."
 msgstr ""
 
@@ -22695,7 +22784,7 @@ msgstr ""
 msgid "Try New BETA UI"
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:124
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:131
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSecurityBadge.vue:125
 #: app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleWhatsappMediaBadge.vue:26
 #, fuzzy
@@ -22704,7 +22793,7 @@ msgid "Try again"
 msgstr "再度"
 
 #: app/assets/javascripts/app/views/widget/two_factor_login/help_text.jst.eco:4
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:256
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:271
 #: app/frontend/apps/mobile/pages/authentication/views/Login.vue:138
 #: app/frontend/shared/composables/authentication/useLoginTwoFactor.ts:96
 msgid "Try another method"
@@ -22735,6 +22824,10 @@ msgstr "火曜日"
 msgid "Turn chat into ticket"
 msgstr ""
 
+#: app/views/init/index.html.erb app/views/init/spinner-loading.html.erb
+msgid "Turn on JavaScript to use Zammad."
+msgstr ""
+
 #: app/assets/javascripts/app/controllers/webhook.coffee:280
 #: app/assets/javascripts/app/views/channel/email_account_wizard.jst.eco:89
 #: app/assets/javascripts/app/views/channel/email_notification_wizard.jst.eco:48
@@ -22753,25 +22846,25 @@ msgstr ""
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:71
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:25
-#: db/seeds/settings.rb:1344
+#: db/seeds/settings.rb:1347
 msgid "Twitter"
 msgstr "ツイッター"
 
-#: db/seeds/settings.rb:1352
+#: db/seeds/settings.rb:1355
 msgid "Twitter App Credentials"
 msgstr "ツイッターアプリの認証情報"
 
-#: db/seeds/settings.rb:1345
+#: db/seeds/settings.rb:1348
 #, fuzzy
 #| msgid "Twitter Secret"
 msgid "Twitter Developer Site"
 msgstr "ツイッターの秘密"
 
-#: db/seeds/settings.rb:1359
+#: db/seeds/settings.rb:1362
 msgid "Twitter Key"
 msgstr "ツイッターのキー"
 
-#: db/seeds/settings.rb:1365
+#: db/seeds/settings.rb:1368
 msgid "Twitter Secret"
 msgstr "ツイッターの秘密"
 
@@ -22826,8 +22919,8 @@ msgid ""
 msgstr ""
 
 #: app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfiguration/TwoFactorConfigurationSecurityKeys.vue:208
-#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:102
-#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:108
+#: app/frontend/apps/desktop/pages/authentication/components/LoginTwoFactor.vue:111
+#: app/frontend/apps/mobile/pages/authentication/components/LoginTwoFactor.vue:117
 #, fuzzy
 #| msgid "Authentication"
 msgid "Two-factor authentication method could not be initiated."
@@ -22881,7 +22974,7 @@ msgstr "アップデートができました！"
 #: app/frontend/apps/desktop/entities/channel-email/composables/useEmailInboundForm.ts:100
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/IdoitFlyout.vue:117
 #: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/TicketSidebarIdoitContent.vue:211
-#: db/seeds/object_manager_attributes.rb:125
+#: db/seeds/object_manager_attributes.rb:129
 msgid "Type"
 msgstr "タイプ"
 
@@ -22891,29 +22984,17 @@ msgstr "タイプ"
 msgid "Type:"
 msgstr "タイプ"
 
-#: db/seeds/settings.rb:6022
-msgid "UI Desktop BETA Switch Admin Menu"
-msgstr ""
-
-#: db/seeds/settings.rb:6031
-msgid "UI Desktop BETA Switch Roles"
-msgstr ""
-
-#: db/seeds/settings.rb:6013
-msgid "UI Desktop Beta Switch"
-msgstr ""
-
 #: app/assets/javascripts/app/views/integration/ldap.jst.eco:44
 msgid "UID"
 msgstr ""
 
-#: db/seeds/settings.rb:1930
+#: db/seeds/settings.rb:1933
 #, fuzzy
 #| msgid "New Attribute"
 msgid "UID Attribute Name"
 msgstr "新規属性"
 
-#: db/seeds/settings.rb:2064
+#: db/seeds/settings.rb:2067
 #, fuzzy
 #| msgid "Date & Time"
 msgid "UID Field"
@@ -23087,7 +23168,7 @@ msgid ""
 "even better and complete the translation."
 msgstr ""
 
-#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:88
+#: app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee:89
 #: app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket_summary.coffee:6
 msgid "Upcoming Events"
 msgstr ""
@@ -23123,6 +23204,12 @@ msgstr ""
 msgid "Update Escalation At"
 msgstr ""
 
+#: db/seeds/schedulers.rb:259
+#, fuzzy
+#| msgid "Defines pretty date format."
+msgid "Update Exchange OAuth2 token."
+msgstr "日付の形式を定義します。"
+
 #: lib/excel_sheet/ticket.rb:68
 msgid "Update In Min"
 msgstr ""
@@ -23136,10 +23223,6 @@ msgstr "更新期限"
 #: app/assets/javascripts/app/controllers/_plugin/keyboard_shortcuts.coffee:513
 msgid "Update as closed"
 msgstr "完了としてアップデート"
-
-#: db/seeds/schedulers.rb:259
-msgid "Update exchange oauth 2 token."
-msgstr ""
 
 #: app/assets/javascripts/app/views/generic/object_import/index.jst.eco:14
 msgid "Update existing records"
@@ -23170,7 +23253,7 @@ msgstr "共有"
 msgid "Update successful."
 msgstr ""
 
-#: db/seeds/settings.rb:5959
+#: db/seeds/settings.rb:5962
 #, fuzzy
 #| msgid "%s Object(s) are updated."
 msgid "Update the most recent tickets."
@@ -23226,7 +23309,7 @@ msgstr ""
 #: app/assets/javascripts/app/models/ticket.coffee:30
 #: app/assets/javascripts/app/models/user.coffee:17
 #: app/frontend/shared/entities/organization/stores/objectAttributes.ts:41
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:117
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:120
 #: app/frontend/shared/entities/user/stores/objectAttributes.ts:44
 #: app/graphql/gql/types/overview_type.rb:115
 msgid "Updated at"
@@ -23248,7 +23331,7 @@ msgstr "次で更新済"
 #: app/assets/javascripts/app/models/ticket_article.coffee:17
 #: app/assets/javascripts/app/models/user.coffee:16
 #: app/frontend/shared/entities/organization/stores/objectAttributes.ts:31
-#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:106
+#: app/frontend/shared/entities/ticket/stores/objectAttributes.ts:109
 #: app/frontend/shared/entities/user/stores/objectAttributes.ts:33
 #: app/graphql/gql/types/overview_type.rb:114
 msgid "Updated by"
@@ -23401,7 +23484,7 @@ msgstr ""
 msgid "Use double click to change level of the row."
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:2409
+#: db/seeds/object_manager_attributes.rb:2467
 #, fuzzy
 #| msgid "Restore Defaults"
 msgid "Use global default"
@@ -23427,18 +23510,18 @@ msgstr ""
 msgid "Use the camera to take a photo for the avatar."
 msgstr ""
 
-#: db/seeds/settings.rb:2360
+#: db/seeds/settings.rb:2363
 msgid ""
 "Use the start time of the last customer thread (which may consist of "
 "multiple articles)."
 msgstr ""
 
-#: db/seeds/settings.rb:2359
+#: db/seeds/settings.rb:2362
 msgid "Use the time of the very last customer article."
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_integration/ldap.coffee:5
-msgid "Use this switch to start synchronization of your ldap sources."
+msgid "Use this switch to start synchronization of your LDAP sources."
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_plugin/keyboard_shortcuts.coffee:141
@@ -23576,7 +23659,7 @@ msgstr "ユーザー名/メールアドレス"
 msgid "User email could not be extracted from 'id_token'."
 msgstr ""
 
-#: db/seeds/settings.rb:1157
+#: db/seeds/settings.rb:1160
 msgid "User email for multiple users"
 msgstr ""
 
@@ -23690,9 +23773,9 @@ msgid "Username"
 msgstr "ユーザー名"
 
 #: app/frontend/apps/desktop/pages/authentication/views/AdminPasswordAuth.vue:44
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:107
-#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:42
-#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:40
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:124
+#: app/frontend/apps/desktop/pages/authentication/views/PasswordReset.vue:48
+#: app/frontend/apps/mobile/pages/authentication/components/LoginCredentialsForm.vue:41
 #, fuzzy
 #| msgid "Username / email"
 msgid "Username / Email"
@@ -23761,7 +23844,7 @@ msgid ""
 msgstr ""
 
 #: app/frontend/shared/components/CommonUserAvatar/CommonUserAvatar.vue:117
-#: db/seeds/object_manager_attributes.rb:1492
+#: db/seeds/object_manager_attributes.rb:1526
 msgid "VIP"
 msgstr "VIP"
 
@@ -23814,7 +23897,7 @@ msgstr ""
 msgid "Verification email could not be sent."
 msgstr "通知が送信された場合。"
 
-#: db/seeds/settings.rb:1946
+#: db/seeds/settings.rb:1949
 msgid ""
 "Verification of the TLS connection to the IDP SSO target URL. Only relevant "
 "during setting up SAML authentication."
@@ -23919,9 +24002,9 @@ msgstr "新規チケット"
 #: app/assets/javascripts/app/models/ticket_article.coffee:14
 #: app/assets/javascripts/app/views/generic/ticket_perform_action/article.jst.eco:3
 #: app/assets/javascripts/app/views/generic/ticket_perform_action/notification.jst.eco:3
-#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:131
+#: app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditFlyout.vue:143
 #: app/frontend/shared/entities/ticket/composables/useTicketEditForm.ts:152
-#: db/seeds/object_manager_attributes.rb:450
+#: db/seeds/object_manager_attributes.rb:462
 msgid "Visibility"
 msgstr "可視性"
 
@@ -23962,14 +24045,14 @@ msgid "Warning"
 msgstr "待機中"
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:34
-#: db/seeds/settings.rb:2729
+#: db/seeds/settings.rb:2732
 #, fuzzy
 #| msgid "Add Tag"
 msgid "Warning message"
 msgstr "タグを追加"
 
 #: app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee:33
-#: db/seeds/settings.rb:2712
+#: db/seeds/settings.rb:2715
 #, fuzzy
 #| msgid "Warning"
 msgid "Warning title"
@@ -23984,7 +24067,7 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/_channel/web.coffee:3
 #: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/plugins/web.ts:7
 #: app/frontend/shared/entities/ticket-article/action/plugins/web.ts:12
-#: db/seeds/object_manager_attributes.rb:956 db/seeds/permissions.rb:89
+#: db/seeds/object_manager_attributes.rb:977 db/seeds/permissions.rb:89
 msgid "Web"
 msgstr "ウェブ"
 
@@ -23995,6 +24078,14 @@ msgstr ""
 #: app/assets/javascripts/app/controllers/knowledge_base/base_form.coffee:97
 #: app/assets/javascripts/app/controllers/knowledge_base/server_snippet.coffee:2
 msgid "Web Server Configuration"
+msgstr ""
+
+#: db/seeds/settings.rb:310
+msgid "WebSocket backend"
+msgstr ""
+
+#: db/seeds/settings.rb:318
+msgid "WebSocket port"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_channel/sms.coffee:201
@@ -24035,14 +24126,6 @@ msgstr ""
 msgid "Website"
 msgstr "ウェブサイト"
 
-#: db/seeds/settings.rb:310
-msgid "Websocket backend"
-msgstr ""
-
-#: db/seeds/settings.rb:318
-msgid "Websocket port"
-msgstr ""
-
 #: app/assets/javascripts/app/controllers/_ui_element/basedate.coffee:157
 msgid "Wed"
 msgstr "水"
@@ -24066,11 +24149,11 @@ msgstr "週"
 
 #: app/assets/javascripts/app/controllers/_profile/linked_accounts.coffee:101
 #: app/frontend/shared/composables/authentication/useThirdPartyAuthentication.ts:67
-#: db/seeds/settings.rb:1805
+#: db/seeds/settings.rb:1808
 msgid "Weibo"
 msgstr ""
 
-#: db/seeds/settings.rb:1813
+#: db/seeds/settings.rb:1816
 msgid "Weibo App Credentials"
 msgstr ""
 
@@ -24087,7 +24170,7 @@ msgstr "ウェルカムメッセージ"
 #: app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco:2
 #: app/assets/javascripts/app/views/welcome.jst.eco:2
 #: app/frontend/apps/desktop/pages/guided-setup/views/GuidedSetupStart.vue:43
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:401
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:412
 msgid "Welcome!"
 msgstr "ようこそ！"
 
@@ -24155,9 +24238,13 @@ msgid "When should the job run?"
 msgstr "いつジョブを実行しますか？"
 
 #: app/assets/javascripts/app/views/channel/chat.jst.eco:218
+#, fuzzy
+#| msgid ""
+#| "When you turn on debugging by setting the option §debug§ to §true§ the "
+#| "reason gets printed to the javascript console."
 msgid ""
 "When you turn on debugging by setting the option §debug§ to §true§ the "
-"reason gets printed to the javascript console."
+"reason gets printed to the JavaScript console."
 msgstr ""
 "オプション§デバッグ§を§真§にしてデバッグをオンにすると、理由が javascriptコン"
 "ソールに印刷されます。"
@@ -24299,15 +24386,15 @@ msgstr ""
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingNewBetaUi.vue:104
 #, fuzzy
 #| msgid "Feedback"
-msgid "Would you like to give us feedback on the BETA UI? "
+msgid "Would you like to give us feedback on the BETA UI?"
 msgstr "フィードバック"
 
 #: app/assets/javascripts/app/controllers/_ai/text_tool.coffee:16
-#: db/seeds/permissions.rb:245 db/seeds/settings.rb:6103
+#: db/seeds/permissions.rb:245 db/seeds/settings.rb:6106
 msgid "Writing Assistant"
 msgstr ""
 
-#: db/seeds/settings.rb:6117
+#: db/seeds/settings.rb:6120
 msgid "Writing Assistant Fixed Instructions"
 msgstr ""
 
@@ -24328,7 +24415,7 @@ msgid ""
 msgstr ""
 
 #: app/assets/javascripts/app/views/generic/text_tools_modal.jst.eco:8
-#: app/frontend/shared/components/Form/fields/FieldEditor/extensions/AiAssistantTextTools.ts:38
+#: app/frontend/shared/components/Form/fields/FieldEditor/extensions/AiAssistantTextTools.ts:40
 #, fuzzy
 #| msgid "Unable to verify email. Please contact your administrator."
 msgid ""
@@ -24366,7 +24453,7 @@ msgid "Yes, add attachments now"
 msgstr "アップロードに添付オプションを追加。"
 
 #: app/assets/javascripts/app/controllers/ticket_zoom/checklist_modal.coffee:5
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:386
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:387
 #, fuzzy
 #| msgid "Remove"
 msgid "Yes, open the checklist"
@@ -24405,10 +24492,6 @@ msgstr ""
 
 #: app/models/transaction/notification.rb:73
 msgid "You are receiving this because you were mentioned in this ticket."
-msgstr ""
-
-#: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingCalendar.vue:252
-msgid "You calendar subscription settings were updated."
 msgstr ""
 
 #: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingNewBetaUi.vue:37
@@ -24604,15 +24687,10 @@ msgstr ""
 "してバックエンドを切り替えられます。"
 
 #: app/assets/javascripts/app/controllers/_plugin/navigation.coffee:185
-msgid ""
-"You can switch between the old and the New BETA UI at any moment in the "
-"Profile > New BETA UI section."
-msgstr ""
-
 #: app/frontend/apps/desktop/components/BetaUi/composables/useBetaUi.ts:82
 msgid ""
 "You can switch between the old and the New BETA UI at any moment in the "
-"Profile Settings > New BETA UI section."
+"Profile settings > New BETA UI section."
 msgstr ""
 
 #: app/assets/javascripts/app/views/integration/check_mk.jst.eco:32
@@ -24641,19 +24719,19 @@ msgstr ""
 msgid "You do not have administrator permission."
 msgstr ""
 
-#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:41
+#: app/frontend/apps/desktop/components/CommonTable/CellContent/CellCheckbox.vue:59
 #, fuzzy
 #| msgid "You have not created a ticket yet."
 msgid "You do not have permission to update"
 msgstr "まだチケットを作成していません。"
 
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:431
+#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:419
 #, fuzzy
 #| msgid "You have not created a ticket yet."
 msgid "You don't have more tickets to load."
 msgstr "まだチケットを作成していません。"
 
-#: app/frontend/shared/router/guards/before/permission.ts:32
+#: app/frontend/shared/router/guards/before/permission.ts:27
 msgid "You don't have the necessary permissions to access this page."
 msgstr ""
 
@@ -24687,7 +24765,7 @@ msgstr ""
 msgid "You have insufficient rights to view this organization."
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/ticket/routes.ts:39
+#: app/frontend/apps/desktop/pages/ticket/routes.ts:45
 #: app/frontend/apps/mobile/pages/ticket/views/TicketDetailView.vue:69
 msgid "You have insufficient rights to view this ticket."
 msgstr ""
@@ -24717,7 +24795,7 @@ msgid "You have no unread messages"
 msgstr ""
 
 #: app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco:10
-#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:404
+#: app/frontend/apps/desktop/pages/ticket-overviews/components/TicketList.vue:415
 msgid "You have not created a ticket yet."
 msgstr "まだチケットを作成していません。"
 
@@ -24739,7 +24817,7 @@ msgstr ""
 msgid "You have unchecked items in the checklist."
 msgstr ""
 
-#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:381
+#: app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue:382
 #, fuzzy
 #| msgid "Sure to delete this object?"
 msgid ""
@@ -24756,7 +24834,7 @@ msgstr ""
 #, fuzzy
 #| msgid ""
 #| "You need to add the following Javascript code snippet to your web page"
-msgid "You need to add the following Javascript code snippet to your web page:"
+msgid "You need to add the following JavaScript code snippet to your web page:"
 msgstr ""
 "次のJavascriptコードスニペットを、ウェブページに追加する必要があります。"
 
@@ -24769,7 +24847,7 @@ msgstr ""
 msgid "You need to configure the Zammad endpoints in the %s:"
 msgstr ""
 
-#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:427
+#: app/frontend/apps/desktop/components/CommonTable/CommonAdvancedTable.vue:415
 msgid "You reached the table limit of %s tickets (%s remaining)."
 msgstr ""
 
@@ -24915,12 +24993,16 @@ msgstr "%s オブジェクトを更新。"
 msgid "Your avatar has been uploaded."
 msgstr "%s オブジェクトを作成。"
 
+#: app/frontend/apps/desktop/pages/personal-setting/views/PersonalSettingCalendar.vue:252
+msgid "Your calendar subscription settings were updated."
+msgstr ""
+
 #: app/assets/javascripts/app/views/exchange/app_config.jst.eco:31
 #: app/assets/javascripts/app/views/facebook/app_config.jst.eco:23
 #: app/assets/javascripts/app/views/google/app_config.jst.eco:23
 #: app/assets/javascripts/app/views/microsoft365/app_config.jst.eco:31
 #: app/assets/javascripts/app/views/microsoft_graph/app_config.jst.eco:31
-#: db/seeds/settings.rb:1371
+#: db/seeds/settings.rb:1374
 msgid "Your callback URL"
 msgstr ""
 
@@ -25009,7 +25091,7 @@ msgstr ""
 
 #: app/assets/javascripts/app/views/generic/login_preview.jst.eco:4
 #: app/assets/javascripts/app/views/login.jst.eco:7
-#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:175
+#: app/frontend/apps/desktop/pages/authentication/views/Login.vue:190
 #: app/frontend/apps/mobile/pages/authentication/components/LoginHeader.vue:22
 #, fuzzy
 #| msgid ""
@@ -25053,7 +25135,7 @@ msgstr "お使いのZammadのバージョンは%sです。"
 msgid "Zendesk"
 msgstr ""
 
-#: db/seeds/object_manager_attributes.rb:1287
+#: db/seeds/object_manager_attributes.rb:1316
 msgid "Zip"
 msgstr "郵便番号"
 
@@ -25114,10 +25196,6 @@ msgstr "タグを追加"
 #: app/assets/javascripts/app/controllers/_ui_element/core_workflow_perform.coffee:169
 msgid "add option"
 msgstr "オプションの追加"
-
-#: db/seeds/settings.rb:11
-msgid "admin"
-msgstr ""
 
 #: app/assets/javascripts/app/controllers/_ui_element/_application_selector.coffee:25
 #: app/assets/javascripts/app/controllers/_ui_element/core_workflow_condition.coffee:67
@@ -25183,16 +25261,16 @@ msgstr "チケット割り当て"
 msgid "at"
 msgstr "次で"
 
-#: app/models/object_manager/attribute.rb:601
+#: app/models/object_manager/attribute.rb:604
 msgid "at least one letter is required"
 msgstr ""
 
-#: app/assets/javascripts/app/lib/app_post/utils.coffee:1080
+#: app/assets/javascripts/app/lib/app_post/utils.coffee:1076
 #: app/frontend/shared/composables/form/useCheckBodyAttachmentReference.ts:9
 msgid "attachment,attached,enclosed,enclosure"
 msgstr ""
 
-#: app/models/object_manager/attribute.rb:634
+#: app/models/object_manager/attribute.rb:637
 msgid "attribute is not editable"
 msgstr ""
 
@@ -25227,7 +25305,7 @@ msgstr "取り込み中"
 msgid "camera,image,photo,picture"
 msgstr ""
 
-#: app/models/object_manager/attribute.rb:680
+#: app/models/object_manager/attribute.rb:683
 msgid ""
 "can't be altered after creation (you can delete the attribute and create "
 "another with the desired value)"
@@ -25239,7 +25317,13 @@ msgstr ""
 msgid "can't be empty"
 msgstr ""
 
-#: app/models/object_manager/attribute.rb:592
+#: app/models/object_manager/attribute.rb:690
+#, fuzzy
+#| msgid "Account not verified"
+msgid "can't be modified"
+msgstr "アカウントが確認されていません"
+
+#: app/models/object_manager/attribute.rb:595
 msgid "can't be used because *_id and *_ids are not allowed"
 msgstr ""
 
@@ -25283,7 +25367,7 @@ msgstr "閉じる"
 msgid "closed"
 msgstr "完了"
 
-#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:135
+#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:137
 #, fuzzy
 #| msgid "Closed Tickets"
 msgid "closed tickets"
@@ -25438,23 +25522,29 @@ msgstr "保留中"
 msgid "detailed search"
 msgstr "詳細検索"
 
-#: db/seeds/settings.rb:1203
+#: db/seeds/settings.rb:1206
 #, fuzzy
 #| msgid "New password"
 msgid "developer password"
 msgstr "新しいパスワード"
+
+#: db/seeds/settings.rb:1103
+#, fuzzy
+#| msgid "Disable"
+msgid "disabled"
+msgstr "無効"
 
 #: app/assets/javascripts/app/views/customer_chat/chat_window.jst.eco:13
 msgid "disconnect"
 msgstr "切断"
 
 #: app/assets/javascripts/app/models/group.coffee:9
-#: db/seeds/object_manager_attributes.rb:2129
+#: db/seeds/object_manager_attributes.rb:2179
 msgid "do not reopen ticket after certain time but create new ticket"
 msgstr ""
 
 #: app/assets/javascripts/app/models/group.coffee:9
-#: db/seeds/object_manager_attributes.rb:2128
+#: db/seeds/object_manager_attributes.rb:2178
 msgid "do not reopen ticket but create new ticket"
 msgstr ""
 
@@ -25691,7 +25781,7 @@ msgstr "時"
 msgid "hours"
 msgstr "時間"
 
-#: db/seeds/settings.rb:2060
+#: db/seeds/settings.rb:2063
 #, fuzzy
 #| msgid "support@example.com"
 msgid "https://example.com"
@@ -25709,11 +25799,11 @@ msgstr ""
 msgid "i-doit"
 msgstr ""
 
-#: db/seeds/settings.rb:5009
+#: db/seeds/settings.rb:5012
 msgid "i-doit config"
 msgstr ""
 
-#: db/seeds/settings.rb:4982
+#: db/seeds/settings.rb:4985
 msgid "i-doit integration"
 msgstr ""
 
@@ -25812,7 +25902,7 @@ msgid "in process"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/_ui_element/active.coffee:5
-#: app/assets/javascripts/app/lib/app_post/utils.coffee:1455
+#: app/assets/javascripts/app/lib/app_post/utils.coffee:1451
 #: app/assets/javascripts/app/models/webhook.coffee:38
 #: app/assets/javascripts/app/views/generic/object_search/item_object.jst.eco:16
 #: app/assets/javascripts/app/views/generic/object_search/item_organization.jst.eco:4
@@ -25824,7 +25914,7 @@ msgstr "非アクティブ"
 msgid "internal"
 msgstr "内部"
 
-#: db/seeds/settings.rb:1187
+#: db/seeds/settings.rb:1190
 #, fuzzy
 #| msgid "internal"
 msgid "internal database"
@@ -25934,7 +26024,7 @@ msgid "is not included in the list"
 msgstr ""
 
 #: app/assets/javascripts/app/controllers/maintenance.coffee:84
-#: app/assets/javascripts/app/models/_application_model.coffee:63
+#: app/assets/javascripts/app/models/_application_model.coffee:65
 msgid "is required"
 msgstr ""
 
@@ -26000,7 +26090,7 @@ msgstr "変更済"
 msgid "just now"
 msgstr "たった今"
 
-#: db/seeds/settings.rb:2330
+#: db/seeds/settings.rb:2333
 msgid "left"
 msgstr ""
 
@@ -26217,7 +26307,7 @@ msgstr ""
 #: app/assets/javascripts/app/views/microsoft_graph/list.jst.eco:106
 #: app/assets/javascripts/app/views/profile/token_access.jst.eco:27
 #: app/assets/javascripts/app/views/widget/ticket_stats_list.jst.eco:7
-#: db/seeds/settings.rb:2332
+#: db/seeds/settings.rb:2335
 msgid "none"
 msgstr "なし"
 
@@ -26260,7 +26350,7 @@ msgstr "通知"
 msgid "now"
 msgstr "いいえ"
 
-#: app/models/object_manager/attribute.rb:598
+#: app/models/object_manager/attribute.rb:601
 msgid "only lowercase letters, numbers, and '_' are allowed"
 msgstr ""
 
@@ -26269,7 +26359,7 @@ msgstr ""
 msgid "open"
 msgstr "対応中"
 
-#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:126
+#: app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomerContent.vue:127
 #, fuzzy
 #| msgid "Open Tickets"
 msgid "open tickets"
@@ -26421,7 +26511,7 @@ msgstr "返信"
 msgid "required"
 msgstr "%sが必要です！"
 
-#: db/seeds/settings.rb:2331
+#: db/seeds/settings.rb:2334
 msgid "right"
 msgstr ""
 
@@ -26522,21 +26612,21 @@ msgstr ""
 msgid "shown"
 msgstr "表示"
 
-#: db/seeds/settings.rb:5161
+#: db/seeds/settings.rb:5164
 #, fuzzy
 #| msgid "Placetel"
 msgid "sipgate.io Token"
 msgstr "電話"
 
-#: db/seeds/settings.rb:5195
+#: db/seeds/settings.rb:5198
 msgid "sipgate.io alternative FQDN"
 msgstr ""
 
-#: db/seeds/settings.rb:5182
+#: db/seeds/settings.rb:5185
 msgid "sipgate.io config"
 msgstr ""
 
-#: db/seeds/settings.rb:5133
+#: db/seeds/settings.rb:5136
 msgid "sipgate.io integration"
 msgstr ""
 
@@ -26552,7 +26642,7 @@ msgstr "スキップ"
 msgid "sms"
 msgstr "SMS"
 
-#: app/models/object_manager/attribute.rb:595
+#: app/models/object_manager/attribute.rb:598
 msgid "spaces are not allowed"
 msgstr ""
 
@@ -26630,14 +26720,6 @@ msgstr ""
 #| msgid "Retweets are converted to Tickets"
 msgid "ticket %s was merged into this ticket"
 msgstr "リツイートはチケットに変換されました"
-
-#: db/seeds/settings.rb:1128
-msgid "ticket.agent"
-msgstr ""
-
-#: db/seeds/settings.rb:1136
-msgid "ticket.customer"
-msgstr ""
 
 #: app/assets/javascripts/app/controllers/_ui_element/_application_action.coffee:487
 #: app/assets/javascripts/app/controllers/_ui_element/_application_selector.coffee:25
@@ -26800,7 +26882,7 @@ msgstr "次の中 (比較)"
 #: app/frontend/apps/mobile/pages/ticket/views/TicketInformation/TicketInformationDetails.vue:81
 #: app/frontend/shared/components/ObjectAttributes/attributes/AttributeBoolean/AttributeBoolean.vue:13
 #: app/frontend/shared/entities/object-attributes/form/resolver/fields/active.ts:14
-#: db/seeds/object_manager_attributes.rb:1500 db/seeds/settings.rb:613
+#: db/seeds/object_manager_attributes.rb:1534 db/seeds/settings.rb:613
 msgid "yes"
 msgstr "はい"
 
@@ -26859,6 +26941,16 @@ msgstr "... テキストエリア全体の"
 #: app/assets/javascripts/app/views/dashboard/stats/ticket_waiting_time.jst.eco:3
 msgid "∅ Waiting time today"
 msgstr "∅ Waiting time today"
+
+#, fuzzy
+#~| msgid "assign tickets"
+#~ msgid "%s ticket selected"
+#~ msgstr "チケット割り当て"
+
+#, fuzzy
+#~| msgid "Update successful!"
+#~ msgid "The %s selected tickets have been updated successfully."
+#~ msgstr "アップデートができました！"
 
 #, fuzzy
 #~| msgid "Time Accounting"

@@ -26,6 +26,7 @@ import { useObjectAttributeFormFields } from '#shared/entities/object-attributes
 import { useObjectAttributeLoadFormFields } from '#shared/entities/object-attributes/composables/useObjectAttributeLoadFormFields.ts'
 import { flattenObjectAttributeValues } from '#shared/entities/object-attributes/utils.ts'
 import UserError from '#shared/errors/UserError.ts'
+import { extractEntityIds } from '#shared/form/utils/entity.ts'
 import type {
   EnumObjectManagerObjects,
   EnumFormUpdaterId,
@@ -36,7 +37,6 @@ import type {
   FormUpdaterMetaInput,
   FormUpdaterChangedFieldInput,
 } from '#shared/graphql/types.ts'
-import { parseGraphqlId } from '#shared/graphql/utils.ts'
 import { I18N, i18n } from '#shared/i18n.ts'
 import { QueryHandler } from '#shared/server/apollo/handler/index.ts'
 import type { EntityObject } from '#shared/types/entity.ts'
@@ -48,7 +48,6 @@ import type {
 import { camelize } from '#shared/utils/formatter.ts'
 import { getFirstFocusableElement } from '#shared/utils/getFocusableElements.ts'
 import getUuid from '#shared/utils/getUuid.ts'
-import { edgesToArray } from '#shared/utils/helpers.ts'
 import log from '#shared/utils/log.ts'
 import { markup } from '#shared/utils/markup.ts'
 import testFlags from '#shared/utils/testFlags.ts'
@@ -57,6 +56,7 @@ import FormGroup from './FormGroup.vue'
 import FormLayout from './FormLayout.vue'
 import { useFormUpdaterQuery } from './graphql/queries/formUpdater.api.ts'
 import { getFormClasses } from './initializeFormClasses.ts'
+import addTranslationFunctionPlugin from './plugins/addTranslationFunctionPlugin.ts'
 import { FormHandlerExecution, FormValidationVisibility } from './types.ts'
 import { getNodeByName as getFormkitFieldNode, getNodeId, setErrors } from './utils.ts'
 
@@ -89,6 +89,7 @@ import type {
 import type { Except, SetRequired } from 'type-fest'
 import type { Component, Ref, SetupContext } from 'vue'
 
+// oxlint-disable no-use-before-define
 export interface Props {
   id?: string
   schema?: FormSchemaNode[]
@@ -405,7 +406,7 @@ const delayedSubmitPlugin = (node: FormKitNode) => {
 }
 
 const localFormKitPlugins = computed(() => {
-  return [delayedSubmitPlugin, ...(props.formKitPlugins || [])]
+  return [delayedSubmitPlugin, addTranslationFunctionPlugin, ...(props.formKitPlugins || [])]
 })
 
 const formConfig = computed(() => {
@@ -443,13 +444,6 @@ const schemaDataFlags = computed(() => schemaData.flags)
 
 const internalFieldCamelizeName: Record<string, string> = {}
 
-const getInternalId = (item?: { id?: string; internalId?: number }) => {
-  if (!item) return undefined
-  if (item.internalId) return item.internalId
-  if (!item.id) return undefined
-  return parseGraphqlId(item.id).id
-}
-
 let initialEntityObjectAttributeMap: Record<string, FormFieldValue> = {}
 const setInitialEntityObjectAttributeMap = (initialEntityObject = props.initialEntityObject) => {
   if (isEmpty(initialEntityObject)) return
@@ -476,16 +470,7 @@ const getInitialEntityObjectValue = (
   let value: FormFieldValue
   if (relationFieldBelongsToObjectField[fieldName]) {
     const belongsToObject = initialEntityObject[relationFieldBelongsToObjectField[fieldName]]
-
-    if (!belongsToObject) return undefined
-
-    if ('edges' in belongsToObject) {
-      value = edgesToArray(belongsToObject as { edges?: { node: { internalId: number } }[] }).map(
-        (item) => getInternalId(item),
-      )
-    } else {
-      value = getInternalId(belongsToObject)
-    }
+    value = extractEntityIds(belongsToObject)
   }
 
   if (!value) {
@@ -1517,6 +1502,7 @@ export default {
     @submit-raw="onSubmitRaw"
   >
     <FormKitMessages
+      :node="formNode"
       :sections-schema="{
         messages: {
           $el: 'div',
@@ -1533,9 +1519,7 @@ export default {
               else: '$message.type',
             },
           },
-          slots: {
-            default: '$message.value',
-          },
+          children: '$fns.t($message.value)',
         },
       }"
     />

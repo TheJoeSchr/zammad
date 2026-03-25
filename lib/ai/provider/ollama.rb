@@ -5,7 +5,7 @@ class AI::Provider::Ollama < AI::Provider
 
   # default model also in app/assets/javascripts/app/lib/app_post/ai_provider/ollama.coffee
   DEFAULT_OPTIONS = {
-    model:           'llama3.2',
+    model:           'mistral-small3.2',
     temperature:     0.0,
     embedding_model: 'all-minilm',
   }.freeze
@@ -22,6 +22,7 @@ class AI::Provider::Ollama < AI::Provider
       system:  prompt_system,
       prompt:  prompt_user,
       stream:  false,
+      think:   false,
       options: {
         temperature: options[:temperature],
       },

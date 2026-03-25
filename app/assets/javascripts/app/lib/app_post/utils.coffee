@@ -553,27 +553,6 @@ class App.Utils
       if origHref != fixedHref then $(@).attr('href', fixedHref)
     )
 
-  # signatureNeeded = App.Utils.signatureCheck(message, signature)
-  @signatureCheck: (message, signature) ->
-    messageText   = message.replace(/<[^>]+>/g, ' ')
-    messageText   = $('<div>' + messageText + '</div>').text().trim()
-    # New UI editor treats new lines differently.
-    # Thus the only way to match signature between new & old is to remove any white space characters.
-    messageText   = messageText.replace(/\s+/g, ' ')
-    signatureText = signature.replace(/<[^>]+>/g, ' ')
-    signatureText = $('<div>' + signatureText + '</div>').text().trim()
-    signatureText = signatureText.replace(/\s+/g, ' ')
-
-    quote = (str) ->
-      (str + '').replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&")
-
-    #console.log('SC', messageText, signatureText, quote(signatureText))
-    regex = new RegExp(quote(signatureText), 'mi')
-    if messageText.match(regex)
-      false
-    else
-      true
-
   # messageWithMarker = App.Utils.signatureIdentifyByPlaintext(message, false)
   @signatureIdentifyByPlaintext: (message, test = false, internal = false) ->
     textToSearch = @html2text(message)

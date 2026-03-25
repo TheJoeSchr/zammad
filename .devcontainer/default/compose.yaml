@@ -2,7 +2,7 @@ name: "zammad-devcontainer"
 
 services:
   devcontainer:
-    "image": "ghcr.io/rails/devcontainer/images/ruby:3.4.8"
+    "image": "ghcr.io/rails/devcontainer/images/ruby:3.4.9"
 
     environment:
       MEMCACHE_SERVERS: memcached:11211
@@ -42,7 +42,7 @@ services:
     restart: unless-stopped
     ports:
       # Expose the ES service for direct access if needed, but avoid conflicts with host services.
-      - 19200:9200
+      - 127.0.0.1:19200:9200
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
 

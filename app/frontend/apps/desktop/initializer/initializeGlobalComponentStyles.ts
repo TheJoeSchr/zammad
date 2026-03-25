@@ -1,5 +1,6 @@
 // Copyright (C) 2012-2026 Zammad Foundation, https://zammad-foundation.org/
 
+import { initializeProgressBarClasses } from '#shared/components/CommonProgressBar/initializeProgressBarClasses.ts'
 import { initializeAiAssistantTextToolsLoadingBannerClasses } from '#shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantLoadingBanner/initializeAiAssistantTextToolsLoadingBannerClasses.ts'
 import { initializeAiAssistantTextToolsClasses } from '#shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantTextTools/initializeAiAssistantTextToolsClasses.ts'
 import { initializeEditorColorMenuClasses } from '#shared/components/Form/fields/FieldEditor/features/color-picker/initializeEditorColorMenuClasses.ts'
@@ -23,6 +24,7 @@ export const initializeGlobalComponentStyles = () => {
     warning: 'bg-yellow-50 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-600',
     danger: 'bg-pink-100 text-red-500 dark:bg-red-900 dark:text-red-500',
     neutral: 'text-gray-100 bg-neutral-50 dark:text-neutral-400 dark:bg-gray-500',
+    highlight: 'border-2 border-white bg-pink-500 text-white dark:border-gray-500',
     custom: 'badge-custom',
   })
 
@@ -65,7 +67,7 @@ export const initializeGlobalComponentStyles = () => {
   })
 
   initializeNotificationClasses({
-    base: 'grid gap-1.5 text-center md:text-start text-sm items-center justify-center md:justify-start grid-flow-row md:grid-flow-col md:grid-cols-[auto_minmax(auto,_1fr)] w-full rounded-lg p-2 border-transparent',
+    base: 'rounded-lg p-2 border-transparent focus-visible-app-default',
     baseContainer: 'mx-auto',
     error: 'bg-pink-100 dark:bg-red-900 text-red-500',
     info: 'bg-blue-500 dark:bg-blue-950 text-blue-800',
@@ -126,4 +128,6 @@ export const initializeGlobalComponentStyles = () => {
     label: 'text-black! dark:text-white!',
     button: 'text-blue-800',
   })
+
+  initializeProgressBarClasses('focus-visible-app-default')
 }

@@ -1671,14 +1671,12 @@ RSpec.describe 'User', performs_jobs: true, type: :request do
     let(:user) { create(:user) }
     let(:avatar_mime_type) { 'image/png' }
     let(:avatar) do
-      file = File.open('test/data/image/1000x1000.png', 'rb')
-      contents = file.read
       Avatar.add(
         object:        'User',
         o_id:          user.id,
         default:       true,
         resize:        {
-          content:   contents,
+          content:   File.binread('test/data/image/1000x1000.png'),
           mime_type: avatar_mime_type,
         },
         source:        'web',
@@ -1901,6 +1899,23 @@ RSpec.describe 'User', performs_jobs: true, type: :request do
         expect(json_response['success']).to be true
         expect(json_response['token']).to be_a String
       end
+    end
+  end
+
+  describe 'GET /api/v1/users/search, regression test for issue #6004 - users without email shown as blank lines', authenticated_as: :agent do
+    let(:agent)     { create(:agent) }
+    let!(:customer) { create(:customer, firstname: 'Tick', lastname: nil, email: nil, login: 'tick-no-email') }
+
+    before do
+      Setting.set('es_url', nil)
+      get "/api/v1/users/search?term=#{CGI.escape('Tick')}", params: {}, as: :json
+    end
+
+    it 'returns a non-blank label for users without email' do
+      expect(response).to have_http_status(:ok)
+
+      result = json_response.find { |u| u['id'] == customer.id }
+      expect(result['label']).to eq('Tick')
     end
   end
 end

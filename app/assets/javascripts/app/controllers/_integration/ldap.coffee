@@ -2,7 +2,7 @@ class Ldap extends App.ControllerIntegrationBase
   featureIntegration: 'ldap_integration'
   featureName: __('LDAP')
   description: [
-    [__('Use this switch to start synchronization of your ldap sources.')]
+    [__('Use this switch to start synchronization of your LDAP sources.')]
     [__('If a user is found in two (or more) configured LDAP sources, the last synchronisation will win.')]
     [__('In order to be able to influence the desired behavior in this regard, you can influence the order of the LDAP sources via drag & drop.')]
   ]
@@ -182,7 +182,7 @@ class Form extends App.Controller
   setConfig: (value) =>
     @item.name = value.name
     @item.active = value.active
-    @item.preferences = _.omit(value, ['id', 'name', 'active'])
+    @item.preferences = _.omit(value, ['id', 'name', 'active', 'ldap_source_id'])
     @item.save(
       done: =>
         @showIndex()
@@ -521,6 +521,7 @@ class ConnectionWizard extends App.ControllerWizardModal
     params.host       = @wizardConfig.host
     params.ssl        = @wizardConfig.ssl
     params.ssl_verify = @wizardConfig.ssl_verify
+    params.ldap_source_id = @wizardConfig.id if @wizardConfig.id
     @ajax(
       id:   'ldap_bind'
       type: 'POST'
@@ -820,7 +821,7 @@ class LdapSourceIndex extends App.ControllerGenericIndex
         item = new App.LdapSource(
           name: config.name
           active: config.active
-          preferences: _.omit(config, ['id', 'name', 'active'])
+          preferences: _.omit(config, ['id', 'name', 'active', 'ldap_source_id'])
         )
         item.save(
           done: ->

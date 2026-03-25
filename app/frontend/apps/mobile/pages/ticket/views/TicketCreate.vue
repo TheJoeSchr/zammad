@@ -440,7 +440,7 @@ const changedFields = reactive({
 
 <script lang="ts">
 export default {
-  beforeRouteEnter(to, from, next) {
+  beforeRouteEnter(to) {
     const { ticketCreateEnabled } = useTicketCreateView()
 
     if (!ticketCreateEnabled.value) {
@@ -451,18 +451,16 @@ export default {
         route: to.fullPath,
       }
 
-      next({
+      return {
         name: 'Error',
         query: {
           redirect: '1',
         },
         replace: true,
-      })
-
-      return
+      }
     }
 
-    next()
+    return true
   },
 }
 </script>
@@ -511,7 +509,7 @@ export default {
     :class="{
       'bg-gray-light backdrop-blur-lg': !isScrolledToBottom,
     }"
-    class="fixed bottom-0 z-10 w-full px-4 pb-safe transition"
+    class="pb-safe fixed bottom-0 z-10 w-full px-4 transition"
   >
     <FormKit
       :variant="lastStepName === activeStep ? 'submit' : 'primary'"

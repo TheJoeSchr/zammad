@@ -307,18 +307,18 @@ Setting.create_if_not_exists(
   frontend:    true
 )
 Setting.create_if_not_exists(
-  title:       __('Websocket backend'),
+  title:       __('WebSocket backend'),
   name:        'websocket_backend',
   area:        'System::WebSocket',
-  description: __('Defines how to reach websocket server. "websocket" is default on production, "websocketPort" is for CI'),
+  description: __('Defines how to reach WebSocket server. "websocket" is default on production, "websocketPort" is for CI.'),
   state:       Rails.env.production? ? 'websocket' : 'websocketPort',
   frontend:    true
 )
 Setting.create_if_not_exists(
-  title:       __('Websocket port'),
+  title:       __('WebSocket port'),
   name:        'websocket_port',
   area:        'System::WebSocket',
-  description: __('Defines the port of the websocket server.'),
+  description: __('Defines the port of the WebSocket server.'),
   options:     {
     form: [
       {
@@ -601,7 +601,7 @@ Setting.create_if_not_exists(
   title:       __('Core Workflow Ajax Mode'),
   name:        'core_workflow_ajax_mode',
   area:        'System::UI',
-  description: __('Defines if the core workflow communication should run over ajax instead of websockets.'),
+  description: __('Defines if the core workflow communication should run over AJAX instead of WebSocket.'),
   options:     {
     form: [
       {
@@ -1101,7 +1101,7 @@ Setting.create_if_not_exists(
   frontend:    true
 )
 
-options = [ { value: '0', name: 'disabled' }, { value: 1.hour.seconds.to_s, name: __('1 hour') }, { value: 2.hours.seconds.to_s, name: __('2 hours') }, { value: 1.day.seconds.to_s, name: __('1 day') }, { value: 7.days.seconds.to_s, name: __('1 week') }, { value: 14.days.seconds.to_s, name: __('2 weeks') }, { value: 21.days.seconds.to_s, name: __('3 weeks') }, { value: 28.days.seconds.to_s, name: __('4 weeks') } ]
+options = [ { value: '0', name: __('disabled') }, { value: 1.hour.seconds.to_s, name: __('1 hour') }, { value: 2.hours.seconds.to_s, name: __('2 hours') }, { value: 1.day.seconds.to_s, name: __('1 day') }, { value: 7.days.seconds.to_s, name: __('1 week') }, { value: 14.days.seconds.to_s, name: __('2 weeks') }, { value: 21.days.seconds.to_s, name: __('3 weeks') }, { value: 28.days.seconds.to_s, name: __('4 weeks') } ]
 Setting.create_if_not_exists(
   title:       __('Session Timeout'),
   name:        'session_timeout',
@@ -1118,28 +1118,31 @@ Setting.create_if_not_exists(
         translate: true,
       },
       {
-        display:   __('admin'),
+        display:   __('Admin interface'),
         null:      false,
         name:      'admin',
         tag:       'select',
         options:   options,
         translate: true,
+        note:      'admin', # intentionally not marked as translatable
       },
       {
-        display:   __('ticket.agent'),
+        display:   __('Agent tickets'),
         null:      false,
         name:      'ticket.agent',
         tag:       'select',
         options:   options,
         translate: true,
+        note:      'ticket.agent', # intentionally not marked as translatable
       },
       {
-        display:   __('ticket.customer'),
+        display:   __('Customer tickets'),
         null:      false,
         name:      'ticket.customer',
         tag:       'select',
         options:   options,
         translate: true,
+        note:      'ticket.customer', # intentionally not marked as translatable
       },
     ],
   },
@@ -1363,10 +1366,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('Twitter Secret'),
-        null:    true,
-        name:    'secret',
-        tag:     'input',
+        display:    __('Twitter Secret'),
+        null:       true,
+        name:       'secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -1427,10 +1431,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'app_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'app_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -1491,10 +1496,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('Client Secret'),
-        null:    true,
-        name:    'client_secret',
-        tag:     'input',
+        display:    __('Client Secret'),
+        null:       true,
+        name:       'client_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -1555,10 +1561,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'app_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'app_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -1619,10 +1626,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'app_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'app_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -1683,10 +1691,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'app_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'app_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:     __('Site'),
@@ -1754,10 +1763,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'app_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'app_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:     __('App Tenant ID'),
@@ -1824,10 +1834,11 @@ Setting.create_if_not_exists(
         tag:     'input',
       },
       {
-        display: __('App Secret'),
-        null:    true,
-        name:    'client_secret',
-        tag:     'input',
+        display:    __('App Secret'),
+        null:       true,
+        name:       'client_secret',
+        tag:        'input',
+        input_type: 'password',
       },
       {
         display:  __('Your callback URL'),
@@ -2082,7 +2093,7 @@ Setting.create_if_not_exists(
         null:      true,
         default:   true,
         name:      'pkce',
-        tag:       'select',
+        tag:       'boolean',
         options:   {
           true  => 'yes',
           false => 'no',
@@ -2157,16 +2168,16 @@ Setting.create_if_not_exists(
         display:   '',
         null:      true,
         name:      'password_min_2_lower_2_upper_characters',
-        tag:       'select',
+        tag:       'boolean',
         options:   {
-          1 => 'yes',
-          0 => 'no',
+          true  => 'yes',
+          false => 'no',
         },
         translate: true,
       },
     ],
   },
-  state:       1,
+  state:       true,
   preferences: {
     permission: ['admin.security'],
   },
@@ -2180,19 +2191,19 @@ Setting.create_if_not_exists(
   options:     {
     form: [
       {
-        display:   __('Needed'),
+        display:   '',
         null:      true,
         name:      'password_need_digit',
-        tag:       'select',
+        tag:       'boolean',
         options:   {
-          1 => 'yes',
-          0 => 'no',
+          true  => 'yes',
+          false => 'no',
         },
         translate: true,
       },
     ],
   },
-  state:       1,
+  state:       true,
   preferences: {
     permission: ['admin.security'],
   },
@@ -2206,19 +2217,19 @@ Setting.create_if_not_exists(
   options:     {
     form: [
       {
-        display:   __('Needed'),
+        display:   '',
         null:      true,
         name:      'password_need_special_character',
-        tag:       'select',
+        tag:       'boolean',
         options:   {
-          1 => 'yes',
-          0 => 'no',
+          true  => 'yes',
+          false => 'no',
         },
         translate: true,
       },
     ],
   },
-  state:       0,
+  state:       false,
   preferences: {
     permission: ['admin.security'],
   },
@@ -4347,7 +4358,7 @@ Setting.create_if_not_exists(
   title:       __('Defines postmaster filter.'),
   name:        '0900_postmaster_filter_bounce_follow_up_check',
   area:        'Postmaster::PreFilter',
-  description: __('Defines postmaster filter to identify postmaster bounces; and handles them as follow-up of the original tickets'),
+  description: __('Defines postmaster filter to identify postmaster bounces; and handles them as follow-up of the original tickets.'),
   options:     {},
   state:       'Channel::Filter::BounceFollowUpCheck',
   frontend:    false
@@ -5558,7 +5569,7 @@ Setting.create_if_not_exists(
   name:        'kb_active',
   area:        'Kb::Core',
   description: __('Defines if Knowledge Base navbar button is enabled.'),
-  state:       true,
+  state:       false,
   preferences: {
     prio:           1,
     trigger:        ['menu:render'],
@@ -5587,7 +5598,7 @@ Setting.create_if_not_exists(
   title:       __('Defines the timeframe during which a self-created note can be deleted.'),
   name:        'ui_ticket_zoom_article_delete_timeframe',
   area:        'UI::TicketZoomArticle',
-  description: __("Set timeframe in seconds. If it's set to 0 you can delete notes without time limits"),
+  description: __("Set timeframe in seconds. If it's set to 0 you can delete notes without time limits."),
   options:     {},
   state:       600,
   preferences: {
@@ -6017,7 +6028,7 @@ Setting.create_if_not_exists(
 )
 
 Setting.create_if_not_exists(
-  title:       __('UI Desktop Beta Switch'),
+  title:       __('Desktop BETA UI Switch'),
   name:        'ui_desktop_beta_switch',
   area:        'UI::Desktop',
   description: __('Allow users to switch automatically to the new desktop UI.'),
@@ -6026,7 +6037,7 @@ Setting.create_if_not_exists(
 )
 
 Setting.create_if_not_exists(
-  title:       __('UI Desktop BETA Switch Admin Menu'),
+  title:       __('Desktop BETA UI Switch Admin Menu'),
   name:        'ui_desktop_beta_switch_admin_menu',
   area:        'UI::Desktop',
   description: __('Allow admins to manage availability and access to the desktop BETA UI switch.'),
@@ -6035,10 +6046,10 @@ Setting.create_if_not_exists(
 )
 
 Setting.create_if_not_exists(
-  title:       __('UI Desktop BETA Switch Roles'),
+  title:       __('Desktop BETA UI Switch Roles'),
   name:        'ui_desktop_beta_switch_role_ids',
   area:        'UI::Desktop',
-  description: __('Defines which roles are allowed to access the desktop UI beta switch.'),
+  description: __('Defines which roles are allowed to access the desktop BETA UI switch.'),
   state:       [],
   frontend:    true,
 )
@@ -6053,6 +6064,9 @@ Setting.create_if_not_exists(
   preferences: {
     authentication: true,
     permission:     ['admin.ai_provider'],
+    validations:    [
+      'Setting::Validation::AIProvider',
+    ],
   },
   frontend:    true,
 )

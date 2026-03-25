@@ -3,10 +3,12 @@
 import { useTimeout } from '@vueuse/core'
 import { ref } from 'vue'
 
-import emitter from '#shared/utils/emitter.ts'
+import { useHighlightMenuState } from '#desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/useHighlightMenuState.ts'
 
 export const useBubbleHeader = () => {
   const showMetaInformation = ref(false)
+
+  const { isActive } = useHighlightMenuState()
 
   const isInteractiveTarget = (target: HTMLElement) => {
     if (!target) return false
@@ -46,8 +48,12 @@ export const useBubbleHeader = () => {
     )
       return
 
+    // When the top-bar has activated the highlight feature/
+    // We don't allow expansion and collapsing
+
+    if (isActive.value) return
+
     start()
-    emitter.emit('recompute-has-reached-article-bottom')
   }
 
   return {
